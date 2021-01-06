@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 346803802
+CRC: 734603571
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -9,5 +9,11 @@ AssetBundleManifest:
       Name: cube
       Dependencies: {}
     Info_2:
+      Name: loadpanel
+      Dependencies: {}
+    Info_3:
+      Name: menupanel
+      Dependencies: {}
+    Info_4:
       Name: assetbundleconfig
       Dependencies: {}

@@ -11,6 +11,8 @@ public class RealFramConfig : ScriptableObject
     public string m_XmlPath;
     //二进制文件夹路径
     public string m_BinaryPath;
+    //UIPanel存放位置
+    public string m_UIPanelPath;
 }
 
 [CustomEditor(typeof(RealFramConfig))]
@@ -19,12 +21,14 @@ public class RealFramConfigInspector : Editor
     public SerializedProperty m_ABBytePath;
     public SerializedProperty m_XmlPath;
     public SerializedProperty m_BinaryPath;
+    public SerializedProperty m_UIPanelPath;
 
     private void OnEnable()
     {
         m_ABBytePath = serializedObject.FindProperty("m_ABBytePath");
         m_XmlPath = serializedObject.FindProperty("m_XmlPath");
         m_BinaryPath = serializedObject.FindProperty("m_BinaryPath");
+        m_UIPanelPath = serializedObject.FindProperty("m_UIPanelPath");
     }
 
     public override void OnInspectorGUI()
@@ -35,6 +39,8 @@ public class RealFramConfigInspector : Editor
         EditorGUILayout.PropertyField(m_XmlPath, new GUIContent("Xml路径"));
         GUILayout.Space(5);
         EditorGUILayout.PropertyField(m_BinaryPath, new GUIContent("二进制路径"));
+        GUILayout.Space(5);
+        EditorGUILayout.PropertyField(m_UIPanelPath, new GUIContent("UI界面预制体存放路径"));
         GUILayout.Space(5);
         serializedObject.ApplyModifiedProperties();
     }

@@ -5,6 +5,12 @@ using UnityEngine.EventSystems;
 
 public class RFramework : MonoSingleton<RFramework>
 {
+    public RectTransform m_UIRoot = null;
+    public RectTransform m_WindowRoot = null;
+    public Camera m_UICamera = null;
+    public EventSystem m_UIEventSystem = null;
+
+
     protected override void Awake()
     {
         base.Awake();
@@ -12,12 +18,19 @@ public class RFramework : MonoSingleton<RFramework>
         AssetBundleManager.Instance.LoadAssetBundleConfig();
         ResourceManager.Instance.Init(this);
         ObjectManager.Instance.Init(transform.Find("RecyclePoolTrs"), transform.Find("SceneTrs"));
+        GameMapManager.Instance.Init(this);
     }
 
     // Use this for initialization
     void Start ()
     {
+        #region 初始化相关游戏资源
+        UIManager.Instance.Init(m_UIRoot, m_WindowRoot, m_UICamera, m_UIEventSystem);
+        RegisterUI();
+        #endregion
 
+        GameMapManager.Instance.LoadScene(ConStr.MENUSCENE);
+        //UIManager.Instance.PopUpWindow(ConStr.MENUPANEL);
     }
 
 
@@ -32,7 +45,7 @@ public class RFramework : MonoSingleton<RFramework>
 	// Update is called once per frame
 	void Update ()
     {
-
+        UIManager.Instance.OnUpdate();
 	}
 
     private void OnApplicationQuit()
@@ -43,4 +56,14 @@ public class RFramework : MonoSingleton<RFramework>
         Debug.Log("清空编辑器缓存");
 #endif
     }
+
+    /// <summary>
+    /// 注册UI
+    /// </summary>
+    private void RegisterUI()
+    {
+        UIManager.Instance.Register<MenuUI>(ConStr.MENUPANEL);
+        UIManager.Instance.Register<LoadUI>(ConStr.LOADINGPANEL);
+    }
+
 }

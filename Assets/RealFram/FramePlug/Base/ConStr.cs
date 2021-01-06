@@ -5,12 +5,12 @@ using UnityEngine;
 public class ConStr
 {
     //界面名称
-    public const string LOADINGPANEL = "LoadingPanel.prefab";
+    public const string LOADINGPANEL = "LoadPanel.prefab";
     public const string MENUPANEL = "MenuPanel.prefab";
 
     //场景名称
     public const string EMPTYSCENE = "Empty";
-    public const string MENUSCENE = "Menu";
+    public const string MENUSCENE = "MenuScene";
 
     //临时prefab路径
     public const string ATTACK = "Assets/GameData/Prefabs/Attack.prefab";

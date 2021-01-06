@@ -46,7 +46,7 @@ public class OfflineDataEditor
     [MenuItem("离线数据/生成所有UI prefab离线数据")]
     public static void AllCreateUIData()
     {
-        string[] allStr = AssetDatabase.FindAssets("t:Prefab", new string[] { "Assets/GameData/Prefabs/UGUI" });
+        string[] allStr = AssetDatabase.FindAssets("t:Prefab", new string[] { RealConfig.GetRealFram().m_UIPanelPath });
         for (int i = 0; i < allStr.Length; i++)
         {
             string prefabPath = AssetDatabase.GUIDToAssetPath(allStr[i]);
