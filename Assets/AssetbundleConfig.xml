@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AssetBundleConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ABList Path="Assets/Resources/Prefabs/Cube.prefab" Crc="3504654601" ABName="cube" AssetName="Cube.prefab" />
+  <ABList Path="Assets/RealFram/Data/Binary/BuffData.bytes" Crc="2262473451" ABName="data" AssetName="BuffData.bytes" />
+</AssetBundleConfig>
