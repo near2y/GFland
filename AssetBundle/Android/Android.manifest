@@ -1,0 +1,32 @@
+ManifestFileVersion: 0
+CRC: 2641400240
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: data
+      Dependencies: {}
+    Info_1:
+      Name: ball
+      Dependencies: {}
+    Info_2:
+      Name: enviroment
+      Dependencies: {}
+    Info_3:
+      Name: player
+      Dependencies: {}
+    Info_4:
+      Name: joystick
+      Dependencies: {}
+    Info_5:
+      Name: gamepanel
+      Dependencies:
+        Dependency_0: joystick
+    Info_6:
+      Name: loadpanel
+      Dependencies: {}
+    Info_7:
+      Name: menupanel
+      Dependencies: {}
+    Info_8:
+      Name: assetbundleconfig
+      Dependencies: {}

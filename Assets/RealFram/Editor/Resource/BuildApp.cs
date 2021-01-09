@@ -12,6 +12,12 @@ public class BuildApp
     public static string m_IOSPath = Application.dataPath + "/../BuildTarget/IOS/";
     public static string m_WindowsPath = Application.dataPath + "/../BuildTarget/Windows/";
 
+    [MenuItem("Build/Test")]
+    public static void Test()
+    {
+        Debug.Log(PlayerSettings.Android.keystoreName = Application.dataPath.Replace("/Assets", "") + "/android.keystore");
+    }
+
     [MenuItem("Build/标准包")]
     public static void Build()
     {
@@ -23,10 +29,10 @@ public class BuildApp
         string savePath = "";
         if (EditorUserBuildSettings.activeBuildTarget == BuildTarget.Android)
         {
-            PlayerSettings.Android.keystorePass = "sikiocean";
-            PlayerSettings.Android.keyaliasPass = "sikiocean";
+            PlayerSettings.Android.keystorePass = "csryw654321*";
+            PlayerSettings.Android.keyaliasPass = "csryw654321*";
             PlayerSettings.Android.keyaliasName = "android.keystore";
-            PlayerSettings.Android.keystoreName = Application.dataPath.Replace("/Assets", "") + "/realfram.keystore";
+            PlayerSettings.Android.keystoreName = Application.dataPath.Replace("/Assets", "") + "/android.keystore";
             savePath = m_AndroidPath + m_AppName + "_" + EditorUserBuildSettings.activeBuildTarget + string.Format("_{0:yyyy_MM_dd_HH_mm}", DateTime.Now) + ".apk";
         }
         else if (EditorUserBuildSettings.activeBuildTarget == BuildTarget.iOS)

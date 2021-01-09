@@ -64,6 +64,7 @@ public class RFramework : MonoSingleton<RFramework>
     {
         UIManager.Instance.Register<MenuUI>(ConStr.MENUPANEL);
         UIManager.Instance.Register<LoadUI>(ConStr.LOADINGPANEL);
+        UIManager.Instance.Register<GameUI>(ConStr.GAMEPANEL);
     }
 
 }

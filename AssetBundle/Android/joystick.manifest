@@ -1,0 +1,31 @@
+ManifestFileVersion: 0
+CRC: 1189004065
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d4fe30ddf95d335f346dcd61b3a813f4
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 453ba75113cb939134a6ef69264fd824
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 33d6864bf086fab4ab7dd21b9ff5a0d6, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
+Assets:
+- Assets/Resources/Prefabs/UGUI/JoyStick.prefab
+- Assets/Resources/Texture/circle.png
+Dependencies: []

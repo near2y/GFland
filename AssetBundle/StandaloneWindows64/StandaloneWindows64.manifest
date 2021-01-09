@@ -1,19 +1,29 @@
 ManifestFileVersion: 0
-CRC: 734603571
+CRC: 2058244156
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
       Name: data
       Dependencies: {}
     Info_1:
-      Name: cube
+      Name: enviroment
       Dependencies: {}
     Info_2:
-      Name: loadpanel
+      Name: player
       Dependencies: {}
     Info_3:
-      Name: menupanel
+      Name: joystick
       Dependencies: {}
     Info_4:
+      Name: gamepanel
+      Dependencies:
+        Dependency_0: joystick
+    Info_5:
+      Name: loadpanel
+      Dependencies: {}
+    Info_6:
+      Name: menupanel
+      Dependencies: {}
+    Info_7:
       Name: assetbundleconfig
       Dependencies: {}

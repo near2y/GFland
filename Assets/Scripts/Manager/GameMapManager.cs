@@ -50,7 +50,7 @@ public class GameMapManager : Singleton<GameMapManager>
     {
         LoadingProgress = 0;
         m_Mono.StartCoroutine(LoadSceneAsync(name));
-        UIManager.Instance.PopUpWindow(ConStr.LOADINGPANEL);
+        UIManager.Instance.PopUpWindow(ConStr.LOADINGPANEL,true,index);
     }
 
     /// <summary>

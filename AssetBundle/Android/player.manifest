@@ -1,0 +1,64 @@
+ManifestFileVersion: 0
+CRC: 3272916821
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 3e60b3f1771b1a09df9427084797784c
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 1b8038e7bc03ef6899d1f4380bc108c3
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: f9fd19f12f057b04c86cb1332dff94cd, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+- Class: 143
+  Script: {instanceID: 0}
+Assets:
+- Assets/GFLand/Texture2D/bl_gun02.png
+- Assets/GFLand/Materials/bl_gun05.mat
+- Assets/GFLand/Texture2D/bl_gun00.png
+- Assets/GFLand/Texture2D/hm_lemon_01.png
+- Assets/GFLand/Materials/bl_gun03.mat
+- Assets/GFLand/Materials/bl_gun00.mat
+- Assets/GFLand/Materials/bl_gun02.mat
+- Assets/GFLand/Texture2D/bl_gun01.png
+- Assets/GFLand/Materials/bl_gun04.mat
+- Assets/GFLand/Animate/PlayerAC.controller
+- Assets/GFLand/Texture2D/bl_gun05.png
+- Assets/Resources/Prefabs/player.prefab
+- Assets/GFLand/Models/lemon_skin.fbx
+- Assets/GFLand/Animate/hm_lemon_ani.fbx
+- Assets/GFLand/Materials/hm_lemon_glass_01.mat
+- Assets/GFLand/Materials/bl_gun01.mat
+- Assets/GFLand/Materials/hm_lemon_01.mat
+- Assets/GFLand/Texture2D/bl_gun03.png
+- Assets/GFLand/Texture2D/bl_gun04.png
+Dependencies: []

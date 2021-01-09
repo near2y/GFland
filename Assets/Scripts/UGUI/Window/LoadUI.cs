@@ -5,10 +5,12 @@ using UnityEngine;
 public class LoadUI : Window
 {
     private LoadPanel m_Panel;
+    private int state = -1;
 
     public override void OnAwake(params object[] paraList)
     {
         m_Panel = GameObject.GetComponent<LoadPanel>();
+        state = (int)paraList[0];
     }
 
     public override void OnUpdate()
@@ -23,7 +25,15 @@ public class LoadUI : Window
     {
         UIManager.Instance.CloseWindow(Name);
         //打开首页
-        UIManager.Instance.PopUpWindow(ConStr.MENUPANEL);
+        switch (state)
+        {
+            case 1:
+                UIManager.Instance.PopUpWindow(ConStr.MENUPANEL);
+                break;
+            case 2:
+                UIManager.Instance.PopUpWindow(ConStr.GAMEPANEL);
+                break;
+        }
 
     }
 }
