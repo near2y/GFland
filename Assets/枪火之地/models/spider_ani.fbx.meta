@@ -1,0 +1,295 @@
+fileFormatVersion: 2
+guid: 5e9eab96862936740a5837ded2997ecb
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Bone001
+    100002: Bone019
+    100004: Bone021
+    100006: Bone025
+    100008: Bone026
+    100010: Bone027
+    100012: Bone028
+    100014: Bone029
+    100016: Bone030
+    100018: Bone031
+    100020: Bone032
+    100022: Bone033
+    100024: Bone034
+    100026: Bone035
+    100028: Bone036
+    100030: Bone037
+    100032: Bone038
+    100034: IK Chain001
+    100036: IK Chain002
+    100038: IK Chain003
+    100040: IK Chain004
+    100042: //RootNode
+    100044: spider_green003
+    400000: Bone001
+    400002: Bone019
+    400004: Bone021
+    400006: Bone025
+    400008: Bone026
+    400010: Bone027
+    400012: Bone028
+    400014: Bone029
+    400016: Bone030
+    400018: Bone031
+    400020: Bone032
+    400022: Bone033
+    400024: Bone034
+    400026: Bone035
+    400028: Bone036
+    400030: Bone037
+    400032: Bone038
+    400034: IK Chain001
+    400036: IK Chain002
+    400038: IK Chain003
+    400040: IK Chain004
+    400042: //RootNode
+    400044: spider_green003
+    4300000: spider_green003
+    7400000: walk
+    7400002: attack
+    9500000: //RootNode
+    13700000: spider_green003
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #53'
+    second: {fileID: 2100000, guid: defdcfa4ef50a6c48a6b29631088869a, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: walk
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 21
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bone001
+        weight: 1
+      - path: Bone001/Bone019
+        weight: 1
+      - path: Bone001/Bone019/Bone038
+        weight: 1
+      - path: Bone001/Bone030
+        weight: 1
+      - path: Bone001/Bone030/Bone026
+        weight: 1
+      - path: Bone001/Bone030/Bone026/Bone025
+        weight: 1
+      - path: Bone001/Bone030/Bone026/Bone025/Bone021
+        weight: 1
+      - path: Bone001/Bone031
+        weight: 1
+      - path: Bone001/Bone031/Bone032
+        weight: 1
+      - path: Bone001/Bone031/Bone032/Bone036
+        weight: 1
+      - path: Bone001/Bone033
+        weight: 1
+      - path: Bone001/Bone033/Bone029
+        weight: 1
+      - path: Bone001/Bone033/Bone029/Bone028
+        weight: 1
+      - path: Bone001/Bone033/Bone029/Bone028/Bone027
+        weight: 1
+      - path: Bone001/Bone035
+        weight: 1
+      - path: Bone001/Bone035/Bone034
+        weight: 1
+      - path: Bone001/Bone035/Bone034/Bone037
+        weight: 1
+      - path: IK Chain001
+        weight: 1
+      - path: IK Chain002
+        weight: 1
+      - path: IK Chain003
+        weight: 1
+      - path: IK Chain004
+        weight: 1
+      - path: spider_green003
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: attack
+      takeName: Take 001
+      firstFrame: 30
+      lastFrame: 52
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bone001
+        weight: 1
+      - path: Bone001/Bone019
+        weight: 1
+      - path: Bone001/Bone019/Bone038
+        weight: 1
+      - path: Bone001/Bone030
+        weight: 1
+      - path: Bone001/Bone030/Bone026
+        weight: 1
+      - path: Bone001/Bone030/Bone026/Bone025
+        weight: 1
+      - path: Bone001/Bone030/Bone026/Bone025/Bone021
+        weight: 1
+      - path: Bone001/Bone031
+        weight: 1
+      - path: Bone001/Bone031/Bone032
+        weight: 1
+      - path: Bone001/Bone031/Bone032/Bone036
+        weight: 1
+      - path: Bone001/Bone033
+        weight: 1
+      - path: Bone001/Bone033/Bone029
+        weight: 1
+      - path: Bone001/Bone033/Bone029/Bone028
+        weight: 1
+      - path: Bone001/Bone033/Bone029/Bone028/Bone027
+        weight: 1
+      - path: Bone001/Bone035
+        weight: 1
+      - path: Bone001/Bone035/Bone034
+        weight: 1
+      - path: Bone001/Bone035/Bone034/Bone037
+        weight: 1
+      - path: IK Chain001
+        weight: 1
+      - path: IK Chain002
+        weight: 1
+      - path: IK Chain003
+        weight: 1
+      - path: IK Chain004
+        weight: 1
+      - path: spider_green003
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

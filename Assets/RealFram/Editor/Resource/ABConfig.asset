@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: ABConfig
   m_EditorClassIdentifier: 
   m_AllPrefabPath:
-  - Assets/Resources/Prefabs
+  - "Assets/\u67AA\u706B\u4E4B\u5730/prefabs"
   m_AllFileDirAB:
   - ABName: data
     Path: Assets/RealFram/Data/Binary
-  - ABName: sound
-    Path: Assets/Resources/Sounds

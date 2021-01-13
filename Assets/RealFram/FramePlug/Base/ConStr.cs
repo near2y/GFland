@@ -16,8 +16,7 @@ public class ConStr
 
 
     //临时prefab路径
-    public const string ATTACK = "Assets/GameData/Prefabs/Attack.prefab";
-    public const string Ball = "Assets/Resources/Prefabs/ball.prefab";
+    public const string Spider = "Assets/枪火之地/prefabs/spider_ani.prefab";
 
     //临时音乐资源
     public const string MENUSOUND = "Assets/GameData/Sounds/menusound.mp3";

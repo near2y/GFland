@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 2641400240
+CRC: 3194054609
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -15,18 +15,21 @@ AssetBundleManifest:
       Name: player
       Dependencies: {}
     Info_4:
-      Name: joystick
+      Name: spider_ani
       Dependencies: {}
     Info_5:
+      Name: joystick
+      Dependencies: {}
+    Info_6:
       Name: gamepanel
       Dependencies:
         Dependency_0: joystick
-    Info_6:
+    Info_7:
       Name: loadpanel
       Dependencies: {}
-    Info_7:
+    Info_8:
       Name: menupanel
       Dependencies: {}
-    Info_8:
+    Info_9:
       Name: assetbundleconfig
       Dependencies: {}

@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2173548704
+CRC: 1536790055
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 754395c9455660caab66c4bc187f3fac
+    Hash: b04499dbf06652cf449ebc36d7a89c46
   TypeTreeHash:
     serializedVersion: 2
     Hash: 3b96582a9421ec70a90adbff00057d96
@@ -38,5 +38,5 @@ ClassTypes:
 - Class: 224
   Script: {instanceID: 0}
 Assets:
-- Assets/Resources/Prefabs/UGUI/Panel/LoadPanel.prefab
+- "Assets/\u67AA\u706B\u4E4B\u5730/prefabs/UGUI/Panel/LoadPanel.prefab"
 Dependencies: []

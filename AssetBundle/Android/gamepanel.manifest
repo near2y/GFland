@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3813870555
+CRC: 492885604
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 71e5947b909dba6026a0d317d3822602
+    Hash: f31ec83c083e499a248b9d2fcebfd852
   TypeTreeHash:
     serializedVersion: 2
-    Hash: dba044adec3f862f05d79f23f0a23046
+    Hash: ba89c4cfb0243c3d89c0355fcf3b6976
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -29,6 +29,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: f57b28759484e4e4e8c3deb4f5c31f8d, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 33d6864bf086fab4ab7dd21b9ff5a0d6, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 79b57452437b44147aaec4eeea727eda, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 128
@@ -40,9 +42,9 @@ ClassTypes:
 - Class: 224
   Script: {instanceID: 0}
 Assets:
-- Assets/Resources/Texture/Home.png
-- Assets/Resources/Texture/Clear.png
-- Assets/Resources/Prefabs/UGUI/Panel/GamePanel.prefab
-- Assets/Resources/Texture/Add.png
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/UGUI/Home.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/UGUI/Clear.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/prefabs/UGUI/Panel/GamePanel.prefab"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/UGUI/Add.png"
 Dependencies:
 - F:/Near2y/GFland/Assets/../AssetBundle/Android/joystick

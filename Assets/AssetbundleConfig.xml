@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <AssetBundleConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <ABList Path="Assets/Resources/Prefabs/ball.prefab" Crc="1849587765" ABName="ball" AssetName="ball.prefab" />
+  <ABList Path="Assets/枪火之地/prefabs/ball.prefab" Crc="2567902784" ABName="ball" AssetName="ball.prefab" />
   <ABList Path="Assets/RealFram/Data/Binary/BuffData.bytes" Crc="2262473451" ABName="data" AssetName="BuffData.bytes" />
-  <ABList Path="Assets/Resources/Prefabs/Enviroment.prefab" Crc="2452441787" ABName="enviroment" AssetName="Enviroment.prefab" />
-  <ABList Path="Assets/Resources/Prefabs/UGUI/Panel/GamePanel.prefab" Crc="3092578792" ABName="gamepanel" AssetName="GamePanel.prefab">
+  <ABList Path="Assets/枪火之地/prefabs/Enviroment.prefab" Crc="400352628" ABName="enviroment" AssetName="Enviroment.prefab" />
+  <ABList Path="Assets/枪火之地/prefabs/UGUI/Panel/GamePanel.prefab" Crc="3809724536" ABName="gamepanel" AssetName="GamePanel.prefab">
     <ABDependce>joystick</ABDependce>
   </ABList>
-  <ABList Path="Assets/Resources/Prefabs/UGUI/JoyStick.prefab" Crc="4155404802" ABName="joystick" AssetName="JoyStick.prefab" />
-  <ABList Path="Assets/Resources/Prefabs/UGUI/Panel/LoadPanel.prefab" Crc="4171135624" ABName="loadpanel" AssetName="LoadPanel.prefab" />
-  <ABList Path="Assets/Resources/Prefabs/UGUI/Panel/MenuPanel.prefab" Crc="251420070" ABName="menupanel" AssetName="MenuPanel.prefab" />
-  <ABList Path="Assets/Resources/Prefabs/player.prefab" Crc="2517404858" ABName="player" AssetName="player.prefab" />
+  <ABList Path="Assets/枪火之地/prefabs/UGUI/JoyStick.prefab" Crc="2390278486" ABName="joystick" AssetName="JoyStick.prefab" />
+  <ABList Path="Assets/枪火之地/prefabs/UGUI/Panel/LoadPanel.prefab" Crc="2748887832" ABName="loadpanel" AssetName="LoadPanel.prefab" />
+  <ABList Path="Assets/枪火之地/prefabs/UGUI/Panel/MenuPanel.prefab" Crc="1438290998" ABName="menupanel" AssetName="MenuPanel.prefab" />
+  <ABList Path="Assets/枪火之地/prefabs/player.prefab" Crc="1850653287" ABName="player" AssetName="player.prefab" />
+  <ABList Path="Assets/枪火之地/prefabs/spider_ani.prefab" Crc="759113610" ABName="spider_ani" AssetName="spider_ani.prefab" />
 </AssetBundleConfig>

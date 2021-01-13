@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3272916821
+CRC: 2205156799
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 3e60b3f1771b1a09df9427084797784c
+    Hash: 647c7c9b0bf246e3ed5d31caf53ba21f
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 1b8038e7bc03ef6899d1f4380bc108c3
+    Hash: 1b3b16f4ad15157c19763f7bab567082
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -42,23 +42,23 @@ ClassTypes:
 - Class: 143
   Script: {instanceID: 0}
 Assets:
-- Assets/GFLand/Texture2D/bl_gun02.png
-- Assets/GFLand/Materials/bl_gun05.mat
-- Assets/GFLand/Texture2D/bl_gun00.png
-- Assets/GFLand/Texture2D/hm_lemon_01.png
-- Assets/GFLand/Materials/bl_gun03.mat
-- Assets/GFLand/Materials/bl_gun00.mat
-- Assets/GFLand/Materials/bl_gun02.mat
-- Assets/GFLand/Texture2D/bl_gun01.png
-- Assets/GFLand/Materials/bl_gun04.mat
-- Assets/GFLand/Animate/PlayerAC.controller
-- Assets/GFLand/Texture2D/bl_gun05.png
-- Assets/Resources/Prefabs/player.prefab
-- Assets/GFLand/Models/lemon_skin.fbx
-- Assets/GFLand/Animate/hm_lemon_ani.fbx
-- Assets/GFLand/Materials/hm_lemon_glass_01.mat
-- Assets/GFLand/Materials/bl_gun01.mat
-- Assets/GFLand/Materials/hm_lemon_01.mat
-- Assets/GFLand/Texture2D/bl_gun03.png
-- Assets/GFLand/Texture2D/bl_gun04.png
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/player/bl_gun02.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/Player/bl_gun05.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/player/bl_gun00.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/player/hm_lemon_01.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/Player/bl_gun03.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/Player/bl_gun00.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/Player/bl_gun02.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/player/bl_gun01.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/Player/bl_gun04.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Animate/PlayerAC.controller"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/player/bl_gun05.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/prefabs/player.prefab"
+- "Assets/\u67AA\u706B\u4E4B\u5730/models/player/lemon_skin.fbx"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Animate/hm_lemon_ani.fbx"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/Player/hm_lemon_glass_01.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/Player/bl_gun01.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/Player/hm_lemon_01.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/player/bl_gun03.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/player/bl_gun04.png"
 Dependencies: []
