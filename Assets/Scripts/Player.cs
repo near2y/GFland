@@ -16,10 +16,10 @@ public class Player : MonoSingleton<Player>
     public float rotLerp = 0.75f;
 
     public Joystick joystick = null;
-    public bool hadJoystick = false;
+    bool hadJoystick = false;
 
     Animator anim;
-    public Vector3 aniDir;
+    Vector3 aniDir;
 
     //Enemy
     public Transform enemy;
@@ -118,7 +118,6 @@ public class Player : MonoSingleton<Player>
 
         transform.LookAt(enemy.position);
 
-        return;
 
 
         //Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);

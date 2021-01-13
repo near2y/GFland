@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EnemyData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <AllEnemyList Id="1" Name="全BUFF0" Hp="1" AttackDis="1" EffectId="1" PrefabPath="near2y" />
+  <AllEnemyList Id="2" Name="全BUFF1" Hp="2" AttackDis="2" EffectId="2" PrefabPath="near2y" />
+  <AllEnemyList Id="3" Name="全BUFF2" Hp="3" AttackDis="3" EffectId="3" PrefabPath="near2y" />
+</EnemyData>

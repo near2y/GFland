@@ -3,7 +3,7 @@ CRC: 1941315128
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: cf609682fc58cc4f27095f1c79ba0ec4
+    Hash: 9c14c593fbd47e9fe2158ae5eaa4c19f
   TypeTreeHash:
     serializedVersion: 2
     Hash: c4016d3b58f584ea97eb093ff5e1d96b
@@ -27,5 +27,5 @@ ClassTypes:
   Script: {instanceID: 0}
 Assets:
 - "Assets/\u67AA\u706B\u4E4B\u5730/prefabs/ball.prefab"
-- "Assets/\u67AA\u706B\u4E4B\u5730/materials/Player/test.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/player/test.mat"
 Dependencies: []

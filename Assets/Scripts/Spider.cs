@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class Spider : MonoBehaviour
 {
+    
 
     public Animator anim;
     public NavMeshAgent agent;
