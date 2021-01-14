@@ -15,6 +15,7 @@ public class DataEditor
     public static string BinaryPath = RealConfig.GetRealFram().m_BinaryPath;
     public static string ExcelPath = Application.dataPath + "/../Data/Excel/";
     public static string RegPath = Application.dataPath + "/../Data/Reg/";
+    public static string WaveXmlPath = Application.dataPath + "/../Data/Excel/Wave/";
 
     [MenuItem("Assets/类转xml")]
     public static void AssetsClassToXml()
@@ -33,10 +34,13 @@ public class DataEditor
     public static void AssetsXmlToBinary()
     {
         UnityEngine.Object[] objs = Selection.objects;
+        string[] strs = Selection.assetGUIDs;
         for (int i = 0; i < objs.Length; i++)
         {
+            string path = AssetDatabase.GUIDToAssetPath(strs[i]);
+            string refName = objs[i].name.Remove(objs[i].name.IndexOf("_"));
             EditorUtility.DisplayProgressBar("文件下的xml转成二进制", "正在扫描" + objs[i].name + "... ...", 1.0f / objs.Length * i);
-            XmlToBinary(objs[i].name);
+            XmlToBinary(objs[i].name,path,refName);
         }
         AssetDatabase.Refresh();
         EditorUtility.ClearProgressBar();
@@ -292,16 +296,56 @@ public class DataEditor
         }
     }
 
-    private static void ExcelToXml(string name)
+
+    [MenuItem("Assets/Excel转Xml")]
+    public static void AssetExcelToXml()
+    {
+        UnityEngine.Object[] objs = Selection.objects;
+        string[] strs = Selection.assetGUIDs;
+        for (int i = 0; i < objs.Length; i++)
+        {
+            string name = objs[i].name.Remove(objs[i].name.IndexOf("_"));
+            string path = AssetDatabase.GUIDToAssetPath(strs[i]);
+            ExcelToXml(name,objs[i].name,path);
+        }
+        AssetDatabase.Refresh();
+        EditorUtility.ClearProgressBar();
+    }
+
+    [MenuItem("Assets/Excel转二进制")]
+    public static void AssetExcelToBinary()
+    {
+        UnityEngine.Object[] objs = Selection.objects;
+        string[] strs = Selection.assetGUIDs;
+        for (int i = 0; i < objs.Length; i++)
+        {
+            string name = objs[i].name.Remove(objs[i].name.IndexOf("_"));
+            string path = AssetDatabase.GUIDToAssetPath(strs[i]);
+            ExcelToXml(name, objs[i].name, path);
+            XmlToBinary(objs[i].name, path, name);
+        }
+        AssetDatabase.Refresh();
+        EditorUtility.ClearProgressBar();
+    }
+
+    public static void ExcelToXml(string name,string exName = null,string path = null)
     {
         string className = "";
         string xmlName = "";
         string excelName = "";
         //第一步，读取Reg文件，确定类的结构
         Dictionary<string, SheetClass> allSheetClassDic = ReadReg(name, ref excelName, ref xmlName, ref className);
-
+        if (exName != null)
+        {
+            excelName = exName + ".xlsx";
+            xmlName = exName + ".xml";
+        }
         //第二步，读取excel里面的数据
         string excelPath = ExcelPath + excelName;
+        if (path != null)
+        {
+            excelPath = path;
+        }
         Dictionary<string, SheetData> sheetDataDic = new Dictionary<string, SheetData>();
         try
         {
@@ -1026,17 +1070,20 @@ public class DataEditor
     /// xml转二进制
     /// </summary>
     /// <param name="name"></param>
-    private static void XmlToBinary(string name)
+    private static void XmlToBinary(string name,string xPath = null,string refName = null)
     {
         if (string.IsNullOrEmpty(name))
             return;
-
         try
         {
             Type type = null;
+            if(refName == null)
+            {
+                refName = name;
+            }
             foreach (var asm in AppDomain.CurrentDomain.GetAssemblies())
             {
-                Type tempType = asm.GetType(name);
+                Type tempType = asm.GetType(refName);
                 if (tempType != null)
                 {
                     type = tempType;
@@ -1046,6 +1093,13 @@ public class DataEditor
             if (type != null)
             {
                 string xmlPath = XmlPath + name + ".xml";
+                if (xPath != null)
+                {
+                    XmlPath = xPath;
+
+                }
+                Debug.Log(XmlPath);
+
                 string binaryPath = BinaryPath + name + ".bytes";
                 object obj = BinarySerializeOpt.XmlDeserialize(xmlPath, type);
                 BinarySerializeOpt.BinarySerilize(binaryPath, obj);

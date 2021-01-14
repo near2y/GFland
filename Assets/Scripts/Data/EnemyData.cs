@@ -44,7 +44,7 @@ public class EnemyData:ExcelBase
     /// <returns></returns>
     public EnemyBase FindByID(int id)
     {
-        return AllEnemyList[id-AllEnemyList[0].Id];
+        return AllEnemyDic[id];
     }
 
     [XmlIgnore]

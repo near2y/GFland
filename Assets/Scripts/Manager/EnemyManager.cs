@@ -20,6 +20,9 @@ public class EnemyManager :  MonoSingleton<EnemyManager>
         enemyData = ConfigerManager.Instance.FindData<EnemyData>(CFG.TABLE_ENEMY);
         enemyList = new List<Enemy>();
 
+        string wavePath = "Assets/RealFram/Data/Binary/WaveData_0701.bytes";
+        WaveData waveData = ConfigerManager.Instance.FindData<WaveData>(wavePath);
+        WaveBase waveBase = waveData.FindByID(1);
     }
 
     private void Update()

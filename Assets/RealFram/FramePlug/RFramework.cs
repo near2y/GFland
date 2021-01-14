@@ -19,6 +19,8 @@ public class RFramework : MonoSingleton<RFramework>
         ResourceManager.Instance.Init(this);
         ObjectManager.Instance.Init(transform.Find("RecyclePoolTrs"), transform.Find("SceneTrs"));
         GameMapManager.Instance.Init(this);
+
+
     }
 
     // Use this for initialization
