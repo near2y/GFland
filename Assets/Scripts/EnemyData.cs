@@ -20,6 +20,7 @@ public class EnemyData:ExcelBase
             enemy.EffectId = i + 1;
             enemy.Hp = i + 1;
             enemy.PrefabPath = "near2y";
+            enemy.Size = 1;
             AllEnemyList.Add(enemy);
         }
     }
@@ -27,7 +28,7 @@ public class EnemyData:ExcelBase
 
     public override void Init()
     {
-        AllEnemyList.Clear();
+        AllEnemyDic.Clear();
         for (int i = 0; i < AllEnemyList.Count; i++)
         {
             AllEnemyDic.Add(AllEnemyList[i].Id, AllEnemyList[i]);
@@ -43,7 +44,7 @@ public class EnemyData:ExcelBase
     /// <returns></returns>
     public EnemyBase FindByID(int id)
     {
-        return AllEnemyList[id];
+        return AllEnemyList[id-AllEnemyList[0].Id];
     }
 
     [XmlIgnore]
@@ -74,5 +75,8 @@ public class EnemyBase
 
     [XmlAttribute("PrefabPath")]
     public string PrefabPath { get; set; }
+
+    [XmlAttribute("Size")]
+    public float Size { get; set; }
 }
 

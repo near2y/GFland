@@ -9,35 +9,41 @@ public class Player : MonoSingleton<Player>
     int aniID_Vertical = Animator.StringToHash("Vertical");
     int aniID_Turning = Animator.StringToHash("Turning");
 
-
+    [Header("< 玩家参数 >")]
     public float speed = 3;
+    public float attackDis = 5f;
     public float aniSpeed = 1.2f;
-    [Range(0,1)]
+    [Range(0, 1)]
     public float rotLerp = 0.75f;
 
+    [Header("< 玩家游戏中变量展示 >")]
     public Joystick joystick = null;
-    bool hadJoystick = false;
+    public bool hadJoystick = false;
 
     Animator anim;
     Vector3 aniDir;
 
     //Enemy
-    public Transform enemy;
+    public Enemy enemy;
     
     Vector3 movement;
-
-    int floorMask;
-    float camRayLength = 100f;
 
     CharacterController cCtrl;
 
     private void Start()
     {
-        floorMask = LayerMask.GetMask("Floor");
         anim = GetComponent<Animator>();
         anim.speed = aniSpeed;
         cCtrl = GetComponent<CharacterController>();
         movement = new Vector3();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            EnemyManager.Instance.ClearEnemy(enemy);
+        }
     }
 
 
@@ -92,58 +98,36 @@ public class Player : MonoSingleton<Player>
         cCtrl.SimpleMove(movement);
     }
 
+    #region 转向
     float ratio = 0;
     void Turning()
     {
-        //Vector3 playerToMouse = enemy.position;
-        //playerToMouse.y = 0f;
-
-        //Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
-
-        //if (Mathf.Abs(transform.rotation.eulerAngles.y - newRotation.eulerAngles.y) > 5)
-        //{
-        //    transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, 5 * Time.deltaTime);
-        //    //ratio = (newRotation.eulerAngles.y - transform.rotation.eulerAngles.y) / offY;
-        //    //Debug.Log(ratio);
-        //    ratio = 1;
-        //    anim.SetFloat(aniID_Turning, ratio);
-        //}
-        //else
-        //{
-        //    transform.rotation = newRotation;
-        //    ratio *= 0.9f;
-        //    if (ratio < 0.1) ratio = 0;
-        //    anim.SetFloat(aniID_Turning, ratio);
-        //}
-
-        transform.LookAt(enemy.position);
-
-
-
-        //Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-        //RaycastHit floorHit;
-        //if (Physics.Raycast(camRay, out floorHit, camRayLength, floorMask))
-        //{
-        //    Vector3 playerToMouse = floorHit.point - transform.position;
-        //    playerToMouse.y = 0f;
-
-        //    Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
-
-        //    if (Mathf.Abs(transform.rotation.eulerAngles.y - newRotation.eulerAngles.y)>5)
-        //    {
-        //        transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, 5 * Time.deltaTime);
-        //        //ratio = (newRotation.eulerAngles.y - transform.rotation.eulerAngles.y) / offY;
-        //        //Debug.Log(ratio);
-        //        ratio = 1;
-        //        anim.SetFloat(aniID_Turning, ratio);
-        //    }
-        //    else
-        //    {
-        //        transform.rotation = newRotation;
-        //        ratio *= 0.9f;
-        //        if (ratio < 0.1) ratio = 0;
-        //        anim.SetFloat(aniID_Turning, ratio);
-        //    }
-        //}
+        enemy = EnemyManager.Instance.FindCloseEnemy(attackDis);
+        if (!Enemy.ReferenceEquals(enemy,null)  )
+        { 
+            //transform.LookAt(enemy.transform.position);
+            Vector3 playerToMouse = enemy.transform.position - transform.position;
+            playerToMouse.y = 0f;
+            //lerp
+            Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
+            if (Mathf.Abs(transform.rotation.eulerAngles.y - newRotation.eulerAngles.y) > 5)
+            {
+                transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, 5 * Time.deltaTime);
+                ratio = 1;
+                anim.SetFloat(aniID_Turning, ratio);
+            }
+            else
+            {
+                transform.rotation = newRotation;
+                ratio *= 0.9f;
+                if (ratio < 0.1) ratio = 0;
+                anim.SetFloat(aniID_Turning, ratio);
+            }
+        }
+        if(Enemy.ReferenceEquals(enemy,null) && anim.GetFloat(aniID_Turning) != 0)
+        {
+            anim.SetFloat(aniID_Turning, 0);
+        }
     }
+    #endregion
 }

@@ -34,11 +34,7 @@ public class GameUI : Window
 
     void ClickAddBallBtn()
     {
-        Vector3 pos = new Vector3(-4.58f, 0, 0);
-        GameObject ball = ObjectManager.Instance.InstantiateObject(ConStr.Spider,true);
-        ball.transform.position = pos;
-        balls.Add(ball);
-        m_Panel.ballNum.text = balls.Count.ToString();
+        //EnemyManager.Instance.Spwan(2001);
     }
 
     void ClearBalls()

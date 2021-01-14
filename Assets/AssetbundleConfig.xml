@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <AssetBundleConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <ABList Path="Assets/枪火之地/prefabs/ball.prefab" Crc="2567902784" ABName="ball" AssetName="ball.prefab" />
   <ABList Path="Assets/RealFram/Data/Binary/BuffData.bytes" Crc="2262473451" ABName="data" AssetName="BuffData.bytes" />
+  <ABList Path="Assets/RealFram/Data/Binary/EnemyData.bytes" Crc="3841643933" ABName="data" AssetName="EnemyData.bytes" />
   <ABList Path="Assets/枪火之地/prefabs/Enviroment.prefab" Crc="400352628" ABName="enviroment" AssetName="Enviroment.prefab" />
   <ABList Path="Assets/枪火之地/prefabs/UGUI/Panel/GamePanel.prefab" Crc="3809724536" ABName="gamepanel" AssetName="GamePanel.prefab">
     <ABDependce>joystick</ABDependce>

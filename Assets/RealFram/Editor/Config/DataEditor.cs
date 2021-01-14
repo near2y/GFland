@@ -91,6 +91,14 @@ public class DataEditor
         EditorUtility.ClearProgressBar();
     }
 
+
+    [MenuItem("Tools/Xml/Excel转二进制")]
+    public static void AllExcelToBinary()
+    {
+        AllExcelToXml();
+        AllXmlToBinary();
+    }
+
     [MenuItem("Tools/测试/测试读取xml")]
     public static void TestReadXml()
     {

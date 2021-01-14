@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 912288668
+CRC: 1549236516
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 8d3c08d62f875c6a7880b389c6b9b2f6
+    Hash: 1c5a27d50d1e72de03d3f6d120ca5cfa
   TypeTreeHash:
     serializedVersion: 2
     Hash: 5ad585dd02dfb5016c0dad519eab8f49
@@ -13,4 +13,5 @@ ClassTypes:
   Script: {instanceID: 0}
 Assets:
 - Assets/RealFram/Data/Binary/BuffData.bytes
+- Assets/RealFram/Data/Binary/EnemyData.bytes
 Dependencies: []
