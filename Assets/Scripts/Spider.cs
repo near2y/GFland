@@ -9,7 +9,7 @@ public class Spider : Enemy
 
     private void Start()
     {
-        target = Player.Instance.gameObject.transform;
+        target = GameManager.Instance.player.gameObject.transform;
     }
 
     void Update()

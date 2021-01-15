@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player : MonoSingleton<Player>
+public class Player : MonoBehaviour
 {
     int aniID_Horizontal = Animator.StringToHash("Horizontal");
     int aniID_Vertical = Animator.StringToHash("Vertical");
@@ -42,7 +42,7 @@ public class Player : MonoSingleton<Player>
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            EnemyManager.Instance.ClearEnemy(enemy);
+            GameManager.Instance.enemyManager.ClearEnemy(enemy);
         }
     }
 
@@ -102,7 +102,7 @@ public class Player : MonoSingleton<Player>
     float ratio = 0;
     void Turning()
     {
-        enemy = EnemyManager.Instance.FindCloseEnemy(attackDis);
+        enemy = GameManager.Instance.enemyManager.FindCloseEnemy(attackDis);
         if (!Enemy.ReferenceEquals(enemy,null)  )
         { 
             //transform.LookAt(enemy.transform.position);

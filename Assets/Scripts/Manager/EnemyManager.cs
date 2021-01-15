@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyManager :  MonoSingleton<EnemyManager>
+public class EnemyManager :  MonoBehaviour
 {
     /// <summary>
     /// 怪物参数表
@@ -20,31 +20,17 @@ public class EnemyManager :  MonoSingleton<EnemyManager>
         enemyData = ConfigerManager.Instance.FindData<EnemyData>(CFG.TABLE_ENEMY);
         enemyList = new List<Enemy>();
 
-        string wavePath = "Assets/RealFram/Data/Binary/WaveData_0701.bytes";
-        WaveData waveData = ConfigerManager.Instance.FindData<WaveData>(wavePath);
-        WaveBase waveBase = waveData.FindByID(1);
+
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            Spwan(2001);
-        }else if (Input.GetKeyDown(KeyCode.W))
-        {
-            Spwan(2004);
-        }else if (Input.GetKeyDown(KeyCode.E))
-        {
-            Spwan(2005);
-        }
-    }
+
 
     /// <summary>
     /// 生成敌人
     /// </summary>
     /// <param name="id"></param>
     /// <returns></returns>
-    public void Spwan(int id)
+    public void Spwan(int id,Transform fullPoint)
     {
         //生成
         EnemyBase data = enemyData.FindByID(id);
@@ -53,8 +39,8 @@ public class EnemyManager :  MonoSingleton<EnemyManager>
         enemy.Init(data);
 
         //TODO位置
-        Vector3 pos = new Vector3(-4.58f, 0, 0);
-        obj.transform.position = pos;
+        obj.transform.position = fullPoint.position;
+        obj.transform.rotation = fullPoint.rotation;
 
         //加到集合中
         enemyList.Add(enemy);
@@ -90,6 +76,7 @@ public class EnemyManager :  MonoSingleton<EnemyManager>
     {
         if (enemy != null)
         {
+            GameManager.Instance.waveManager.CurrentWave.aliveEnemyNum--;
             ObjectManager.Instance.ReleaseObject(enemy.gameObject);
             enemyList.Remove(enemy);
         }
