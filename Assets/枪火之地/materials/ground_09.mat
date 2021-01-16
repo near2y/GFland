@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ground_09
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: d8dc5b44f974a407888d976711c36e82, type: 3}
   m_ShaderKeywords: EMISSION EnableLighting _ALPHABLEND_OFF _ALPHATEST_OFF _ISVERTEXCOLOR_OFF
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -95,8 +95,8 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _HeightFogEnd: -4
-    - _HeightFogStart: -8.41
+    - _HeightFogEnd: 1.04
+    - _HeightFogStart: -6.61
     - _IsVertexColor: 0
     - _Lighting: 0
     - _Metallic: 0

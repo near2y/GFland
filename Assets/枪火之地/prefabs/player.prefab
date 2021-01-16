@@ -2024,9 +2024,9 @@ CharacterController:
   serializedVersion: 2
   m_Height: 0.68
   m_Radius: 0.22
-  m_SlopeLimit: 45
-  m_StepOffset: 0.0001
-  m_SkinWidth: 0.0001
+  m_SlopeLimit: 14.49
+  m_StepOffset: 0.001
+  m_SkinWidth: 0.001
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.34, z: 0}
 --- !u!114 &4625968519744938100
@@ -2042,11 +2042,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 150
+  attackDis: 5
   aniSpeed: 1.2
   rotLerp: 0.882
   joystick: {fileID: 0}
   hadJoystick: 0
-  aniDir: {x: 0, y: 0, z: 0}
   enemy: {fileID: 0}
 --- !u!1 &1900679071163357622
 GameObject:

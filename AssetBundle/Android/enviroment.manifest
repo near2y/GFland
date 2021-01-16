@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 577440419
+CRC: 3958376319
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 7883502b35e0d8380b8494a2e9ce851a
+    Hash: 3a0dfa33b53947c0630fe903c5ed81d4
   TypeTreeHash:
     serializedVersion: 2
     Hash: 27490867e8449dc86fd9ffca3f290005
@@ -71,6 +71,7 @@ Assets:
 - "Assets/\u67AA\u706B\u4E4B\u5730/materials/New Folder/123_DefaultMaterial_AlbedoTransparency.jpg"
 - "Assets/\u67AA\u706B\u4E4B\u5730/materials/New Folder/123_DefaultMaterial_Normal.tga"
 - Assets/Plugins/Z ! Voxel BlocksAssets/Standard Assets/Effects/ImageEffects/Textures/VignetteMask.png
+- "Assets/\u67AA\u706B\u4E4B\u5730/Shader/PolyboxStandard.shader"
 - Assets/Plugins/Z ! Voxel BlocksAssets/Standard Assets/Effects/ImageEffects/Shaders/ContrastComposite.shader
 - "Assets/\u67AA\u706B\u4E4B\u5730/materials/New Folder/biaoshi.FBX"
 - "Assets/\u67AA\u706B\u4E4B\u5730/materials/New Folder/ceshi_04.mat"
@@ -114,7 +115,6 @@ Assets:
 - "Assets/\u67AA\u706B\u4E4B\u5730/materials/New Folder/123_DefaultMaterial_AlbedoTransparency_02.tga"
 - "Assets/\u67AA\u706B\u4E4B\u5730/materials/New Folder/6_15 - Default_AlbedoTransparency.png"
 - Assets/Plugins/Z ! Voxel BlocksAssets/Standard Assets/Effects/ImageEffects/Textures/RandomVectors.png
-- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/w4_grid.png"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Texture/w0_floor.png"
 - "Assets/\u67AA\u706B\u4E4B\u5730/materials/New Folder/ceshi_03.mat"
 - "Assets/\u67AA\u706B\u4E4B\u5730/materials/New Folder/ceshi_02.mat"
