@@ -27,7 +27,6 @@ public class WaveManager : MonoBehaviour
             }
             list.Add(waveBase);
         }
-        Debug.Log(waveBaseListDic);
         foreach (int waveID in waveBaseListDic.Keys)
         {
             WaveBehavior wb = new WaveBehavior();

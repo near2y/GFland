@@ -21,8 +21,6 @@ public class EnemyPoints : MonoBehaviour
 #endif
             allPointsDic[id] = transList[i];
         }
-
-        Debug.Log(allPointsDic);
     }
 
 

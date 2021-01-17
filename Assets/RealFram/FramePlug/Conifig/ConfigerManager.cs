@@ -79,4 +79,5 @@ public class CFG
     //配置表路径
     public const string TABLE_BUFF = "Assets/GameData/Data/Binary/BuffData.bytes";
     public const string TABLE_ENEMY = "Assets/RealFram/Data/Binary/EnemyData.bytes";
+    public const string TABLE_BULLET = "Assets/RealFram/Data/Binary/BulletData.bytes";
 }

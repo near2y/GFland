@@ -8,6 +8,7 @@ public class GameManager : MonoSingleton<GameManager>
     public Player player;
     public WaveManager waveManager;
     public EnemyPoints enemyPoints;
+    public EffectManager effectManager;
 
 
     private void Start()

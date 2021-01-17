@@ -304,9 +304,14 @@ public class DataEditor
         string[] strs = Selection.assetGUIDs;
         for (int i = 0; i < objs.Length; i++)
         {
-            string name = objs[i].name.Remove(objs[i].name.IndexOf("_"));
+            string name = objs[i].name;
+            if (objs[i].name.Contains("_"))
+            {
+                name = objs[i].name.Remove(objs[i].name.IndexOf("_"));
+
+            }
             string path = AssetDatabase.GUIDToAssetPath(strs[i]);
-            ExcelToXml(name,objs[i].name,path);
+            ExcelToXml(name, objs[i].name, path);
         }
         AssetDatabase.Refresh();
         EditorUtility.ClearProgressBar();
@@ -319,10 +324,17 @@ public class DataEditor
         string[] strs = Selection.assetGUIDs;
         for (int i = 0; i < objs.Length; i++)
         {
-            string name = objs[i].name.Remove(objs[i].name.IndexOf("_"));
+
+            string name = objs[i].name;
+            if (objs[i].name.Contains("_"))
+            {
+                name = objs[i].name.Remove(objs[i].name.IndexOf("_"));
+
+            }
             string path = AssetDatabase.GUIDToAssetPath(strs[i]);
             ExcelToXml(name, objs[i].name, path);
             XmlToBinary(objs[i].name, path, name);
+
         }
         AssetDatabase.Refresh();
         EditorUtility.ClearProgressBar();
