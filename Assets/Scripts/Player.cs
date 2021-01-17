@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     int aniID_Horizontal = Animator.StringToHash("Horizontal");
     int aniID_Vertical = Animator.StringToHash("Vertical");
     int aniID_Turning = Animator.StringToHash("Turning");
+    int aniID_Attack = Animator.StringToHash("Attack");
 
     [Header("< 玩家参数 >")]
     public float speed = 3;
@@ -15,6 +16,11 @@ public class Player : MonoBehaviour
     public float aniSpeed = 1.2f;
     [Range(0, 1)]
     public float rotLerp = 0.75f;
+
+
+    [Header("< 攻击相关 >")]
+    public Transform attackEffectPos;
+    public ParticleSystem attackEffect;
 
     [Header("< 玩家游戏中变量展示 >")]
     public Joystick joystick = null;
@@ -36,20 +42,19 @@ public class Player : MonoBehaviour
         anim.speed = aniSpeed;
         cCtrl = GetComponent<CharacterController>();
         movement = new Vector3();
+
+        attackEffect.Stop();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            GameManager.Instance.enemyManager.ClearEnemy(enemy);
-        }
+        Attack();
     }
 
 
     private void FixedUpdate()
     {
-
+        //Move
         if(!hadJoystick)
         {
             GameUI ui = UIManager.Instance.FindWindowByName<GameUI>(ConStr.GAMEPANEL);
@@ -97,6 +102,25 @@ public class Player : MonoBehaviour
         movement = movement * speed * Time.deltaTime;
         cCtrl.SimpleMove(movement);
     }
+
+    void Attack()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            anim.SetBool(aniID_Attack, true);
+            attackEffect.Play();
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            anim.SetBool(aniID_Attack, false);
+            attackEffect.Stop();
+
+        }
+    }
+
+
+
 
     #region 转向
     float ratio = 0;

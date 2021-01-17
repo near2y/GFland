@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<data name ="BulletData" from="Bullet.xlsx" to = "BulletData.xml">
+	<variable  name="AllBulletList" type="list">
+		<list name = "BulletBase" sheetname="子弹特效参数" mainKey = "Id">
+			<variable  name="Id" col = "Id" type="int"/>
+			<variable  name="Name" col = "子弹名字" type="string"/>
+			<variable  name="PrefabPath" col = "子弹完整路径" type="int"/>
+		</list>
+	</variable>
+</data>

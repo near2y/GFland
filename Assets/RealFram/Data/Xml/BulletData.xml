@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BulletData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <AllBulletList Id="1" Name="全BUFF0" PrefabPath="near2y" />
+  <AllBulletList Id="2" Name="全BUFF1" PrefabPath="near2y" />
+  <AllBulletList Id="3" Name="全BUFF2" PrefabPath="near2y" />
+</BulletData>

@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
     public Transform target = null;
     public bool isStop = false;
     public float targetSqrDis = 0;
+    public Collider bodyCollider = null;
 
     protected Animator anim;
     protected NavMeshAgent agent;
@@ -27,6 +28,8 @@ public class Enemy : MonoBehaviour
     {
         anim = GetComponentInChildren<Animator>();
         agent = GetComponent<NavMeshAgent>();
+        bodyCollider = GetComponent<Collider>();
+        hp = 100;
     }
 
     public void Init(EnemyBase data)
@@ -41,6 +44,16 @@ public class Enemy : MonoBehaviour
         //set
         gameObject.transform.localScale = Vector3.one * size;
         agent.stoppingDistance = attackDis;
+    }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        hp--;
+        if (hp <= 0)
+        {
+            GameManager.Instance.enemyManager.ClearEnemy(this);
+
+        }
     }
 
 

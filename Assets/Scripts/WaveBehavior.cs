@@ -62,13 +62,12 @@ public class WaveBehavior
 
     /// <summary>
     /// 更新波次行为
-    ///  
     /// </summary>
     public bool Update()
     {
         if (overSpwan)
         {
-            timer += Time.deltaTime;
+            //timer += Time.deltaTime;
             if ((timer >= maxTimer || aliveEnemyNum <= nextWaveActiveNum))
                 return true;
         }

@@ -44,6 +44,8 @@ public class EnemyManager :  MonoBehaviour
 
         //加到集合中
         enemyList.Add(enemy);
+
+
     }
 
     /// <summary>
