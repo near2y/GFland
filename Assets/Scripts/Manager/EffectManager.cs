@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class EffectManager : MonoBehaviour
 {
-    BulletData bulletData = null;
+    EffectData effectData = null;
 
     private void Awake()
     {
-        bulletData = ConfigerManager.Instance.FindData<BulletData>(CFG.TABLE_BULLET);
+        effectData = ConfigerManager.Instance.FindData<EffectData>(CFG.TABLE_BULLET);
 
     }
 
     public GameObject GetEffect(int id)
     {
-        BulletBase data = bulletData.FindByID(id);
+        EffectBase data = effectData.FindByID(id);
         GameObject effect = ObjectManager.Instance.InstantiateObject(data.PrefabPath);
         return effect;
     }

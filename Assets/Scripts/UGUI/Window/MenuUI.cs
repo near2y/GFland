@@ -6,6 +6,8 @@ public class MenuUI : Window
 {
     private MenuPanel m_Panel;
 
+    //需要打开的场景
+    string openSceneName = null;
 
     public override void OnAwake(params object[] paraList)
     {
@@ -13,12 +15,16 @@ public class MenuUI : Window
         AddBtnClickListener(m_Panel.m_SoundBtn, ClickSoundBtn);
         AddBtnClickListener(m_Panel.m_StartBtn, ClickStartBtn);
     }
-    
+
 
     private void ClickStartBtn()
     {
         UIManager.Instance.CloseWindow(Name);
-        GameMapManager.Instance.LoadScene(ConStr.GameSCENE,2);
+        if (TestData.Instance.TestConfig.inTest)
+        {
+            openSceneName = TestData.Instance.TestConfig.testSceneName.ToString();
+        }
+        GameMapManager.Instance.LoadScene(openSceneName,2);
     }
 
     private void ClickSoundBtn()

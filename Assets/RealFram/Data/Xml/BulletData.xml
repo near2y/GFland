@@ -1,6 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BulletData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <AllBulletList Id="4001" Name="子弹1号" PrefabPath="Assets/枪火之地/Effects/Prefabs/ef_bl_gun01.prefab" />
-  <AllBulletList Id="4002" Name="子弹2号" PrefabPath="Assets/枪火之地/Effects/Prefabs/ef_bl_gun01.prefab" />
-  <AllBulletList Id="4003" Name="子弹3号" PrefabPath="Assets/枪火之地/Effects/Prefabs/ef_bl_gun01.prefab" />
+  <AllBulletList Id="0" EffectId="1" BulletDamage="5" ShootCound="3" ShootSpeed="3" ShootInterval="5" BulletSpeed="10" PenetrateCount="1" />
 </BulletData>

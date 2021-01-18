@@ -7,6 +7,10 @@ public class GameUI : Window
     public GamePanel m_Panel;
 
     private List<GameObject> balls = new List<GameObject>();
+
+
+
+
     public override void OnAwake(params object[] paraList)
     {
         m_Panel = GameObject.GetComponent<GamePanel>();
@@ -47,3 +51,5 @@ public class GameUI : Window
         m_Panel.ballNum.text = balls.Count.ToString();
     }
 }
+
+

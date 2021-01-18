@@ -9,6 +9,7 @@ public class ABConfig : ScriptableObject
     public List<string> m_AllPrefabPath = new List<string>();
     public List<FileDirABName> m_AllFileDirAB = new List<FileDirABName>();
 
+
     [System.Serializable]
     public struct FileDirABName
     {

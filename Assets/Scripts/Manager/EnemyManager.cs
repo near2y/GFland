@@ -19,11 +19,7 @@ public class EnemyManager :  MonoBehaviour
     {
         enemyData = ConfigerManager.Instance.FindData<EnemyData>(CFG.TABLE_ENEMY);
         enemyList = new List<Enemy>();
-
-
     }
-
-
 
     /// <summary>
     /// 生成敌人
