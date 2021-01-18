@@ -50,12 +50,8 @@ public class WaveBehavior
         for(int i = 0; i < waveBaseList.Count; i++)
         {
             WaveBase wave = waveBaseList[i];
-            for(int j = 0; j < wave.SpwanCount; j++)
-            {
-                //有可能一个点可以生成多个怪物，采用延迟生成
-                mono.StartCoroutine(ISpwanEnemy(i,j, wave));
-            }
-            maxTimer = Mathf.Max(maxTimer, wave.MaxTime);
+            mono.StartCoroutine(IActivePoint(i, wave));
+            maxTimer = Mathf.Max(maxTimer, wave.MaxTime/1000);
             nextWaveActiveNum = Mathf.Max(nextWaveActiveNum, wave.NextWaveActiveNum);
         }
     }
@@ -74,20 +70,28 @@ public class WaveBehavior
         return false;
     }
 
+    IEnumerator IActivePoint(int waveIndex,WaveBase wave)
+    {
+        //等待当前点激活时间
+        yield return new WaitForSeconds(wave.DelayTime / 1000);
+        for (int j = 0; j < wave.SpwanCount; j++)
+        {
+            //有可能一个点可以生成多个怪物，采用延迟生成
+            mono.StartCoroutine(ISpwanEnemy(waveIndex, j, wave));
+        }
+    }
+
     
     IEnumerator ISpwanEnemy(int waveIndex,int spwanIndex, WaveBase wave)
     {
-        yield return new WaitForSeconds(wave.SpwanInterval * spwanIndex);
+        yield return new WaitForSeconds(wave.SpwanInterval/1000 * spwanIndex);
         Transform point = GameManager.Instance.enemyPoints.FindPointByID(wave.PointID);
         GameManager.Instance.enemyManager.Spwan(wave.EnemyID,point);
         aliveEnemyNum++;
         if (waveIndex == waveBaseList.Count - 1 && spwanIndex == wave.SpwanCount - 1)
         {
-            Debug.Log("该波次完成了所有的怪物生成");
             overSpwan = true;
         }
-
-
     }
 
 

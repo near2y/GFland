@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     public GameObject attackEffect;
     public ParticleSystem attackParticle;
     public bool inAttack;
+    public float ATK = 5;
 
 
     [Header("< 玩家游戏中变量展示 >")]

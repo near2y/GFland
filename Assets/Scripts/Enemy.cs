@@ -42,13 +42,13 @@ public class Enemy : MonoBehaviour
         size = data.Size;
         
         //set
-        gameObject.transform.localScale = Vector3.one * size;
+        //gameObject.transform.localScale = Vector3.one * size;
         agent.stoppingDistance = attackDis;
     }
 
     private void OnParticleCollision(GameObject other)
     {
-        hp-=5;
+        hp-=GameManager.Instance.player.ATK;
         if (hp <= 0)
         {
             GameManager.Instance.enemyManager.ClearEnemy(this);
