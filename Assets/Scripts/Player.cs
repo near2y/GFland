@@ -20,7 +20,10 @@ public class Player : MonoBehaviour
 
     [Header("< 攻击相关 >")]
     public Transform attackEffectPos;
-    public ParticleSystem attackEffect;
+    public GameObject attackEffect;
+    public ParticleSystem attackParticle;
+    public bool inAttack;
+
 
     [Header("< 玩家游戏中变量展示 >")]
     public Joystick joystick = null;
@@ -43,12 +46,9 @@ public class Player : MonoBehaviour
         cCtrl = GetComponent<CharacterController>();
         movement = new Vector3();
 
-        attackEffect.Stop();
-    }
-
-    private void Update()
-    {
-        Attack();
+        attackEffect = GameManager.Instance.effectManager.GetEffect(4001);
+        attackParticle = attackEffect.GetComponent<ParticleSystem>();
+        attackParticle.Stop();
     }
 
 
@@ -65,6 +65,8 @@ public class Player : MonoBehaviour
             }
         }
         ComMovement();
+
+        Attack();
     }
 
     void ComMovement()
@@ -105,18 +107,37 @@ public class Player : MonoBehaviour
 
     void Attack()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (inAttack)
         {
-            anim.SetBool(aniID_Attack, true);
-            attackEffect.Play();
+            attackEffect.transform.position = attackEffectPos.position;
+            attackEffect.transform.rotation = transform.rotation;
+            if(enemy == null)
+            {
+                //没有目标了，停止攻击
+                attackParticle.Stop();
+                inAttack = false;
+            }
+        }
+        else
+        {
+            if(enemy != null)
+            {
+                attackParticle.Play();
+                inAttack = true;
+            }
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            anim.SetBool(aniID_Attack, false);
-            attackEffect.Stop();
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    anim.SetBool(aniID_Attack, true);
+        //    attackParticle.Play();
+        //}
 
-        }
+        //if (Input.GetKeyUp(KeyCode.Space))
+        //{
+        //    anim.SetBool(aniID_Attack, false);
+        //    attackParticle.Stop();
+        //}
     }
 
 

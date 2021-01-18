@@ -14,8 +14,8 @@ TagManager:
   - 
   - 
   - Player
-  - Ground0
-  - Ground1
+  - Ground
+  - AirGround
   - ' AirWall'
   - Enemy
   - 

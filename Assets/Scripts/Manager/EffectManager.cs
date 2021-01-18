@@ -6,13 +6,21 @@ public class EffectManager : MonoBehaviour
 {
     BulletData bulletData = null;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         bulletData = ConfigerManager.Instance.FindData<BulletData>(CFG.TABLE_BULLET);
-        BulletBase data1 = bulletData.FindByID(4001);
-        Debug.Log("near2y" + data1.Name);
+
     }
 
+    public GameObject GetEffect(int id)
+    {
+        BulletBase data = bulletData.FindByID(id);
+        GameObject effect = ObjectManager.Instance.InstantiateObject(data.PrefabPath);
+        return effect;
+    }
 
+    public void ReleaseEffect(GameObject effect)
+    {
+        ObjectManager.Instance.ReleaseObject(effect);
+    }
 }

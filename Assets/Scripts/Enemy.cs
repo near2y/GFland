@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        hp--;
+        hp-=5;
         if (hp <= 0)
         {
             GameManager.Instance.enemyManager.ClearEnemy(this);
