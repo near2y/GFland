@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class Wall : MonoBehaviour
 {
-    private void OnParticleCollision(GameObject other)
+    //private void OnParticleCollision(GameObject other)
+    //{
+    //    Bullet bullet = other.GetComponent<Bullet>();
+    //    //bullet.Penetrate();
+    //}
+
+    private void OnParticleTrigger()
     {
-        Bullet bullet = other.GetComponent<Bullet>();
-        //bullet.Penetrate();
+        Debug.Log("near2y");
     }
 
 

@@ -5,11 +5,14 @@ using UnityEngine;
 public class Emitter : MonoBehaviour
 {
     [Header("< 基础对象 >")]
-    public ParticleSystem particleSystem;
+    public ParticleSystem particleSystem = null;
+    public Transform[] targets;
 
     [Header("< 射击相关参数 >")]
     public float speed = 5;
     public float shootFrequency = 200;
+    public BulletProp prop = BulletProp.Kill;
+    public short trajectoryCount = 1;
 
     [Header("< 游戏中相关参数动态展示 >")]
     public  bool inShoot = false;
@@ -18,22 +21,28 @@ public class Emitter : MonoBehaviour
 
     float shootFrequencyTimer = 0;
     ParticleSystem.Particle[] particles;
-    ParticleSystem.MainModule main;
-    ParticleSystem.VelocityOverLifetimeModule velocity;
-    List<ParticleCollisionEvent> collisionEvents;
 
     private void Awake()
     {
         particles = new ParticleSystem.Particle[particleSystem.main.maxParticles];
-        main = particleSystem.main;
-        velocity = particleSystem.velocityOverLifetime;
-        collisionEvents = new List<ParticleCollisionEvent>();
+
+        for(int i = 0; i < targets.Length; i++)
+        {
+            particleSystem.trigger.SetCollider(i, targets[i]);
+        }
 
 
     }
 
+    private void Start()
+    {
+        SetTrajectory(trajectoryCount);
+    }
+
     private void Update()
     {
+        //int count = particleSystem.GetParticles(particles);
+        //Debug.Log(count);
         RefreshTimer();
         GetInput();
         Behavior();
@@ -66,6 +75,15 @@ public class Emitter : MonoBehaviour
         }
     }
 
+    void SetTrajectory(short count)
+    {
+        ParticleSystem.EmissionModule emission = particleSystem.emission;
+        ParticleSystem.Burst[] bursts = new ParticleSystem.Burst[emission.burstCount];
+        emission.GetBursts(bursts);
+        bursts[0].minCount = bursts[0].maxCount = count;
+        emission.SetBursts(bursts);
+    }
+
     void Shoot()
     {
         if (shootFrequencyTimer >= shootFrequency)
@@ -77,40 +95,69 @@ public class Emitter : MonoBehaviour
 
     IEnumerator SetBullet()
     {
-        particleSystem.Play();
+        for(int i = 1; i <= trajectoryCount; i++)
+        {
+            particleSystem.Play();
+        }
         yield return new WaitForEndOfFrame();
         int count = particleSystem.GetParticles(particles);
-        particles[count - 1].velocity = shootDir.normalized * speed;
-        particleSystem.SetParticles(particles, count);
-    }
-
-    IEnumerator SetBullet(Vector3 pos)
-    {
-        yield return new WaitForEndOfFrame();
-        particleSystem.Play();
-        yield return new WaitForEndOfFrame();
-        int count = particleSystem.GetParticles(particles);
-        particles[count - 1].velocity = shootDir.normalized * speed;
-        particles[count - 1].position = pos;
+        float unitOff = 0.5f;
+        float dis = (trajectoryCount - 1) * unitOff;
+        float start = -dis / 2;
+        for(int j = 1; j <= trajectoryCount; j++)
+        {
+            particles[count - j].position = transform.TransformVector(Vector3.right+ Vector3.right * (start * j - 1));
+            particles[count - j].velocity = shootDir.normalized * speed;
+        }
         particleSystem.SetParticles(particles, count);
 
     }
 
-
-    Vector3 collisionPos = new Vector3();
-    public Vector3 outPos;
-    private void OnParticleCollision(GameObject other)
+    List<ParticleSystem.Particle> enter = new List<ParticleSystem.Particle>();
+    private void OnParticleTrigger()
     {
-        Debug.Log(particleSystem.GetSafeCollisionEventSize());
-        particleSystem.trigger.SetCollider(0, other.GetComponent<Collider>());
-        int numCollisionEvents = particleSystem.GetCollisionEvents(other, collisionEvents);
-        //outPos = collisionEvents[numCollisionEvents - 1].intersection+ collisionEvents[numCollisionEvents - 1].velocity.normalized*0.6f;
-        StartCoroutine(SetBullet(other.transform.position));
-    }
+        // 获取与此帧的触发条件匹配的粒子
+        int numEnter = particleSystem.GetTriggerParticles(ParticleSystemTriggerEventType.Enter, enter);
 
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("near2y");
+        switch (prop)
+        {
+            case BulletProp.Bounce:
+                // 反弹
+                for (int i = 0; i < numEnter; i++)
+                {
+                    ParticleSystem.Particle p = enter[i];
+                    p.velocity = -p.velocity;
+                    enter[i] = p;
+                }
+                break;
+            case BulletProp.Diffraction:
+                //衍射
+                for (int i = 0; i < numEnter; i++)
+                {
+                    ParticleSystem.Particle p = enter[i];
+                    p.velocity = (targets[1].position - p.position).normalized * speed;
+                    enter[i] = p;
+                }
+                break;
+            case BulletProp.Kill:
+                //抹掉
+                for (int i = 0; i < numEnter; i++)
+                {
+                    ParticleSystem.Particle p = enter[i];
+                    p.remainingLifetime = 0;
+                    enter[i] = p;
+                }
+                break;
+        }
 
+        // 将修改后的粒子重新分配回粒子系统
+        particleSystem.SetTriggerParticles(ParticleSystemTriggerEventType.Enter, enter);
     }
+}
+
+public enum BulletProp
+{
+    Bounce,
+    Diffraction,
+    Kill
 }
