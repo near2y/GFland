@@ -6,12 +6,13 @@ public class Emitter : MonoBehaviour
 {
     [Header("< 基础对象 >")]
     public ParticleSystem particleSystem = null;
+    public ParticleSystem.MainModule particleMain;
     public Transform[] targets;
 
     [Header("< 射击相关参数 >")]
     public float speed = 5;
     public float shootFrequency = 200;
-    public BulletProp prop = BulletProp.Kill;
+    public BulletAbilityType prop = BulletAbilityType.Stop;
     public short trajectoryCount = 1;
 
     [Header("< 游戏中相关参数动态展示 >")]
@@ -21,17 +22,16 @@ public class Emitter : MonoBehaviour
 
     float shootFrequencyTimer = 0;
     ParticleSystem.Particle[] particles;
+    List<ParticleSystem.Particle> exitParticles = new List<ParticleSystem.Particle>();
 
     private void Awake()
     {
         particles = new ParticleSystem.Particle[particleSystem.main.maxParticles];
-
+        particleMain = particleSystem.main;
         for(int i = 0; i < targets.Length; i++)
         {
             particleSystem.trigger.SetCollider(i, targets[i]);
         }
-
-
     }
 
     private void Start()
@@ -43,6 +43,7 @@ public class Emitter : MonoBehaviour
     {
         //int count = particleSystem.GetParticles(particles);
         //Debug.Log(count);
+        particleMain.startSpeed = speed;
         RefreshTimer();
         GetInput();
         Behavior();
@@ -89,75 +90,53 @@ public class Emitter : MonoBehaviour
         if (shootFrequencyTimer >= shootFrequency)
         {
             shootFrequencyTimer = 0;
-            StartCoroutine(SetBullet());
-        }
-    }
-
-    IEnumerator SetBullet()
-    {
-        for(int i = 1; i <= trajectoryCount; i++)
-        {
             particleSystem.Play();
         }
-        yield return new WaitForEndOfFrame();
-        int count = particleSystem.GetParticles(particles);
-        float unitOff = 0.5f;
-        float dis = (trajectoryCount - 1) * unitOff;
-        float start = -dis / 2;
-        for(int j = 1; j <= trajectoryCount; j++)
-        {
-            particles[count - j].position = transform.TransformVector(Vector3.right+ Vector3.right * (start * j - 1));
-            particles[count - j].velocity = shootDir.normalized * speed;
-        }
-        particleSystem.SetParticles(particles, count);
-
     }
 
-    List<ParticleSystem.Particle> enter = new List<ParticleSystem.Particle>();
     private void OnParticleTrigger()
     {
         // 获取与此帧的触发条件匹配的粒子
-        int numEnter = particleSystem.GetTriggerParticles(ParticleSystemTriggerEventType.Enter, enter);
-
-        switch (prop)
+        int numExit = particleSystem.GetTriggerParticles(ParticleSystemTriggerEventType.Enter, exitParticles);
+        if (numExit > 0)
         {
-            case BulletProp.Bounce:
-                // 反弹
-                for (int i = 0; i < numEnter; i++)
-                {
-                    ParticleSystem.Particle p = enter[i];
-                    p.velocity = -p.velocity;
-                    enter[i] = p;
-                }
-                break;
-            case BulletProp.Diffraction:
-                //衍射
-                for (int i = 0; i < numEnter; i++)
-                {
-                    ParticleSystem.Particle p = enter[i];
-                    p.velocity = (targets[1].position - p.position).normalized * speed;
-                    enter[i] = p;
-                }
-                break;
-            case BulletProp.Kill:
-                //抹掉
-                for (int i = 0; i < numEnter; i++)
-                {
-                    ParticleSystem.Particle p = enter[i];
-                    p.remainingLifetime = 0;
-                    enter[i] = p;
-                }
-                break;
-        }
+            switch (prop)
+            {
+                case BulletAbilityType.Bounce:
+                    // 反弹
+                    for (int i = 0; i < numExit; i++)
+                    {
+                        ParticleSystem.Particle p = exitParticles[i];
+                        //p.velocity = -p.velocity;
+                        //exitParticles[i] = p;
 
-        // 将修改后的粒子重新分配回粒子系统
-        particleSystem.SetTriggerParticles(ParticleSystemTriggerEventType.Enter, enter);
+                        BulletAbility.Bounce(ref p);
+                        exitParticles[i] = p;
+                    }
+                    break;
+                case BulletAbilityType.Diffraction:
+                    //衍射
+                    for (int i = 0; i < numExit; i++)
+                    {
+                        ParticleSystem.Particle p = exitParticles[i];
+                        p.velocity = (targets[1].position - p.position).normalized * speed;
+                        exitParticles[i] = p;
+                    }
+                    break;
+                case BulletAbilityType.Stop:
+                    //抹掉
+                    for (int i = 0; i < numExit; i++)
+                    {
+                        ParticleSystem.Particle p = exitParticles[i];
+                        p.remainingLifetime = 0;
+                        exitParticles[i] = p;
+                    }
+                    break;
+            }
+            // 将修改后的粒子重新分配回粒子系统
+            particleSystem.SetTriggerParticles(ParticleSystemTriggerEventType.Enter, exitParticles);
+            exitParticles.Clear();
+        }
     }
 }
 
-public enum BulletProp
-{
-    Bounce,
-    Diffraction,
-    Kill
-}
