@@ -53,11 +53,11 @@ public class Enemy : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        hp-=GameManager.Instance.player.ATK;
+        hp-=SceneManager.Instance.player.ATK;
         if (hp <= 0 && inStage )
         {
             inStage = false;
-            GameManager.Instance.enemyManager.ClearEnemy(this);
+            SceneManager.Instance.enemyManager.ClearEnemy(this);
             bodyCollider.enabled = false;
         }
     }

@@ -144,7 +144,7 @@ public class Player : MonoBehaviour
     float ratio = 0;
     void Turning()
     {
-        enemy = GameManager.Instance.enemyManager.FindCloseEnemy(attackDis);
+        enemy = SceneManager.Instance.enemyManager.FindCloseEnemy(attackDis);
         if (!Enemy.ReferenceEquals(enemy,null)  )
         { 
             //transform.LookAt(enemy.transform.position);

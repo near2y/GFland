@@ -13,14 +13,14 @@ public class Spider : Enemy
     private void Start()
     {
 #if UNITY_EDITOR
-        if(GameManager.Instance == null)
+        if(SceneManager.Instance == null)
         {
             Debug.LogError("GameManager不存在！请通过GameStart.Scene启动！");
             return;
         }
         else
         {
-            if (GameManager.Instance.player == null)
+            if (SceneManager.Instance.player == null)
             {
                 Debug.LogError("player没有赋值");
                 return;
@@ -28,7 +28,7 @@ public class Spider : Enemy
         }
 #endif
 
-        target = GameManager.Instance.player.gameObject.transform;
+        target = SceneManager.Instance.player.gameObject.transform;
     }
 
     void Update()

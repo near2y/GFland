@@ -37,8 +37,6 @@ public class WaveData : ExcelBase
         }
     }
 
-
-
     /// <summary>
     /// 通过ID查找怪物数据
     /// </summary>

@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyPoints : MonoBehaviour
+public class EnemyPoints 
 {
 
     Dictionary<int, Transform> allPointsDic = new Dictionary<int, Transform>();
 
-    private void Awake()
+    public EnemyPoints(Transform transform)
     {
         Transform[] transList = transform.GetComponentsInChildren<Transform>();
         for(int i = 1; i < transList.Length; i++)

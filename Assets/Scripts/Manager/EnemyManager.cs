@@ -74,7 +74,7 @@ public class EnemyManager :  MonoBehaviour
     {
         if (enemy != null)
         {
-            GameManager.Instance.waveManager.CurrentWave.aliveEnemyNum--;
+            SceneManager.Instance.waveManager.CurrentWave.aliveEnemyNum--;
             ObjectManager.Instance.ReleaseObject(enemy.gameObject);
             enemyList.Remove(enemy);
         }

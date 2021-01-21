@@ -72,14 +72,14 @@ public class GameMapManager : Singleton<GameMapManager>
         }
         ClearCache();
         AlreadyLoadScene = false;
-        AsyncOperation unloadScene = SceneManager.LoadSceneAsync(ConStr.EMPTYSCENE, LoadSceneMode.Single);
+        AsyncOperation unloadScene = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(ConStr.EMPTYSCENE, LoadSceneMode.Single);
         while(!AsyncOperation.ReferenceEquals(unloadScene,null) && !unloadScene.isDone)
         {
             yield return new WaitForEndOfFrame();
         }
         LoadingProgress = 0;
         int targetProgress = 0;
-        AsyncOperation asyncScene = SceneManager.LoadSceneAsync(name);
+        AsyncOperation asyncScene = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(name);
         if(!AsyncOperation.ReferenceEquals(asyncScene,null) && !asyncScene.isDone)
         {
             asyncScene.allowSceneActivation = false;

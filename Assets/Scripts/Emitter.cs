@@ -31,7 +31,7 @@ public class Emitter : MonoBehaviour
         shootObj.transform.localScale = Vector3.one;
         shootTrajactory = shootObj.AddComponent<Trajactory>();
         shootTrajactory.Init(this, bulletSpeed, shootCount, bulletFrequency, shootFrequency);
-        targets = GameManager.Instance.enemyManager.enemyList;
+        targets = SceneManager.Instance.enemyManager.enemyList;
         for(int i = 0; i < penetrateCount; i++)
         {
             AddPenetrateAbility();
