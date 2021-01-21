@@ -24,6 +24,8 @@ public class Enemy : MonoBehaviour
     protected Animator anim;
     protected NavMeshAgent agent;
 
+    bool inStage = false;
+
     private void Awake()
     {
         anim = GetComponentInChildren<Animator>();
@@ -40,19 +42,23 @@ public class Enemy : MonoBehaviour
         effectId = data.EffectId;
         hp = data.Hp;
         size = data.Size;
+        inStage = true;
         
         //set
         //gameObject.transform.localScale = Vector3.one * size;
         agent.stoppingDistance = attackDis;
+        bodyCollider.enabled = true;
+
     }
 
     private void OnParticleCollision(GameObject other)
     {
         hp-=GameManager.Instance.player.ATK;
-        if (hp <= 0)
+        if (hp <= 0 && inStage )
         {
+            inStage = false;
             GameManager.Instance.enemyManager.ClearEnemy(this);
-
+            bodyCollider.enabled = false;
         }
     }
 

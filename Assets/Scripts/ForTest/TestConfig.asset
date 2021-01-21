@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: TestConfig
   m_EditorClassIdentifier: 
   inTest: 1
-  testSceneName: 1
+  testSceneName: 0
   smallLevelID: 0701

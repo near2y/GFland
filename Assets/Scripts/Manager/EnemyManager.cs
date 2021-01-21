@@ -11,7 +11,7 @@ public class EnemyManager :  MonoBehaviour
     /// <summary>
     /// 当前正在场上的敌人集合
     /// </summary>
-    List<Enemy> enemyList;
+    public List<Enemy> enemyList;
 
     public float sqrTargetDis;
 

@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 582886810
+CRC: 1844367239
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -28,5 +28,12 @@ AssetBundleManifest:
       Name: menupanel
       Dependencies: {}
     Info_8:
+      Name: ef_bl_gun01
+      Dependencies: {}
+    Info_9:
+      Name: testbullet
+      Dependencies:
+        Dependency_0: ef_bl_gun01
+    Info_10:
       Name: assetbundleconfig
       Dependencies: {}

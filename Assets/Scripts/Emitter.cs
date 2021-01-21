@@ -15,7 +15,8 @@ public class Emitter : MonoBehaviour
 
     [Header(" <暂存> ")]
     public GameObject bulletPre = null;
-    public Transform[] targets = null;
+    public List<Enemy> targets = null;
+    public Transform bulletPos = null;
 
 
 
@@ -27,9 +28,10 @@ public class Emitter : MonoBehaviour
         shootObj.transform.SetParent(transform);
         shootObj.transform.localPosition = Vector3.zero;
         shootObj.transform.localEulerAngles = Vector3.zero;
+        shootObj.transform.localScale = Vector3.one;
         shootTrajactory = shootObj.AddComponent<Trajactory>();
         shootTrajactory.Init(this, bulletSpeed, shootCount, bulletFrequency, shootFrequency);
-
+        targets = GameManager.Instance.enemyManager.enemyList;
         for(int i = 0; i < penetrateCount; i++)
         {
             AddPenetrateAbility();
@@ -40,21 +42,32 @@ public class Emitter : MonoBehaviour
             AddDiffractionAbility();
         }
     }
+
+    public void Attack(bool ing)
+    {
+        if (ing)
+        {
+            if (!shootTrajactory.InShoot)
+            {
+                shootTrajactory.InShoot = true;
+            }
+        }
+        else
+        {
+            if (shootTrajactory.InShoot)
+            {
+                shootTrajactory.InShoot = false;
+            }
+        }
+    }
      
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            shootTrajactory.InShoot = true;
-        }
-
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            shootTrajactory.InShoot = false;
-        }
+        shootTrajactory.transform.position = bulletPos.position;
+        
     }
 
-    void AddDiffractionAbility()
+    public void AddDiffractionAbility()
     {
         Trajactory t = shootTrajactory;
         while (t.dTrajactory !=null)
@@ -68,7 +81,7 @@ public class Emitter : MonoBehaviour
         t.dTrajactory.Init(this, bulletSpeed, shootCount, bulletFrequency, shootFrequency);
     }
 
-    void AddPenetrateAbility()
+    public void AddPenetrateAbility()
     {
         Trajactory t = shootTrajactory;
         while (t.pTrajactory != null)

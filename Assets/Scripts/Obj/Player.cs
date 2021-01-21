@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     public ParticleSystem shootParticle;
     public bool inAttack;
     public float ATK = 5;
-
+    public Emitter emitter = null;
 
     [Header("< 玩家游戏中变量展示 >")]
     public Joystick joystick = null;
@@ -48,9 +48,10 @@ public class Player : MonoBehaviour
         cCtrl = GetComponent<CharacterController>();
         movement = new Vector3();
 
-        attackEffect = GameManager.Instance.effectManager.GetEffect(4001);
-        attackParticle = attackEffect.GetComponent<ParticleSystem>();
-        attackParticle.Stop();
+        //attackEffect = GameManager.Instance.effectManager.GetEffect(4001);
+        //attackParticle = attackEffect.GetComponent<ParticleSystem>();
+        //attackParticle.Stop();
+        //emitter.AddDiffractionAbility();
     }
 
 
@@ -69,6 +70,7 @@ public class Player : MonoBehaviour
         ComMovement();
 
         Attack();
+        
     }
 
     void ComMovement()
@@ -111,37 +113,28 @@ public class Player : MonoBehaviour
     {
         if (inAttack)
         {
-            attackEffect.transform.position = attackEffectPos.position;
-            attackEffect.transform.rotation = transform.rotation;
+            //attackEffect.transform.position = attackEffectPos.position;
+            //attackEffect.transform.rotation = transform.rotation;
             if(enemy == null)
             {
                 //没有目标了，停止攻击
-                attackParticle.Stop();
+                //attackParticle.Stop();
                 inAttack = false;
-                shootParticle.gameObject.SetActive(false);
+                //shootParticle.gameObject.SetActive(false);
+                emitter.Attack(false);
             }
         }
         else
         {
             if(enemy != null)
             {
-                attackParticle.Play();
+                //attackParticle.Play();
                 inAttack = true;
-                shootParticle.gameObject.SetActive(true);
+                //shootParticle.gameObject.SetActive(true);
+                emitter.Attack(true);
+
             }
         }
-
-        //if (Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    anim.SetBool(aniID_Attack, true);
-        //    attackParticle.Play();
-        //}
-
-        //if (Input.GetKeyUp(KeyCode.Space))
-        //{
-        //    anim.SetBool(aniID_Attack, false);
-        //    attackParticle.Stop();
-        //}
     }
 
 

@@ -14,8 +14,22 @@ public class TestConfig : ScriptableObject
     public string smallLevelID = string.Empty;
 }
 
-public class TestData:Singleton<TestData>
+public class TestData
 {
+    private static TestData m_Instance;
+    public static TestData Instance
+    {
+        get
+        {
+            if (m_Instance == null)
+            {
+                m_Instance = new TestData();
+            }
+
+            return m_Instance;
+        }
+    }
+
     TestConfig m_TestConfig = null;
 
     public TestConfig TestConfig {

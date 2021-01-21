@@ -1,0 +1,25 @@
+ManifestFileVersion: 0
+CRC: 2190906213
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: fa73c4d9203db047804b94683068d26f
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 6a6c6d41d3b4b9856b897225f9eb2399
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+Assets:
+- "Assets/\u67AA\u706B\u4E4B\u5730/Effects/Prefabs/testBullet.prefab"
+Dependencies:
+- F:/Near2y/GFland/Assets/../AssetBundle/Android/ef_bl_gun01

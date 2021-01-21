@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1434693977
+CRC: 2545621484
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 03d155b153eeaadf5d25185e4f51ae62
+    Hash: 62719cd5369bc4f986dea1e5e4a4d334
   TypeTreeHash:
     serializedVersion: 2
     Hash: 5ad585dd02dfb5016c0dad519eab8f49
@@ -12,8 +12,10 @@ ClassTypes:
 - Class: 49
   Script: {instanceID: 0}
 Assets:
+- Assets/RealFram/Data/Binary/EffectData.bytes
 - Assets/RealFram/Data/Binary/WaveData_0701.bytes
 - Assets/RealFram/Data/Binary/WaveData.bytes
 - Assets/RealFram/Data/Binary/BuffData.bytes
 - Assets/RealFram/Data/Binary/EnemyData.bytes
+- Assets/RealFram/Data/Binary/BulletData.bytes
 Dependencies: []

@@ -476,8 +476,7 @@ Transform:
     w: 1}
   m_LocalPosition: {x: -0, y: 0, z: -0.000000019073486}
   m_LocalScale: {x: 0.999999, y: 1, z: 0.999999}
-  m_Children:
-  - {fileID: 2130022558457044861}
+  m_Children: []
   m_Father: {fileID: 1900679071163057232}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2048,6 +2047,11 @@ MonoBehaviour:
   rotLerp: 0.882
   attackEffectPos: {fileID: 0}
   attackEffect: {fileID: 0}
+  attackParticle: {fileID: 0}
+  shootParticle: {fileID: 0}
+  inAttack: 0
+  ATK: 5
+  emitter: {fileID: 0}
   joystick: {fileID: 0}
   hadJoystick: 0
   enemy: {fileID: 0}
@@ -3238,36 +3242,5 @@ Transform:
   m_Children:
   - {fileID: 1900679071163057180}
   m_Father: {fileID: 1900679071163057176}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5527210862736085349
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2130022558457044861}
-  m_Layer: 0
-  m_Name: attackEffectPos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2130022558457044861
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5527210862736085349}
-  m_LocalRotation: {x: 0.00000011362138, y: 0.00000012991964, z: -0.000000007450605,
-    w: 1}
-  m_LocalPosition: {x: -0.267, y: 0.012, z: 0.074}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1900679071163057198}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

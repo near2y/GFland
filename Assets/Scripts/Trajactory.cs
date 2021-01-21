@@ -52,12 +52,13 @@ public class Trajactory : MonoBehaviour
         bulletProp.ShootFrequency = shootFrequency;
     }
 
-
+    bool inPlay = false;
     public bool InShoot
     {
         set
         {
-            if (value)
+            inPlay = value;
+            if (inPlay)
             {
                 system.Play();
             }
@@ -66,6 +67,7 @@ public class Trajactory : MonoBehaviour
                 system.Stop();
             }
         }
+        get { return inPlay; }
     }
 
     public void Spwan(Vector3 position,Vector3 targetPos,int count = 1)
@@ -88,12 +90,12 @@ public class Trajactory : MonoBehaviour
     //弹射
     void Diffraction(GameObject other)
     {
-        if (dTrajactory == null) return;
+        if (dTrajactory == null || test.targets.Count<2) return;
         Collider collider = other.GetComponent<Collider>();
-        int t = Random.Range(0, test.targets.Length);
+        int t = Random.Range(0, test.targets.Count);
         float dis = Mathf.Max(collider.bounds.size.x, collider.bounds.size.z) * 0.6f;
-        Vector3 point = other.transform.position + (test.targets[t].position - other.transform.position).normalized * dis;
-        dTrajactory.Spwan(point, test.targets[t].position);
+        Vector3 point = other.transform.position + (test.targets[t].transform.position - other.transform.position).normalized * dis;
+        dTrajactory.Spwan(point, test.targets[t].transform.position);
     }
 
     //穿透

@@ -68,6 +68,7 @@ public class BulletProp
         set
         {
             bulletFrequency = value;
+            if (value <= 0) return;
             emission.GetBursts(bursts);
             bursts[0].repeatInterval = bulletFrequency/1000;
             emission.SetBursts(bursts);
