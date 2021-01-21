@@ -4,139 +4,81 @@ using UnityEngine;
 
 public class Emitter : MonoBehaviour
 {
-    [Header("< 基础对象 >")]
-    public ParticleSystem particleSystem = null;
-    public ParticleSystem.MainModule particleMain;
-    public Transform[] targets;
 
-    [Header("< 射击相关参数 >")]
-    public float speed = 5;
-    public float shootFrequency = 200;
-    public BulletAbilityType prop = BulletAbilityType.Stop;
-    public short trajectoryCount = 1;
+    [Header("< 弹道相关参数 >")]
+    public float bulletSpeed = 5;
+    public int shootCount = 1;
+    public float bulletFrequency = 100;
+    public float shootFrequency = 100;
+    public int penetrateCount = 0;
+    public int diffractionCount = 0;
 
-    [Header("< 游戏中相关参数动态展示 >")]
-    public  bool inShoot = false;
-    public Vector3 shootDir = new Vector3(0, 0, 1);
-    public Vector3 shootPos = new Vector3(0, 0, 0);
+    [Header(" <暂存> ")]
+    public GameObject bulletPre = null;
+    public Transform[] targets = null;
 
-    float shootFrequencyTimer = 0;
-    ParticleSystem.Particle[] particles;
-    List<ParticleSystem.Particle> exitParticles = new List<ParticleSystem.Particle>();
 
-    private void Awake()
-    {
-        particles = new ParticleSystem.Particle[particleSystem.main.maxParticles];
-        particleMain = particleSystem.main;
-        for(int i = 0; i < targets.Length; i++)
-        {
-            particleSystem.trigger.SetCollider(i, targets[i]);
-        }
-    }
+
+    Trajactory shootTrajactory = null;
 
     private void Start()
     {
-        SetTrajectory(trajectoryCount);
-    }
+        GameObject shootObj = GameObject.Instantiate(bulletPre);
+        shootObj.transform.SetParent(transform);
+        shootObj.transform.localPosition = Vector3.zero;
+        shootObj.transform.localEulerAngles = Vector3.zero;
+        shootTrajactory = shootObj.AddComponent<Trajactory>();
+        shootTrajactory.Init(this, bulletSpeed, shootCount, bulletFrequency, shootFrequency);
 
-    private void Update()
-    {
-        //int count = particleSystem.GetParticles(particles);
-        //Debug.Log(count);
-        particleMain.startSpeed = speed;
-        RefreshTimer();
-        GetInput();
-        Behavior();
-    }
-
-    void RefreshTimer()
-    {
-        shootFrequencyTimer += Time.deltaTime*1000;
-    }
-
-    void Behavior()
-    {
-        if (inShoot)
+        for(int i = 0; i < penetrateCount; i++)
         {
-            Shoot();
+            AddPenetrateAbility();
+        }
+
+        for(int i = 0; i < diffractionCount; i++)
+        {
+            AddDiffractionAbility();
         }
     }
-
-
-    void GetInput()
+     
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            inShoot = true;
+            shootTrajactory.InShoot = true;
         }
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            inShoot = false;
+            shootTrajactory.InShoot = false;
         }
     }
 
-    void SetTrajectory(short count)
+    void AddDiffractionAbility()
     {
-        ParticleSystem.EmissionModule emission = particleSystem.emission;
-        ParticleSystem.Burst[] bursts = new ParticleSystem.Burst[emission.burstCount];
-        emission.GetBursts(bursts);
-        bursts[0].minCount = bursts[0].maxCount = count;
-        emission.SetBursts(bursts);
-    }
-
-    void Shoot()
-    {
-        if (shootFrequencyTimer >= shootFrequency)
+        Trajactory t = shootTrajactory;
+        while (t.dTrajactory !=null)
         {
-            shootFrequencyTimer = 0;
-            particleSystem.Play();
+            t = t.dTrajactory;
         }
+        GameObject shootObj = GameObject.Instantiate(bulletPre);
+        shootObj.transform.localPosition = Vector3.zero;
+        shootObj.transform.localEulerAngles = Vector3.zero;
+        t.dTrajactory = shootObj.AddComponent<Trajactory>();
+        t.dTrajactory.Init(this, bulletSpeed, shootCount, bulletFrequency, shootFrequency);
     }
 
-    private void OnParticleTrigger()
+    void AddPenetrateAbility()
     {
-        // 获取与此帧的触发条件匹配的粒子
-        int numExit = particleSystem.GetTriggerParticles(ParticleSystemTriggerEventType.Enter, exitParticles);
-        if (numExit > 0)
+        Trajactory t = shootTrajactory;
+        while (t.pTrajactory != null)
         {
-            switch (prop)
-            {
-                case BulletAbilityType.Bounce:
-                    // 反弹
-                    for (int i = 0; i < numExit; i++)
-                    {
-                        ParticleSystem.Particle p = exitParticles[i];
-                        //p.velocity = -p.velocity;
-                        //exitParticles[i] = p;
-
-                        BulletAbility.Bounce(ref p);
-                        exitParticles[i] = p;
-                    }
-                    break;
-                case BulletAbilityType.Diffraction:
-                    //衍射
-                    for (int i = 0; i < numExit; i++)
-                    {
-                        ParticleSystem.Particle p = exitParticles[i];
-                        p.velocity = (targets[1].position - p.position).normalized * speed;
-                        exitParticles[i] = p;
-                    }
-                    break;
-                case BulletAbilityType.Stop:
-                    //抹掉
-                    for (int i = 0; i < numExit; i++)
-                    {
-                        ParticleSystem.Particle p = exitParticles[i];
-                        p.remainingLifetime = 0;
-                        exitParticles[i] = p;
-                    }
-                    break;
-            }
-            // 将修改后的粒子重新分配回粒子系统
-            particleSystem.SetTriggerParticles(ParticleSystemTriggerEventType.Enter, exitParticles);
-            exitParticles.Clear();
+            t = t.pTrajactory;
         }
+        GameObject shootObj = GameObject.Instantiate(bulletPre);
+        shootObj.transform.localPosition = Vector3.zero;
+        shootObj.transform.localEulerAngles = Vector3.zero;
+        t.pTrajactory = shootObj.AddComponent<Trajactory>();
+        t.pTrajactory.Init(this, bulletSpeed, shootCount, bulletFrequency, shootFrequency);
     }
 }
-

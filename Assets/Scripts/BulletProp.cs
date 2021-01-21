@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletProp
 {
     public ParticleSystem system;
-    public ParticleSystem.MainModule main;
+    ParticleSystem.MainModule main;
     public ParticleSystem.EmissionModule emission;
     public ParticleSystem.Burst[] bursts;
 
@@ -33,6 +33,16 @@ public class BulletProp
         {
             bulletSpeed = value;
             main.startSpeed = bulletSpeed;
+        }
+    }
+
+    //循环 
+    public bool Loop
+    {
+        get { return main.loop; }
+        set
+        {
+            main.loop = value;
         }
     }
 
@@ -72,7 +82,8 @@ public class BulletProp
         set
         {
             shootFrequency = value;
-            main.duration = shootFrequency / 1000;
+            float duration = shootFrequency + (shootCount - 1) * bulletFrequency;
+            main.duration = duration / 1000;
         }
     }
 
