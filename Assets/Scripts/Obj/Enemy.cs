@@ -57,7 +57,7 @@ public class Enemy : MonoBehaviour
         if (hp <= 0 && inStage )
         {
             inStage = false;
-            SceneManager.Instance.enemyManager.ClearEnemy(this);
+            //SceneManager.Instance.enemyManager.ClearEnemy(this);
             bodyCollider.enabled = false;
         }
     }

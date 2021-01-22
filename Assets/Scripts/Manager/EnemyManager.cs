@@ -11,14 +11,14 @@ public class EnemyManager :  MonoBehaviour
     /// <summary>
     /// 当前正在场上的敌人集合
     /// </summary>
-    public List<Enemy> enemyList;
+    public List<EnemyTest> enemyList;
 
     public float sqrTargetDis;
 
     void Start()
     {
         enemyData = ConfigerManager.Instance.FindData<EnemyData>(CFG.TABLE_ENEMY);
-        enemyList = new List<Enemy>();
+        enemyList = new List<EnemyTest>();
     }
 
     /// <summary>
@@ -30,27 +30,26 @@ public class EnemyManager :  MonoBehaviour
     {
         //生成
         EnemyBase data = enemyData.FindByID(id);
-        GameObject obj = ObjectManager.Instance.InstantiateObject(data.PrefabPath, true);
-        Enemy enemy = obj.GetComponent<Enemy>();
-        enemy.Init(data);
+        EnemyTest enemy = ObjectManager.Instance.InstantiateObject(data.PrefabPath).GetComponent<EnemyTest>();
+        enemy.transform.SetParent(transform);
+        //Enemy enemy = obj.GetComponent<Enemy>();
+        //enemy.Init(data);
 
-        //TODO位置
-        obj.transform.position = fullPoint.position;
-        obj.transform.rotation = fullPoint.rotation;
+        ////TODO位置
+        //obj.transform.position = fullPoint.position;
+        //obj.transform.rotation = fullPoint.rotation;
+        enemy.InStage(SceneManager.Instance.player.transform,fullPoint);
 
         //加到集合中
-        enemyList.Add(enemy);
-
-
     }
 
     /// <summary>
     /// 找到最近的敌人
     /// </summary>
     /// <returns></returns>
-    public Enemy FindCloseEnemy(float attackDis)
+    public EnemyTest FindCloseEnemy(float attackDis)
     {
-        Enemy enemy = null;
+        EnemyTest enemy = null;
         float sqrDis = 0;
         if (enemyList.Count > 0)
         {
@@ -70,13 +69,17 @@ public class EnemyManager :  MonoBehaviour
         return enemy;
     }
 
-    public void ClearEnemy(Enemy enemy)
+    public void ClearEnemy(EnemyTest enemy)
     {
         if (enemy != null)
         {
-            SceneManager.Instance.waveManager.CurrentWave.aliveEnemyNum--;
-            ObjectManager.Instance.ReleaseObject(enemy.gameObject);
             enemyList.Remove(enemy);
+            SceneManager.Instance.waveManager.CurrentWave.aliveEnemyNum--;
         }
+    }
+
+    public void AddEnemy(EnemyTest enemy)
+    {
+        enemyList.Add(enemy);
     }
 }

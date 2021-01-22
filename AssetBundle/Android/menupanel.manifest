@@ -3,7 +3,7 @@ CRC: 136452100
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 0a480083857fd6459b352ea9214662c4
+    Hash: a63677861c3b7e4cfc95616bd3e233f3
   TypeTreeHash:
     serializedVersion: 2
     Hash: a9aa422d002449b14f3da4e12ed4b355
@@ -40,5 +40,5 @@ ClassTypes:
 Assets:
 - "Assets/\u67AA\u706B\u4E4B\u5730/Texture/UGUI/soundBtn.png"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Texture/UGUI/circle 1.png"
-- "Assets/\u67AA\u706B\u4E4B\u5730/prefabs/UGUI/Panel/MenuPanel.prefab"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Prefabs/UGUI/Panel/MenuPanel.prefab"
 Dependencies: []

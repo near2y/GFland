@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
     Vector3 aniDir;
 
     //Enemy
-    public Enemy enemy;
+    public EnemyTest enemy;
     
     Vector3 movement;
 
@@ -135,6 +135,7 @@ public class Player : MonoBehaviour
 
             }
         }
+        anim.SetBool(aniID_Attack, inAttack);
     }
 
 

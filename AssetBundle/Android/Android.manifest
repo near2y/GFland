@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 1844367239
+CRC: 3440645446
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -9,31 +9,35 @@ AssetBundleManifest:
       Name: enviroment
       Dependencies: {}
     Info_2:
-      Name: player
+      Name: ms_spider_green
       Dependencies: {}
     Info_3:
-      Name: spider_ani
+      Name: player
       Dependencies: {}
     Info_4:
+      Name: spider_ani
+      Dependencies:
+        Dependency_0: ms_spider_green
+    Info_5:
       Name: joystick
       Dependencies: {}
-    Info_5:
+    Info_6:
       Name: gamepanel
       Dependencies:
         Dependency_0: joystick
-    Info_6:
+    Info_7:
       Name: loadpanel
       Dependencies: {}
-    Info_7:
+    Info_8:
       Name: menupanel
       Dependencies: {}
-    Info_8:
+    Info_9:
       Name: ef_bl_gun01
       Dependencies: {}
-    Info_9:
+    Info_10:
       Name: testbullet
       Dependencies:
         Dependency_0: ef_bl_gun01
-    Info_10:
+    Info_11:
       Name: assetbundleconfig
       Dependencies: {}

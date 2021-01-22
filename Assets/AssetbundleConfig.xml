@@ -4,18 +4,22 @@
   <ABList Path="Assets/RealFram/Data/Binary/BulletData.bytes" Crc="4110740475" ABName="data" AssetName="BulletData.bytes" />
   <ABList Path="Assets/RealFram/Data/Binary/EffectData.bytes" Crc="3883766571" ABName="data" AssetName="EffectData.bytes" />
   <ABList Path="Assets/RealFram/Data/Binary/EnemyData.bytes" Crc="3841643933" ABName="data" AssetName="EnemyData.bytes" />
+  <ABList Path="Assets/RealFram/Data/Binary/SceneData.bytes" Crc="3874122375" ABName="data" AssetName="SceneData.bytes" />
   <ABList Path="Assets/RealFram/Data/Binary/WaveData.bytes" Crc="2240778075" ABName="data" AssetName="WaveData.bytes" />
   <ABList Path="Assets/RealFram/Data/Binary/WaveData_0701.bytes" Crc="3116184195" ABName="data" AssetName="WaveData_0701.bytes" />
   <ABList Path="Assets/枪火之地/Effects/Prefabs/ef_bl_gun01.prefab" Crc="2521747447" ABName="ef_bl_gun01" AssetName="ef_bl_gun01.prefab" />
-  <ABList Path="Assets/枪火之地/prefabs/Enviroment.prefab" Crc="400352628" ABName="enviroment" AssetName="Enviroment.prefab" />
-  <ABList Path="Assets/枪火之地/prefabs/UGUI/Panel/GamePanel.prefab" Crc="3809724536" ABName="gamepanel" AssetName="GamePanel.prefab">
+  <ABList Path="Assets/枪火之地/Prefabs/Enviroment.prefab" Crc="2817698728" ABName="enviroment" AssetName="Enviroment.prefab" />
+  <ABList Path="Assets/枪火之地/Prefabs/UGUI/Panel/GamePanel.prefab" Crc="2095530222" ABName="gamepanel" AssetName="GamePanel.prefab">
     <ABDependce>joystick</ABDependce>
   </ABList>
-  <ABList Path="Assets/枪火之地/prefabs/UGUI/JoyStick.prefab" Crc="2390278486" ABName="joystick" AssetName="JoyStick.prefab" />
-  <ABList Path="Assets/枪火之地/prefabs/UGUI/Panel/LoadPanel.prefab" Crc="2748887832" ABName="loadpanel" AssetName="LoadPanel.prefab" />
-  <ABList Path="Assets/枪火之地/prefabs/UGUI/Panel/MenuPanel.prefab" Crc="1438290998" ABName="menupanel" AssetName="MenuPanel.prefab" />
-  <ABList Path="Assets/枪火之地/prefabs/player.prefab" Crc="1850653287" ABName="player" AssetName="player.prefab" />
-  <ABList Path="Assets/枪火之地/prefabs/spider_ani.prefab" Crc="759113610" ABName="spider_ani" AssetName="spider_ani.prefab" />
+  <ABList Path="Assets/枪火之地/Prefabs/UGUI/JoyStick.prefab" Crc="3100074742" ABName="joystick" AssetName="JoyStick.prefab" />
+  <ABList Path="Assets/枪火之地/Prefabs/UGUI/Panel/LoadPanel.prefab" Crc="1009531790" ABName="loadpanel" AssetName="LoadPanel.prefab" />
+  <ABList Path="Assets/枪火之地/Prefabs/UGUI/Panel/MenuPanel.prefab" Crc="3394116768" ABName="menupanel" AssetName="MenuPanel.prefab" />
+  <ABList Path="Assets/枪火之地/Prefabs/ms_spider_green.prefab" Crc="1896498299" ABName="ms_spider_green" AssetName="ms_spider_green.prefab" />
+  <ABList Path="Assets/枪火之地/Prefabs/player.prefab" Crc="4186349503" ABName="player" AssetName="player.prefab" />
+  <ABList Path="Assets/枪火之地/Prefabs/spider_ani.prefab" Crc="2635163990" ABName="spider_ani" AssetName="spider_ani.prefab">
+    <ABDependce>ms_spider_green</ABDependce>
+  </ABList>
   <ABList Path="Assets/枪火之地/Effects/Prefabs/testBullet.prefab" Crc="182895824" ABName="testbullet" AssetName="testBullet.prefab">
     <ABDependce>ef_bl_gun01</ABDependce>
   </ABList>

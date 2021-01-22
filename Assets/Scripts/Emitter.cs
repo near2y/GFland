@@ -14,8 +14,9 @@ public class Emitter : MonoBehaviour
     public int diffractionCount = 0;
 
     [Header(" <暂存> ")]
-    public GameObject bulletPre = null;
-    public List<Enemy> targets = null;
+    //public GameObject bulletPre = null;
+    public int bulletID = 4001;
+    public List<EnemyTest> targets = null;
     public Transform bulletPos = null;
 
 
@@ -24,7 +25,7 @@ public class Emitter : MonoBehaviour
 
     private void Start()
     {
-        GameObject shootObj = GameObject.Instantiate(bulletPre);
+        GameObject shootObj = SceneManager.Instance.effectManager.GetEffect(bulletID);
         shootObj.transform.SetParent(transform);
         shootObj.transform.localPosition = Vector3.zero;
         shootObj.transform.localEulerAngles = Vector3.zero;
@@ -74,7 +75,7 @@ public class Emitter : MonoBehaviour
         {
             t = t.dTrajactory;
         }
-        GameObject shootObj = GameObject.Instantiate(bulletPre);
+        GameObject shootObj = SceneManager.Instance.effectManager.GetEffect(bulletID);
         shootObj.transform.localPosition = Vector3.zero;
         shootObj.transform.localEulerAngles = Vector3.zero;
         t.dTrajactory = shootObj.AddComponent<Trajactory>();
@@ -88,7 +89,7 @@ public class Emitter : MonoBehaviour
         {
             t = t.pTrajactory;
         }
-        GameObject shootObj = GameObject.Instantiate(bulletPre);
+        GameObject shootObj = SceneManager.Instance.effectManager.GetEffect(bulletID);
         shootObj.transform.localPosition = Vector3.zero;
         shootObj.transform.localEulerAngles = Vector3.zero;
         t.pTrajactory = shootObj.AddComponent<Trajactory>();

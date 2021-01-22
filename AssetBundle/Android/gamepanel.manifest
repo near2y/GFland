@@ -3,7 +3,7 @@ CRC: 492885604
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: f31ec83c083e499a248b9d2fcebfd852
+    Hash: b8d7691d8fac69940c3e787a815d7dca
   TypeTreeHash:
     serializedVersion: 2
     Hash: 394c42d0042b1a35e0afad87f7deb22e
@@ -44,7 +44,7 @@ ClassTypes:
 Assets:
 - "Assets/\u67AA\u706B\u4E4B\u5730/Texture/UGUI/Home.png"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Texture/UGUI/Clear.png"
-- "Assets/\u67AA\u706B\u4E4B\u5730/prefabs/UGUI/Panel/GamePanel.prefab"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Prefabs/UGUI/Panel/GamePanel.prefab"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Texture/UGUI/Add.png"
 Dependencies:
 - F:/Near2y/GFland/Assets/../AssetBundle/Android/joystick

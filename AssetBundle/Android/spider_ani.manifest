@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 401181464
+CRC: 2850060870
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 342003b679cd810b43d1011014d16169
+    Hash: edc2e30e42d10d2c4a39fb3cc88e5645
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 97e69b11c616fb122eae6fdf6770687c
+    Hash: b51c570f18729ee9e0c9e38776774009
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -15,11 +15,7 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 21
   Script: {instanceID: 0}
-- Class: 28
-  Script: {instanceID: 0}
 - Class: 43
-  Script: {instanceID: 0}
-- Class: 48
   Script: {instanceID: 0}
 - Class: 74
   Script: {instanceID: 0}
@@ -42,9 +38,8 @@ ClassTypes:
 - Class: 195
   Script: {instanceID: 0}
 Assets:
-- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/spider/ms_spider_green_01.tga"
-- "Assets/\u67AA\u706B\u4E4B\u5730/Animate/spider_ani.controller"
-- "Assets/\u67AA\u706B\u4E4B\u5730/materials/ms_spider_green_01.mat"
-- "Assets/\u67AA\u706B\u4E4B\u5730/models/spider_ani.fbx"
-- "Assets/\u67AA\u706B\u4E4B\u5730/prefabs/spider_ani.prefab"
-Dependencies: []
+- "Assets/\u67AA\u706B\u4E4B\u5730/Animation/spider_ani.controller"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Models/spider_ani.fbx"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Prefabs/spider_ani.prefab"
+Dependencies:
+- F:/Near2y/GFland/Assets/../AssetBundle/Android/ms_spider_green

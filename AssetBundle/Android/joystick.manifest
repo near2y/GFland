@@ -3,7 +3,7 @@ CRC: 2007820948
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: df3471a473fd3d7a24737a0fcf3e950c
+    Hash: 78ada13ee4ff833c6043afcde72f4c32
   TypeTreeHash:
     serializedVersion: 2
     Hash: 453ba75113cb939134a6ef69264fd824
@@ -26,6 +26,6 @@ ClassTypes:
 - Class: 224
   Script: {instanceID: 0}
 Assets:
-- "Assets/\u67AA\u706B\u4E4B\u5730/prefabs/UGUI/JoyStick.prefab"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Prefabs/UGUI/JoyStick.prefab"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Texture/UGUI/circle.png"
 Dependencies: []

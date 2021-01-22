@@ -10,12 +10,16 @@ public class SceneManager : MonoSingleton<SceneManager>
     public WaveManager waveManager;
     public EffectManager effectManager;
     public Transform pointsTrans;
-    
+    public GameCamera gameCamera;
     public EnemyPoints enemyPoints;
+
+    string playerPrePath = "Assets/枪火之地/Prefabs/player.prefab";
 
 
     private void Start()
     {
+        Init();
+
         string wavePath = "Assets/RealFram/Data/Binary/WaveData_0701.bytes";
 #if UNITY_EDITOR
         //if (!System.IO.File.Exists(wavePath))
@@ -33,6 +37,10 @@ public class SceneManager : MonoSingleton<SceneManager>
     {
         //points
         enemyPoints = new EnemyPoints(pointsTrans);
+        player = ObjectManager.Instance.InstantiateObject(playerPrePath).GetComponent<Player>();
+        player.transform.SetParent(transform);
+        gameCamera.SetTarget(player.transform);
+
     }
 
 

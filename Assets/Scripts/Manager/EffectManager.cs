@@ -16,11 +16,13 @@ public class EffectManager : MonoBehaviour
     {
         EffectBase data = effectData.FindByID(id);
         GameObject effect = ObjectManager.Instance.InstantiateObject(data.PrefabPath);
+        effect.transform.SetParent(transform);
+        effect.SetActive(true);
         return effect;
     }
 
     public void ReleaseEffect(GameObject effect)
     {
-        ObjectManager.Instance.ReleaseObject(effect);
+        ObjectManager.Instance.ReleaseObject(effect,recycleParent:false);
     }
 }
