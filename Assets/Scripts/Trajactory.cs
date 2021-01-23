@@ -8,10 +8,6 @@ public class Trajactory : MonoBehaviour
     public BulletProp bulletProp = null;
     //发射器
     public Emitter test;
-
-    //Trajactory subTrajactory = null;
-    BulletAbilityType abilityType = BulletAbilityType.Stop;
-
     public Trajactory pTrajactory= null;
     public Trajactory dTrajactory = null;
 
@@ -77,6 +73,11 @@ public class Trajactory : MonoBehaviour
         bulletProp.Loop = false;
         transform.position = position;
         transform.LookAt(targetPos);
+        Vector3 euler = transform.rotation.eulerAngles;
+        euler.x = 0;
+        var rotaion = transform.rotation;
+        rotaion.eulerAngles = euler;
+        transform.rotation = rotaion;
         system.Play();
     }
 

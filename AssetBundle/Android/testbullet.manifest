@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3010331333
+CRC: 3125360088
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: a8135f9319d94200dd277a9c9f727493
+    Hash: 91023b7efa3f2a93011551ad08005edd
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 6a6c6d41d3b4b9856b897225f9eb2399
+    Hash: 8e7a9a5bc260fb3cb7f278e39396d550
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -15,11 +15,16 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 21
   Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
 - Class: 198
   Script: {instanceID: 0}
 - Class: 199
   Script: {instanceID: 0}
 Assets:
 - "Assets/\u67AA\u706B\u4E4B\u5730/Effects/Prefabs/testBullet.prefab"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Effects/Materials/particle_orange_bullet_07.mat"
 Dependencies:
 - F:/Near2y/GFland/Assets/../AssetBundle/Android/ef_bl_gun01

@@ -36,3 +36,9 @@ public class EnemyPoints
     }
 
 }
+
+public class SpwanPointTag
+{
+    public static string Climb = "Climb";
+    public static string Full = "Full";
+}

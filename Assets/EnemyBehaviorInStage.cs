@@ -9,7 +9,7 @@ public class EnemyBehaviorInStage : EnemyBehaviorBase
     {
         enemy.bodyCollider.enabled = false;
         enemy.agent.enabled = false;
-
+        enemy.anim.speed = enemy.anim.speed * enemy.inStageSpeedRatio;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -21,8 +21,12 @@ public class EnemyBehaviorInStage : EnemyBehaviorBase
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        enemy.anim.speed = enemy.anim.speed / enemy.inStageSpeedRatio;
         enemy.bodyCollider.enabled = true;
-        SceneManager.Instance.enemyManager.AddEnemy(enemy);
+        if(SceneManager.Instance != null)
+        {
+            SceneManager.Instance.enemyManager.AddEnemy(enemy);
+        }
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

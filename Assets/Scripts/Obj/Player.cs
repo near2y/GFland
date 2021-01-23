@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
     Vector3 aniDir;
 
     //Enemy
-    public EnemyTest enemy;
+    public Enemy enemy;
     
     Vector3 movement;
 
@@ -146,7 +146,7 @@ public class Player : MonoBehaviour
     void Turning()
     {
         enemy = SceneManager.Instance.enemyManager.FindCloseEnemy(attackDis);
-        if (!Enemy.ReferenceEquals(enemy,null)  )
+        if (enemy != null  )
         { 
             //transform.LookAt(enemy.transform.position);
             Vector3 playerToMouse = enemy.transform.position - transform.position;
@@ -167,7 +167,7 @@ public class Player : MonoBehaviour
                 anim.SetFloat(aniID_Turning, ratio);
             }
         }
-        if(Enemy.ReferenceEquals(enemy,null) && anim.GetFloat(aniID_Turning) != 0)
+        if(enemy == null && anim.GetFloat(aniID_Turning) != 0)
         {
             anim.SetFloat(aniID_Turning, 0);
         }

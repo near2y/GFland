@@ -5,12 +5,18 @@ using UnityEngine;
 public class EnemyBehaviorWalk : EnemyBehaviorBase
 {
     float attackTimer = 0;
+    float startAniSpeed = 0;
+    float startAgentSpeed = 0;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         attackTimer = 0;
         enemy.agent.enabled = true;
+        startAniSpeed = enemy.anim.speed;
+        startAgentSpeed = enemy.agent.speed;
+        enemy.anim.speed = startAniSpeed * enemy.walkSpeedRatio;
+        enemy.agent.speed = startAgentSpeed * enemy.walkSpeedRatio;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -21,7 +27,7 @@ public class EnemyBehaviorWalk : EnemyBehaviorBase
         if(attackTimer >= enemy.attackInterval)
         {
             enemy.targetSqrDis = Vector3.SqrMagnitude(enemy.transform.position - enemy.agentTarget.position);
-            if(enemy.targetSqrDis <= enemy.agent.stoppingDistance * enemy.agent.stoppingDistance)
+            if(enemy.targetSqrDis <= enemy.attackRange * enemy.attackRange)
             {
                 enemy.anim.SetBool(enemy.id_Attack, true);
             }
@@ -30,10 +36,11 @@ public class EnemyBehaviorWalk : EnemyBehaviorBase
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
-    //override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        enemy.anim.speed = startAniSpeed;
+        enemy.agent.speed = startAgentSpeed;
+    }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

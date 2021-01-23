@@ -70,66 +70,220 @@
     <NextWaveActiveNum>0</NextWaveActiveNum>
     <MaxTime>1500</MaxTime>
   </AllWaveList>
-  <AllWaveList ID="11" WaveID="2" DelayTime="0" PointID="1006" EnemyID="2001">
+  <AllWaveList ID="11" WaveID="2" DelayTime="0" PointID="2026" EnemyID="2002">
+    <EnemyName>方便看</EnemyName>
+    <SpwanCount>1</SpwanCount>
+    <SpwanInterval>0</SpwanInterval>
+    <NextWaveActiveNum>0</NextWaveActiveNum>
+    <MaxTime>1500</MaxTime>
+  </AllWaveList>
+  <AllWaveList ID="12" WaveID="2" DelayTime="0" PointID="2028" EnemyID="2002">
+    <EnemyName>方便看</EnemyName>
+    <SpwanCount>1</SpwanCount>
+    <SpwanInterval>0</SpwanInterval>
+    <NextWaveActiveNum>0</NextWaveActiveNum>
+    <MaxTime>1500</MaxTime>
+  </AllWaveList>
+  <AllWaveList ID="13" WaveID="2" DelayTime="0" PointID="2030" EnemyID="2002">
+    <EnemyName>方便看</EnemyName>
+    <SpwanCount>1</SpwanCount>
+    <SpwanInterval>0</SpwanInterval>
+    <NextWaveActiveNum>0</NextWaveActiveNum>
+    <MaxTime>1500</MaxTime>
+  </AllWaveList>
+  <AllWaveList ID="14" WaveID="2" DelayTime="0" PointID="3031" EnemyID="2002">
+    <EnemyName>方便看</EnemyName>
+    <SpwanCount>1</SpwanCount>
+    <SpwanInterval>0</SpwanInterval>
+    <NextWaveActiveNum>0</NextWaveActiveNum>
+    <MaxTime>1500</MaxTime>
+  </AllWaveList>
+  <AllWaveList ID="15" WaveID="2" DelayTime="0" PointID="3028" EnemyID="2002">
+    <EnemyName>方便看</EnemyName>
+    <SpwanCount>1</SpwanCount>
+    <SpwanInterval>0</SpwanInterval>
+    <NextWaveActiveNum>0</NextWaveActiveNum>
+    <MaxTime>1500</MaxTime>
+  </AllWaveList>
+  <AllWaveList ID="16" WaveID="2" DelayTime="0" PointID="4008" EnemyID="2001">
+    <EnemyName>方便看</EnemyName>
+    <SpwanCount>1</SpwanCount>
+    <SpwanInterval>0</SpwanInterval>
+    <NextWaveActiveNum>0</NextWaveActiveNum>
+    <MaxTime>1500</MaxTime>
+  </AllWaveList>
+  <AllWaveList ID="17" WaveID="2" DelayTime="0" PointID="4004" EnemyID="2001">
+    <EnemyName>方便看</EnemyName>
+    <SpwanCount>1</SpwanCount>
+    <SpwanInterval>0</SpwanInterval>
+    <NextWaveActiveNum>0</NextWaveActiveNum>
+    <MaxTime>1500</MaxTime>
+  </AllWaveList>
+  <AllWaveList ID="18" WaveID="2" DelayTime="0" PointID="4010" EnemyID="2001">
+    <EnemyName>方便看</EnemyName>
+    <SpwanCount>1</SpwanCount>
+    <SpwanInterval>0</SpwanInterval>
+    <NextWaveActiveNum>0</NextWaveActiveNum>
+    <MaxTime>1500</MaxTime>
+  </AllWaveList>
+  <AllWaveList ID="19" WaveID="2" DelayTime="0" PointID="4012" EnemyID="2001">
+    <EnemyName>方便看</EnemyName>
+    <SpwanCount>1</SpwanCount>
+    <SpwanInterval>0</SpwanInterval>
+    <NextWaveActiveNum>0</NextWaveActiveNum>
+    <MaxTime>1500</MaxTime>
+  </AllWaveList>
+  <AllWaveList ID="20" WaveID="2" DelayTime="0" PointID="3025" EnemyID="2002">
+    <EnemyName>方便看</EnemyName>
+    <SpwanCount>1</SpwanCount>
+    <SpwanInterval>0</SpwanInterval>
+    <NextWaveActiveNum>0</NextWaveActiveNum>
+    <MaxTime>1500</MaxTime>
+  </AllWaveList>
+  <AllWaveList ID="21" WaveID="3" DelayTime="0" PointID="1006" EnemyID="2001">
     <EnemyName>方便看</EnemyName>
     <SpwanCount>2</SpwanCount>
     <SpwanInterval>1500</SpwanInterval>
     <NextWaveActiveNum>0</NextWaveActiveNum>
     <MaxTime>1500</MaxTime>
   </AllWaveList>
-  <AllWaveList ID="12" WaveID="2" DelayTime="0" PointID="1002" EnemyID="2001">
+  <AllWaveList ID="22" WaveID="3" DelayTime="0" PointID="1002" EnemyID="2001">
     <EnemyName>方便看</EnemyName>
     <SpwanCount>2</SpwanCount>
     <SpwanInterval>1500</SpwanInterval>
     <NextWaveActiveNum>0</NextWaveActiveNum>
     <MaxTime>1500</MaxTime>
   </AllWaveList>
-  <AllWaveList ID="13" WaveID="2" DelayTime="0" PointID="2006" EnemyID="2001">
+  <AllWaveList ID="23" WaveID="3" DelayTime="0" PointID="2006" EnemyID="2001">
     <EnemyName>方便看</EnemyName>
     <SpwanCount>2</SpwanCount>
     <SpwanInterval>1500</SpwanInterval>
     <NextWaveActiveNum>0</NextWaveActiveNum>
     <MaxTime>1500</MaxTime>
   </AllWaveList>
-  <AllWaveList ID="14" WaveID="2" DelayTime="0" PointID="2003" EnemyID="2001">
+  <AllWaveList ID="24" WaveID="3" DelayTime="0" PointID="2003" EnemyID="2001">
     <EnemyName>方便看</EnemyName>
     <SpwanCount>2</SpwanCount>
     <SpwanInterval>1500</SpwanInterval>
     <NextWaveActiveNum>0</NextWaveActiveNum>
     <MaxTime>1500</MaxTime>
   </AllWaveList>
-  <AllWaveList ID="15" WaveID="2" DelayTime="0" PointID="3007" EnemyID="2001">
+  <AllWaveList ID="25" WaveID="3" DelayTime="0" PointID="3007" EnemyID="2001">
     <EnemyName>方便看</EnemyName>
     <SpwanCount>2</SpwanCount>
     <SpwanInterval>1500</SpwanInterval>
     <NextWaveActiveNum>0</NextWaveActiveNum>
     <MaxTime>1500</MaxTime>
   </AllWaveList>
-  <AllWaveList ID="16" WaveID="2" DelayTime="0" PointID="3004" EnemyID="2001">
+  <AllWaveList ID="26" WaveID="3" DelayTime="0" PointID="3004" EnemyID="2001">
     <EnemyName>方便看</EnemyName>
     <SpwanCount>2</SpwanCount>
     <SpwanInterval>1500</SpwanInterval>
     <NextWaveActiveNum>0</NextWaveActiveNum>
     <MaxTime>1500</MaxTime>
   </AllWaveList>
-  <AllWaveList ID="17" WaveID="2" DelayTime="1500" PointID="3005" EnemyID="2001">
+  <AllWaveList ID="27" WaveID="3" DelayTime="1500" PointID="3005" EnemyID="2001">
     <EnemyName>方便看</EnemyName>
     <SpwanCount>3</SpwanCount>
     <SpwanInterval>1500</SpwanInterval>
     <NextWaveActiveNum>0</NextWaveActiveNum>
     <MaxTime>1500</MaxTime>
   </AllWaveList>
-  <AllWaveList ID="18" WaveID="2" DelayTime="1000" PointID="1005" EnemyID="2001">
+  <AllWaveList ID="28" WaveID="3" DelayTime="1000" PointID="1005" EnemyID="2001">
     <EnemyName>方便看</EnemyName>
     <SpwanCount>3</SpwanCount>
     <SpwanInterval>1500</SpwanInterval>
     <NextWaveActiveNum>0</NextWaveActiveNum>
     <MaxTime>1500</MaxTime>
   </AllWaveList>
-  <AllWaveList ID="19" WaveID="2" DelayTime="2000" PointID="2005" EnemyID="2001">
+  <AllWaveList ID="29" WaveID="3" DelayTime="2000" PointID="2005" EnemyID="2001">
     <EnemyName>方便看</EnemyName>
     <SpwanCount>3</SpwanCount>
     <SpwanInterval>1500</SpwanInterval>
+    <NextWaveActiveNum>0</NextWaveActiveNum>
+    <MaxTime>1500</MaxTime>
+  </AllWaveList>
+  <AllWaveList ID="30" WaveID="3" DelayTime="1000" PointID="4013" EnemyID="2002">
+    <EnemyName>方便看</EnemyName>
+    <SpwanCount>1</SpwanCount>
+    <SpwanInterval>0</SpwanInterval>
+    <NextWaveActiveNum>0</NextWaveActiveNum>
+    <MaxTime>1500</MaxTime>
+  </AllWaveList>
+  <AllWaveList ID="31" WaveID="3" DelayTime="1000" PointID="4004" EnemyID="2002">
+    <EnemyName>方便看</EnemyName>
+    <SpwanCount>1</SpwanCount>
+    <SpwanInterval>0</SpwanInterval>
+    <NextWaveActiveNum>0</NextWaveActiveNum>
+    <MaxTime>1500</MaxTime>
+  </AllWaveList>
+  <AllWaveList ID="32" WaveID="3" DelayTime="1000" PointID="4002" EnemyID="2002">
+    <EnemyName>方便看</EnemyName>
+    <SpwanCount>1</SpwanCount>
+    <SpwanInterval>0</SpwanInterval>
+    <NextWaveActiveNum>0</NextWaveActiveNum>
+    <MaxTime>1500</MaxTime>
+  </AllWaveList>
+  <AllWaveList ID="33" WaveID="3" DelayTime="1000" PointID="4015" EnemyID="2002">
+    <EnemyName>方便看</EnemyName>
+    <SpwanCount>1</SpwanCount>
+    <SpwanInterval>0</SpwanInterval>
+    <NextWaveActiveNum>0</NextWaveActiveNum>
+    <MaxTime>1500</MaxTime>
+  </AllWaveList>
+  <AllWaveList ID="34" WaveID="4" DelayTime="0" PointID="4008" EnemyID="2003">
+    <EnemyName>方便看</EnemyName>
+    <SpwanCount>1</SpwanCount>
+    <SpwanInterval>0</SpwanInterval>
+    <NextWaveActiveNum>0</NextWaveActiveNum>
+    <MaxTime>1500</MaxTime>
+  </AllWaveList>
+  <AllWaveList ID="35" WaveID="4" DelayTime="0" PointID="4005" EnemyID="2003">
+    <EnemyName>方便看</EnemyName>
+    <SpwanCount>1</SpwanCount>
+    <SpwanInterval>0</SpwanInterval>
+    <NextWaveActiveNum>0</NextWaveActiveNum>
+    <MaxTime>1500</MaxTime>
+  </AllWaveList>
+  <AllWaveList ID="36" WaveID="4" DelayTime="0" PointID="1004" EnemyID="2004">
+    <EnemyName>方便看</EnemyName>
+    <SpwanCount>3</SpwanCount>
+    <SpwanInterval>1000</SpwanInterval>
+    <NextWaveActiveNum>0</NextWaveActiveNum>
+    <MaxTime>1500</MaxTime>
+  </AllWaveList>
+  <AllWaveList ID="37" WaveID="4" DelayTime="0" PointID="1007" EnemyID="2004">
+    <EnemyName>方便看</EnemyName>
+    <SpwanCount>3</SpwanCount>
+    <SpwanInterval>1000</SpwanInterval>
+    <NextWaveActiveNum>0</NextWaveActiveNum>
+    <MaxTime>1500</MaxTime>
+  </AllWaveList>
+  <AllWaveList ID="38" WaveID="4" DelayTime="0" PointID="2031" EnemyID="2004">
+    <EnemyName>方便看</EnemyName>
+    <SpwanCount>3</SpwanCount>
+    <SpwanInterval>1000</SpwanInterval>
+    <NextWaveActiveNum>0</NextWaveActiveNum>
+    <MaxTime>1500</MaxTime>
+  </AllWaveList>
+  <AllWaveList ID="39" WaveID="4" DelayTime="0" PointID="2026" EnemyID="2004">
+    <EnemyName>方便看</EnemyName>
+    <SpwanCount>3</SpwanCount>
+    <SpwanInterval>1000</SpwanInterval>
+    <NextWaveActiveNum>0</NextWaveActiveNum>
+    <MaxTime>1500</MaxTime>
+  </AllWaveList>
+  <AllWaveList ID="40" WaveID="4" DelayTime="0" PointID="3006" EnemyID="2004">
+    <EnemyName>方便看</EnemyName>
+    <SpwanCount>3</SpwanCount>
+    <SpwanInterval>1000</SpwanInterval>
+    <NextWaveActiveNum>0</NextWaveActiveNum>
+    <MaxTime>1500</MaxTime>
+  </AllWaveList>
+  <AllWaveList ID="41" WaveID="4" DelayTime="0" PointID="3004" EnemyID="2004">
+    <EnemyName>方便看</EnemyName>
+    <SpwanCount>3</SpwanCount>
+    <SpwanInterval>1000</SpwanInterval>
     <NextWaveActiveNum>0</NextWaveActiveNum>
     <MaxTime>1500</MaxTime>
   </AllWaveList>

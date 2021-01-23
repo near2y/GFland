@@ -1,0 +1,47 @@
+ManifestFileVersion: 0
+CRC: 2026945732
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 67ed25217de903fd7abcddb0a20c8747
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 7f9158ef341766811e47f1954d0650cc
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: d9d48af3a36036449b6a1c6c127d695e, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 93edd37c35bc41c4f872dc83b137ae41, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 135
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+- Class: 195
+  Script: {instanceID: 0}
+Assets:
+- "Assets/\u67AA\u706B\u4E4B\u5730/Prefabs/spider3.prefab"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Materials/Enemy/ms_spider_green_03.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/ms_spider_green_04.jpg"
+Dependencies:
+- F:/Near2y/GFland/Assets/../AssetBundle/Android/spider

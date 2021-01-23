@@ -16,8 +16,9 @@ public class Emitter : MonoBehaviour
     [Header(" <暂存> ")]
     //public GameObject bulletPre = null;
     public int bulletID = 4001;
-    public List<EnemyTest> targets = null;
+    public List<Enemy> targets = null;
     public Transform bulletPos = null;
+
 
 
 
@@ -42,6 +43,7 @@ public class Emitter : MonoBehaviour
         {
             AddDiffractionAbility();
         }
+
     }
 
     public void Attack(bool ing)
@@ -61,11 +63,16 @@ public class Emitter : MonoBehaviour
             }
         }
     }
+
+
+    public void SingleShot(Vector3 position,Vector3 targetPos,int count =1)
+    {
+        shootTrajactory.Spwan(position, targetPos, count);
+    }
      
     private void Update()
     {
         shootTrajactory.transform.position = bulletPos.position;
-        
     }
 
     public void AddDiffractionAbility()
