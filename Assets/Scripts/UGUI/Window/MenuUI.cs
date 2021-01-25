@@ -20,11 +20,7 @@ public class MenuUI : Window
     private void ClickStartBtn()
     {
         UIManager.Instance.CloseWindow(Name);
-        //if (TestData.Instance.TestConfig.inTest)
-        //{
-        //    openSceneName = TestData.Instance.TestConfig.testSceneName.ToString();
-        //}
-        GameMapManager.Instance.LoadScene("scene07",2);
+        GameManager.Instance.GameStart();
     }
 
     private void ClickSoundBtn()

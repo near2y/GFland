@@ -23,6 +23,7 @@ public class WaveData : ExcelBase
             wave.SpwanInterval = i;
             wave.NextWaveActiveNum = i;
             wave.MaxTime = i;
+            wave.SceneName = "scene07";
             AllWaveList.Add(wave);
         }
     }
@@ -119,4 +120,10 @@ public class WaveBase
     /// </summary>
     [XmlElement("MaxTime")]
     public float MaxTime { get; set; }
+
+    /// <summary>
+    /// 场景名称
+    /// </summary>
+    [XmlElement("SceneName")]
+    public string SceneName { get; set; }
 }

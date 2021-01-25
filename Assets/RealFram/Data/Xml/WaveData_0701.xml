@@ -6,6 +6,7 @@
     <SpwanInterval>0</SpwanInterval>
     <NextWaveActiveNum>0</NextWaveActiveNum>
     <MaxTime>1500</MaxTime>
+    <SceneName>scene07</SceneName>
   </AllWaveList>
   <AllWaveList ID="2" WaveID="1" DelayTime="0" PointID="3007" EnemyID="2001">
     <EnemyName>方便看</EnemyName>

@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class SceneManager : MonoSingleton<SceneManager>
 {
-    
-    public EnemyManager enemyManager;
+    [Header("< 设置 >")]
+    public Transform effectParent = null;
+
+    [HideInInspector]
     public Player player;
-    public WaveManager waveManager;
-    public EffectManager effectManager;
+    public EnemyManager enemyManager;
+    public WaveManager waveManager = null;
+    public EffectManager effectManager = null;
     public Transform pointsTrans;
     public GameCamera gameCamera;
     public EnemyPoints enemyPoints;
@@ -19,28 +22,27 @@ public class SceneManager : MonoSingleton<SceneManager>
     private void Start()
     {
         Init();
-
-        string wavePath = "Assets/RealFram/Data/Binary/WaveData_0701.bytes";
-#if UNITY_EDITOR
-        //if (!System.IO.File.Exists(wavePath))
-        //{
-        //    Debug.LogError(TestData.Instance.TestConfig.smallLevelID + "配置表文件不存在！请查看！");
-        //    UnityEditor.EditorApplication.isPaused = true;
-        //}
-#endif
-        WaveData waveData = ConfigerManager.Instance.FindData<WaveData>(wavePath);
-        waveManager.Init(waveData);
     }
 
     //初始化
     void Init()
     {
+        //waveManager
+        waveManager = new WaveManager(GameManager.Instance.waveData, this);
         //points
         enemyPoints = new EnemyPoints(pointsTrans);
         player = ObjectManager.Instance.InstantiateObject(playerPrePath).GetComponent<Player>();
         player.transform.SetParent(transform);
         gameCamera.SetTarget(player.transform);
+        //effectManager
+        Transform parent = effectParent == null ? transform : effectParent;
+        effectManager = new EffectManager(GameManager.Instance.effectData, parent);
 
+    }
+
+    private void Update()
+    {
+        waveManager.Update();
     }
 
 

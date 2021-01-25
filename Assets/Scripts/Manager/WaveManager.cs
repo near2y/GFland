@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaveManager : MonoBehaviour
+public class WaveManager
 {
 
     bool inited = false;
@@ -12,17 +12,17 @@ public class WaveManager : MonoBehaviour
     int waveIndex = 0;
 
     public WaveBehavior CurrentWave { get { return waveBehaviorDic[waveIndex]; } }
+    
 
-
-    public void Init(WaveData data)
+    public WaveManager(WaveData data,MonoBehaviour mono)
     {
         waveData = data;
         foreach (WaveBase waveBase in data.AllWaveList)
         {
             List<WaveBase> list = null;
-            if(!waveBaseListDic.TryGetValue(waveBase.WaveID,out list) || list == null)
+            if (!waveBaseListDic.TryGetValue(waveBase.WaveID, out list) || list == null)
             {
-                list = new List<WaveBase>();    
+                list = new List<WaveBase>();
                 waveBaseListDic[waveBase.WaveID] = list;
             }
             list.Add(waveBase);
@@ -31,7 +31,7 @@ public class WaveManager : MonoBehaviour
         {
             WaveBehavior wb = new WaveBehavior();
             waveBehaviorDic[waveID] = wb;
-            wb.Init(waveBaseListDic[waveID], this);
+            wb.Init(waveBaseListDic[waveID], mono);
         }
         inited = true;
 
@@ -39,8 +39,13 @@ public class WaveManager : MonoBehaviour
         waveBehaviorDic[waveIndex].Active();
     }
 
+    //public void Init(WaveData data)
+    //{
 
-    private void Update()
+    //}
+
+
+    public void Update()
     {
         if (!inited) return;
 

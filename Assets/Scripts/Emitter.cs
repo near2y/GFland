@@ -73,6 +73,11 @@ public class Emitter : MonoBehaviour
     private void Update()
     {
         shootTrajactory.transform.position = bulletPos.position;
+        Vector3 euler = bulletPos.rotation.eulerAngles;
+        euler.x = 0;
+        var rotaion = bulletPos.rotation;
+        rotaion.eulerAngles = euler;
+        shootTrajactory.transform.rotation = rotaion;
     }
 
     public void AddDiffractionAbility()

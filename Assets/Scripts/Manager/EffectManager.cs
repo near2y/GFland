@@ -2,21 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EffectManager : MonoBehaviour
+public class EffectManager
 {
     EffectData effectData = null;
+    Transform effectParent = null;
 
-    private void Awake()
+    public EffectManager(EffectData data,Transform parent)
     {
-        effectData = ConfigerManager.Instance.FindData<EffectData>(CFG.TABLE_BULLET);
-
+        effectData = data;
+        effectParent = parent;
     }
 
     public GameObject GetEffect(int id)
     {
         EffectBase data = effectData.FindByID(id);
         GameObject effect = ObjectManager.Instance.InstantiateObject(data.PrefabPath);
-        effect.transform.SetParent(transform);
+        effect.transform.SetParent(effectParent);
         effect.SetActive(true);
         return effect;
     }

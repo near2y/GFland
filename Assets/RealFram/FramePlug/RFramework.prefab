@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4598824524797380}
   - component: {fileID: 114849280847294876}
+  - component: {fileID: 573091145827960600}
   m_Layer: 0
   m_Name: RFramework
   m_TagString: Untagged
@@ -51,6 +52,19 @@ MonoBehaviour:
   m_WindowRoot: {fileID: 1219821691723402221}
   m_UICamera: {fileID: 2873921995606039801}
   m_UIEventSystem: {fileID: 0}
+--- !u!114 &573091145827960600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341015384496180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20391e0f51dbd046afe504fabe6d991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveID: 0701
 --- !u!1 &1447137171226232
 GameObject:
   m_ObjectHideFlags: 0
