@@ -8,7 +8,8 @@ public class EnemyBehaviorDying : EnemyBehaviorBase
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         enemy.bodyCollider.enabled = false;
-        enemy.agent.enabled = false;
+        if(enemy.agent != null)enemy.agent.enabled = false;
+        enemy.completeInStage = false;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

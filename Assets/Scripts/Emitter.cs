@@ -65,9 +65,9 @@ public class Emitter : MonoBehaviour
     }
 
 
-    public void SingleShot(Vector3 position,Vector3 targetPos,int count =1)
+    public void SingleShot(Vector3 position,Vector3 targetPos)
     {
-        shootTrajactory.Spwan(position, targetPos, count);
+        shootTrajactory.Spwan(position, targetPos);
     }
      
     private void Update()
@@ -106,5 +106,10 @@ public class Emitter : MonoBehaviour
         shootObj.transform.localEulerAngles = Vector3.zero;
         t.pTrajactory = shootObj.AddComponent<Trajactory>();
         t.pTrajactory.Init(this, bulletSpeed, shootCount, bulletFrequency, shootFrequency);
+    }
+
+    public void Stop()
+    {
+        shootTrajactory.system.Stop();
     }
 }

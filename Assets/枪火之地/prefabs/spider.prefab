@@ -355,6 +355,7 @@ MonoBehaviour:
   hp: 100
   walkSpeedRatio: 1
   attackSpeedRatio: 1
+  inStageSpeedRatio: 1
   startPos: {fileID: 0}
   agentTarget: {fileID: 0}
   emitter: {fileID: 0}
@@ -362,6 +363,8 @@ MonoBehaviour:
   agent: {fileID: 0}
   bodyCollider: {fileID: 0}
   targetSqrDis: 0
+  completeInStage: 0
+  attackTimer: 0
   id_Attack: 1080829965
   melee: 1
   startRange: {x: 0.6, y: 0.8}

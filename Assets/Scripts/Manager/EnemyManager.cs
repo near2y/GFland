@@ -39,7 +39,7 @@ public class EnemyManager :  MonoBehaviour
         //obj.transform.position = fullPoint.position;
         //obj.transform.rotation = fullPoint.rotation;
         enemy.InStage(SceneManager.Instance.player.transform,fullPoint);
-
+        enemy.hp = data.Hp;
         //加到集合中
     }
 

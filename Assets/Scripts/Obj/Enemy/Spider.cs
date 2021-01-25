@@ -35,11 +35,8 @@ public class Spider : Enemy
             //落下来的
             anim.SetFloat(id_SpwanType, 0);
             anim.Play(EnemyState.InStage);
-
         }
-        //恢复血量
-        hp = 100;
-
+        attackTimer = attackInterval;
     }
 
     private void OnParticleCollision(GameObject other)

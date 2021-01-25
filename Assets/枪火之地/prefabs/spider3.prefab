@@ -388,6 +388,7 @@ MonoBehaviour:
   hp: 100
   walkSpeedRatio: 1
   attackSpeedRatio: 1
+  inStageSpeedRatio: 1
   startPos: {fileID: 0}
   agentTarget: {fileID: 0}
   emitter: {fileID: 0}
@@ -413,7 +414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 8
-  shootCount: 1
+  shootCount: 3
   bulletFrequency: 100
   shootFrequency: 100
   penetrateCount: 0

@@ -17,6 +17,7 @@ public class DataEditor
     public static string RegPath = Application.dataPath + "/../Data/Reg/";
     public static string WaveXmlPath = Application.dataPath + "/../Data/Excel/Wave/";
 
+
     [MenuItem("Assets/类转xml")]
     public static void AssetsClassToXml()
     {
@@ -336,8 +337,6 @@ public class DataEditor
             XmlToBinary(objs[i].name, path, name);
 
         }
-        AssetDatabase.Refresh();
-        EditorUtility.ClearProgressBar();
     }
 
     public static void ExcelToXml(string name,string exName = null,string path = null)
@@ -1122,6 +1121,8 @@ public class DataEditor
         {
             Debug.LogError(name + "xml转二进制失败！");
         }
+                AssetDatabase.Refresh();
+        EditorUtility.ClearProgressBar();
     }
 
     /// <summary>

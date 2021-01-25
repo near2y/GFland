@@ -33,9 +33,14 @@ public abstract class  Enemy : MonoBehaviour
     public Collider bodyCollider;
     [HideInInspector]
     public float targetSqrDis;
+    [HideInInspector]
+    public bool completeInStage= false;
+    [HideInInspector]
+    public float attackTimer = 0;
 
     [HideInInspector]
     public int id_Attack = Animator.StringToHash("Attack");
+
 
     protected bool died = false;
 

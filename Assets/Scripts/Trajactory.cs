@@ -66,10 +66,9 @@ public class Trajactory : MonoBehaviour
         get { return inPlay; }
     }
 
-    public void Spwan(Vector3 position,Vector3 targetPos,int count = 1)
+    public void Spwan(Vector3 position,Vector3 targetPos)
     {
         system.Stop();
-        bulletProp.ShootCount = count;
         bulletProp.Loop = false;
         transform.position = position;
         transform.LookAt(targetPos);

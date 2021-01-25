@@ -81,9 +81,9 @@ public class Player : MonoBehaviour
             h = joystick.movement.x;
             v = joystick.movement.z;
         }
+        Move(h, v);
         Turning();
         Animating(h, v);
-        Move(h, v);
     }
 
 
@@ -111,6 +111,7 @@ public class Player : MonoBehaviour
 
     void Attack()
     {
+
         if (inAttack)
         {
             //attackEffect.transform.position = attackEffectPos.position;
@@ -147,7 +148,7 @@ public class Player : MonoBehaviour
     {
         enemy = SceneManager.Instance.enemyManager.FindCloseEnemy(attackDis);
         if (enemy != null  )
-        { 
+        {
             //transform.LookAt(enemy.transform.position);
             Vector3 playerToMouse = enemy.transform.position - transform.position;
             playerToMouse.y = 0f;
@@ -161,10 +162,12 @@ public class Player : MonoBehaviour
             }
             else
             {
+                emitter.bulletPos.LookAt(enemy.transform);
+                //transform.LookAt(enemy.transform.position);
                 transform.rotation = newRotation;
                 ratio *= 0.9f;
                 if (ratio < 0.1) ratio = 0;
-                anim.SetFloat(aniID_Turning, ratio);
+                anim.SetFloat(aniID_Turning, 0);
             }
         }
         if(enemy == null && anim.GetFloat(aniID_Turning) != 0)

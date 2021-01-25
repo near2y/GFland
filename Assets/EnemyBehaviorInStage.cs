@@ -8,7 +8,10 @@ public class EnemyBehaviorInStage : EnemyBehaviorBase
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         enemy.bodyCollider.enabled = false;
-        enemy.agent.enabled = false;
+        if(enemy.agent != null)
+        {
+            enemy.agent.enabled = false;
+        }
         enemy.anim.speed = enemy.anim.speed * enemy.inStageSpeedRatio;
     }
 
@@ -27,6 +30,7 @@ public class EnemyBehaviorInStage : EnemyBehaviorBase
         {
             SceneManager.Instance.enemyManager.AddEnemy(enemy);
         }
+        enemy.completeInStage = true;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
