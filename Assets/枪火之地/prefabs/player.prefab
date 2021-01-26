@@ -171,7 +171,7 @@ MonoBehaviour:
   attackParticle: {fileID: 0}
   shootParticle: {fileID: 0}
   inAttack: 0
-  ATK: 5
+  ATK: 9
   emitter: {fileID: 2697930127955747723}
   joystick: {fileID: 0}
   hadJoystick: 0
@@ -188,12 +188,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93edd37c35bc41c4f872dc83b137ae41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 25
+  bulletSpeed: 18
   shootCount: 1
-  bulletFrequency: 100
-  shootFrequency: 125
+  bulletFrequency: 50
+  shootFrequency: 75
   penetrateCount: 0
-  diffractionCount: 2
+  diffractionCount: 0
   bulletID: 4001
   targets: []
   bulletPos: {fileID: 7077405924559495786}

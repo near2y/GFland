@@ -64,8 +64,8 @@ public class Joystick : MonoBehaviour
             }
             if (Vector3.SqrMagnitude(knob.localPosition) >= safeRadius * safeRadius)
             {
-                movement.x = knob.localPosition.x / (moveArea.rect.width * 0.5f);
-                movement.z = knob.localPosition.y / (moveArea.rect.height * 0.5f);
+                movement.x = knob.localPosition.x / (moveArea.rect.width * 0.25f);
+                movement.z = knob.localPosition.y / (moveArea.rect.height * 0.25f);
             }
         }
     }

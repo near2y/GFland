@@ -16,7 +16,10 @@ public class EnemyBehaviorDying : EnemyBehaviorBase
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         //Debug.Log(stateInfo.normalizedTime/stateInfo.length);
-        enemy.meshRenderer.material.SetFloat("_DissvoleRange", stateInfo.normalizedTime);
+        if (enemy.meshRenderer != null)
+        {
+            enemy.meshRenderer.material.SetFloat("_DissvoleRange", stateInfo.normalizedTime);
+        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

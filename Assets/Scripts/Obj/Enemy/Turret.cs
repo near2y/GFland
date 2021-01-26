@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Turret : Enemy
 {
-    float attackTimer = 0;
+    private float shootTimer = 0;
 
     public override void InStage(Transform target, Transform spwanPoint)
     {
@@ -13,17 +13,18 @@ public class Turret : Enemy
         //登场
         anim.Play(EnemyState.InStage);
         attackTimer = emitter.shootFrequency;
-
+        shootTimer = 0;
     }
 
 
     protected void Update()
     {
         base.Update();
-        attackTimer += Time.deltaTime * 1000;
-        if (completeInStage && attackTimer >= emitter.shootFrequency)
+        shootTimer += Time.deltaTime * 1000;
+        if (completeInStage && shootTimer >= emitter.shootFrequency)
         {
-            attackTimer = 0;
+            Debug.Log("near2y");
+            shootTimer = 0;
             emitter.SingleShot(emitter.bulletPos.position, emitter.bulletPos.position + emitter.bulletPos.forward);
         }
     }

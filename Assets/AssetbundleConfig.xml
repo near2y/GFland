@@ -8,6 +8,7 @@
   <ABList Path="Assets/RealFram/Data/Binary/WaveData.bytes" Crc="2240778075" ABName="data" AssetName="WaveData.bytes" />
   <ABList Path="Assets/RealFram/Data/Binary/WaveData_0701.bytes" Crc="3116184195" ABName="data" AssetName="WaveData_0701.bytes" />
   <ABList Path="Assets/枪火之地/Prefabs/drone.prefab" Crc="2754423227" ABName="drone" AssetName="drone.prefab" />
+  <ABList Path="Assets/枪火之地/Effects/Prefabs/ef_behit_02.prefab" Crc="1662204411" ABName="ef_behit_02" AssetName="ef_behit_02.prefab" />
   <ABList Path="Assets/枪火之地/Effects/Prefabs/ef_bl_gun01.prefab" Crc="2521747447" ABName="ef_bl_gun01" AssetName="ef_bl_gun01.prefab" />
   <ABList Path="Assets/枪火之地/Effects/Prefabs/enemyBullet.prefab" Crc="1486010686" ABName="enemybullet" AssetName="enemyBullet.prefab">
     <ABDependce>ef_bl_gun01</ABDependce>
@@ -19,15 +20,21 @@
   <ABList Path="Assets/枪火之地/Prefabs/UGUI/Panel/LoadPanel.prefab" Crc="1009531790" ABName="loadpanel" AssetName="LoadPanel.prefab" />
   <ABList Path="Assets/枪火之地/Prefabs/UGUI/Panel/MenuPanel.prefab" Crc="3394116768" ABName="menupanel" AssetName="MenuPanel.prefab" />
   <ABList Path="Assets/枪火之地/Prefabs/player.prefab" Crc="4186349503" ABName="player" AssetName="player.prefab" />
-  <ABList Path="Assets/枪火之地/Prefabs/spider.prefab" Crc="634238993" ABName="spider" AssetName="spider.prefab" />
+  <ABList Path="Assets/枪火之地/Prefabs/spider.prefab" Crc="634238993" ABName="spider" AssetName="spider.prefab">
+    <ABDependce>drone</ABDependce>
+  </ABList>
   <ABList Path="Assets/枪火之地/Prefabs/spider2.prefab" Crc="3758797836" ABName="spider2" AssetName="spider2.prefab">
+    <ABDependce>drone</ABDependce>
     <ABDependce>spider</ABDependce>
   </ABList>
   <ABList Path="Assets/枪火之地/Prefabs/spider3.prefab" Crc="748729490" ABName="spider3" AssetName="spider3.prefab">
+    <ABDependce>drone</ABDependce>
     <ABDependce>spider</ABDependce>
   </ABList>
   <ABList Path="Assets/枪火之地/Effects/Prefabs/testBullet.prefab" Crc="182895824" ABName="testbullet" AssetName="testBullet.prefab">
     <ABDependce>ef_bl_gun01</ABDependce>
   </ABList>
-  <ABList Path="Assets/枪火之地/Prefabs/turret.prefab" Crc="2702537470" ABName="turret" AssetName="turret.prefab" />
+  <ABList Path="Assets/枪火之地/Prefabs/turret.prefab" Crc="2702537470" ABName="turret" AssetName="turret.prefab">
+    <ABDependce>drone</ABDependce>
+  </ABList>
 </AssetBundleConfig>

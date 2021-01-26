@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2468684414
+CRC: 2258697241
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 22aae8fef5cfa5523516fbb13842fecd
+    Hash: f30057f2c380cd9dbb52d828bdf18f7a
   TypeTreeHash:
     serializedVersion: 2
-    Hash: cb2daf783d8fa5e82ffbc8df781e3df4
+    Hash: 9691e3acbb5e46a898405b1b70d57ec0
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -45,13 +45,16 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 137
   Script: {instanceID: 0}
+- Class: 195
+  Script: {instanceID: 0}
 Assets:
 - "Assets/\u67AA\u706B\u4E4B\u5730/Models/Enemy/turret_ani.fbx"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Materials/Enemy/turret.mat"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Models/Enemy/turret_Death.anim"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Animation/Enemy/TurretAC.controller"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Prefabs/turret.prefab"
-- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/ms_turret_white_04.jpg"
-- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/ms_turret_white_01.jpg"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Textures/ms_turret_white_04.jpg"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Textures/ms_turret_white_01.jpg"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Models/Enemy/Materials/turret.mat"
-Dependencies: []
+Dependencies:
+- F:/Near2y/GFland/Assets/../AssetBundle/Android/drone

@@ -1,4 +1,4 @@
-Shader "PolyboxStandard"
+Shader "GFLand/MaterialFog"
 {
 	Properties
 	{

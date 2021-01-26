@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2908472927
+CRC: 3902317457
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 369a4b04a835b7e5ad45c396ca55cc5c
+    Hash: 5dab8b6b7a87ef66ea781b1b1fd0029b
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 6b8e99316d8903bd7c13ef641eeae4b4
+    Hash: 205d09b970665240c9063818eb5b7343
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -42,6 +42,7 @@ ClassTypes:
 Assets:
 - "Assets/\u67AA\u706B\u4E4B\u5730/Prefabs/spider3.prefab"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Materials/Enemy/ms_spider_green_03.mat"
-- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/ms_spider_green_04.jpg"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Textures/ms_spider_green_04.jpg"
 Dependencies:
+- F:/Near2y/GFland/Assets/../AssetBundle/Android/drone
 - F:/Near2y/GFland/Assets/../AssetBundle/Android/spider

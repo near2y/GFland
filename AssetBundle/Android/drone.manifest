@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 4011749775
+CRC: 950432431
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 6fbacceb28ba54b054c681c211fee9ee
+    Hash: 04b2999abb76277a5f6c6b0089d7a946
   TypeTreeHash:
     serializedVersion: 2
-    Hash: b38945eaf37e90e80a358a13b3f8bd76
+    Hash: 40cffb49e48f47d8afeb0125e9d4ba16
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -55,10 +55,12 @@ Assets:
 - "Assets/\u67AA\u706B\u4E4B\u5730/Prefabs/drone.prefab"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Models/Enemy/drone_ani/birth1.anim"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Models/Enemy/drone_ani/die.anim"
-- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/ms_drone_white_02.jpg"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Textures/ms_drone_white_02.jpg"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Materials/Enemy/Enemy.shader"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Models/Enemy/drone_ani/birth2.anim"
-- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/ms_drone_white_01.jpg"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Textures/ms_drone_white_01.jpg"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Models/Enemy/drone_ani/idle.anim"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Textures/Shader/monsterDyingNoise.png"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Materials/Enemy/drone.mat"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Animation/Enemy/DroneAC.controller"
 Dependencies: []

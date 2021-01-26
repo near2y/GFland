@@ -85,8 +85,12 @@ public abstract class  Enemy : MonoBehaviour
         //玩家与敌人的距离平方
         targetSqrDis = Vector3.SqrMagnitude(transform.position - agentTarget.position);
         //恢复render
-        meshRenderer.material.SetFloat("_DissvoleRange", 0);
-        meshRenderer.material.SetFloat("_colorrange", startColorRange);
+        if (meshRenderer != null)
+        {
+            meshRenderer.material.SetFloat("_DissvoleRange", 0);
+            meshRenderer.material.SetFloat("_colorrange", startColorRange);
+        }
+
 
     }
 
@@ -100,7 +104,10 @@ public abstract class  Enemy : MonoBehaviour
         died = true;
         anim.Play(EnemyState.Dying);
         SceneManager.Instance.enemyManager.ClearEnemy(this);
-        meshRenderer.material.SetFloat("_colorrange", 0.3f);
+        if (meshRenderer != null)
+        {
+            meshRenderer.material.SetFloat("_colorrange", 0.3f);
+        }
     }
 
     protected void Update()
