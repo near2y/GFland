@@ -16,10 +16,12 @@ public class Turret : Enemy
 
     }
 
-    private void Update()
+
+    protected void Update()
     {
+        base.Update();
         attackTimer += Time.deltaTime * 1000;
-        if (completeInStage && attackTimer>= emitter.shootFrequency)
+        if (completeInStage && attackTimer >= emitter.shootFrequency)
         {
             attackTimer = 0;
             emitter.SingleShot(emitter.bulletPos.position, emitter.bulletPos.position + emitter.bulletPos.forward);
@@ -29,6 +31,7 @@ public class Turret : Enemy
     private void OnParticleCollision(GameObject other)
     {
         hp -= SceneManager.Instance.player.ATK;
+        OnHit();
         if (hp <= 0 && !died)
         {
             emitter.Stop();

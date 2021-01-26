@@ -389,6 +389,7 @@ MonoBehaviour:
   walkSpeedRatio: 1
   attackSpeedRatio: 1
   inStageSpeedRatio: 1
+  meshRenderer: {fileID: 8841969229254788041}
   startPos: {fileID: 0}
   agentTarget: {fileID: 0}
   emitter: {fileID: 0}
@@ -396,6 +397,8 @@ MonoBehaviour:
   agent: {fileID: 0}
   bodyCollider: {fileID: 0}
   targetSqrDis: 0
+  completeInStage: 0
+  attackTimer: 0
   id_Attack: 1080829965
   melee: 0
   startRange: {x: 0.6, y: 0.8}

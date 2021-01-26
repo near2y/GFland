@@ -356,6 +356,7 @@ MonoBehaviour:
   walkSpeedRatio: 1
   attackSpeedRatio: 1
   inStageSpeedRatio: 1
+  meshRenderer: {fileID: 8841969229254788041}
   startPos: {fileID: 0}
   agentTarget: {fileID: 0}
   emitter: {fileID: 0}
@@ -418,7 +419,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: defdcfa4ef50a6c48a6b29631088869a, type: 2}
+  - {fileID: 2100000, guid: a87ce587367290242958d5e8c9a7a239, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

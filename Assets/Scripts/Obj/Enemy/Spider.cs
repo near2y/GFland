@@ -16,6 +16,7 @@ public class Spider : Enemy
     public int id_SpwanType = Animator.StringToHash("SpwanType");
 
 
+
     public override void InStage(Transform target, Transform spwanPoint)
     {
         Init(target, spwanPoint);
@@ -37,11 +38,17 @@ public class Spider : Enemy
             anim.Play(EnemyState.InStage);
         }
         attackTimer = attackInterval;
+        if (meshRenderer != null) 
+        {
+            startColorRange = meshRenderer.material.GetFloat("_colorrange");
+        }
     }
+
 
     private void OnParticleCollision(GameObject other)
     {
         hp -= SceneManager.Instance.player.ATK;
+        OnHit();
         if (hp <= 0 && !died)
         {
             Dying();

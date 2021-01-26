@@ -34,6 +34,7 @@ public class Drone : Enemy
     private void OnParticleCollision(GameObject other)
     {
         hp -= SceneManager.Instance.player.ATK;
+        OnHit();
         if (hp <= 0 && !died)
         {
             Dying();

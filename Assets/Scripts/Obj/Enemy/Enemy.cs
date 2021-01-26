@@ -18,6 +18,8 @@ public abstract class  Enemy : MonoBehaviour
     public float attackSpeedRatio = 1;
     //登场速度比例
     public float inStageSpeedRatio = 1;
+    //怪物材质
+    public SkinnedMeshRenderer meshRenderer = null;
 
     [Header("< 调试相关 >")]
     public Transform startPos;
@@ -43,8 +45,10 @@ public abstract class  Enemy : MonoBehaviour
 
 
     protected bool died = false;
+    protected float startColorRange = 1;
 
-    private void Awake()
+
+    protected void Awake()
     {
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
@@ -80,12 +84,15 @@ public abstract class  Enemy : MonoBehaviour
         died = false;
         //玩家与敌人的距离平方
         targetSqrDis = Vector3.SqrMagnitude(transform.position - agentTarget.position);
+        //恢复render
+        meshRenderer.material.SetFloat("_DissvoleRange", 0);
+        meshRenderer.material.SetFloat("_colorrange", startColorRange);
+
     }
 
     public void Release()
     {
         ObjectManager.Instance.ReleaseObject(gameObject,recycleParent:false);
-
     }
 
     public void Dying()
@@ -93,6 +100,29 @@ public abstract class  Enemy : MonoBehaviour
         died = true;
         anim.Play(EnemyState.Dying);
         SceneManager.Instance.enemyManager.ClearEnemy(this);
+        meshRenderer.material.SetFloat("_colorrange", 0.3f);
+    }
+
+    protected void Update()
+    {
+        if (hitting && !died)
+        {
+            float res = Mathf.Lerp(meshRenderer.material.GetFloat("_colorrange"), startColorRange, 50 * Time.deltaTime);
+            if (res - startColorRange < 0.3f)
+            {
+                hitting = false;
+                res = startColorRange;
+            }
+            meshRenderer.material.SetFloat("_colorrange", res);
+        }
+    }
+
+    protected bool hitting = false;
+    protected void OnHit()
+    {
+        if (meshRenderer == null) return;
+        meshRenderer.material.SetFloat("_colorrange", 15);
+        hitting = true;
     }
 }
 

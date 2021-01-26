@@ -346,6 +346,10 @@ MonoBehaviour:
   attackRange: 8
   attackInterval: 1000
   hp: 100
+  walkSpeedRatio: 1
+  attackSpeedRatio: 1
+  inStageSpeedRatio: 1
+  meshRenderer: {fileID: 4290956574675978532}
   startPos: {fileID: 0}
   agentTarget: {fileID: 0}
   emitter: {fileID: 0}
@@ -353,6 +357,8 @@ MonoBehaviour:
   agent: {fileID: 0}
   bodyCollider: {fileID: 0}
   targetSqrDis: 0
+  completeInStage: 0
+  attackTimer: 0
   id_Attack: 1080829965
   id_SpwanType: -1068817168
 --- !u!114 &114132520038430184

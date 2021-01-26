@@ -12,7 +12,6 @@
   <ABList Path="Assets/枪火之地/Effects/Prefabs/enemyBullet.prefab" Crc="1486010686" ABName="enemybullet" AssetName="enemyBullet.prefab">
     <ABDependce>ef_bl_gun01</ABDependce>
   </ABList>
-  <ABList Path="Assets/枪火之地/Prefabs/Enviroment.prefab" Crc="2817698728" ABName="enviroment" AssetName="Enviroment.prefab" />
   <ABList Path="Assets/枪火之地/Prefabs/UGUI/Panel/GamePanel.prefab" Crc="2095530222" ABName="gamepanel" AssetName="GamePanel.prefab">
     <ABDependce>joystick</ABDependce>
   </ABList>
@@ -30,4 +29,5 @@
   <ABList Path="Assets/枪火之地/Effects/Prefabs/testBullet.prefab" Crc="182895824" ABName="testbullet" AssetName="testBullet.prefab">
     <ABDependce>ef_bl_gun01</ABDependce>
   </ABList>
+  <ABList Path="Assets/枪火之地/Prefabs/turret.prefab" Crc="2702537470" ABName="turret" AssetName="turret.prefab" />
 </AssetBundleConfig>

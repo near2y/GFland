@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2947949764
+CRC: 1496373702
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 78516153aba938f745d113d81e34a953
+    Hash: 4cb2e00c6b092e723106f6f91f88e42e
   TypeTreeHash:
     serializedVersion: 2
     Hash: 4b5541b58c20e91146a6859945f7dc93
@@ -55,12 +55,16 @@ Assets:
 - "Assets/\u67AA\u706B\u4E4B\u5730/Materials/player/bl_gun04.mat"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Animation/PlayerAC.controller"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Texture/player/bl_gun05.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Animation/Player/run_left.anim"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Animation/Player/run_front.anim"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Animation/Player/run_back.anim"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Prefabs/player.prefab"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Models/player/lemon_skin.fbx"
-- "Assets/\u67AA\u706B\u4E4B\u5730/Animation/hm_lemon_ani.fbx"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Animation/Player/hm_lemon_ani.fbx"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Materials/player/hm_lemon_glass_01.mat"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Materials/player/bl_gun01.mat"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Materials/player/hm_lemon_01.mat"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Texture/player/bl_gun03.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Animation/Player/run_right.anim"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Texture/player/bl_gun04.png"
 Dependencies: []

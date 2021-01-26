@@ -188,10 +188,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93edd37c35bc41c4f872dc83b137ae41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 15
+  bulletSpeed: 25
   shootCount: 1
   bulletFrequency: 100
-  shootFrequency: 100
+  shootFrequency: 125
   penetrateCount: 0
   diffractionCount: 2
   bulletID: 4001
