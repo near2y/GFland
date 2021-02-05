@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     int aniID_Vertical = Animator.StringToHash("Vertical");
     int aniID_Turning = Animator.StringToHash("Turning");
     int aniID_Attack = Animator.StringToHash("Attack");
+    int aniID_StartGame = Animator.StringToHash("StartGame");
 
     [Header("< 玩家参数 >")]
     public float speed = 3;
@@ -16,6 +17,7 @@ public class Player : MonoBehaviour
     public float aniSpeed = 1.2f;
     [Range(0, 1)]
     public float rotLerp = 0.75f;
+    public Renderer meshRenderer = null;
 
 
     [Header("< 攻击相关 >")]
@@ -26,6 +28,7 @@ public class Player : MonoBehaviour
     public bool inAttack;
     public float ATK = 5;
     public Emitter emitter = null;
+    public PlayerBoomSkill skill = null;
 
     [Header("< 玩家游戏中变量展示 >")]
     public Joystick joystick = null;
@@ -33,6 +36,16 @@ public class Player : MonoBehaviour
 
     Animator anim;
     Vector3 aniDir;
+    //bool hitting = false;
+
+    //glitter
+    //float startColorrange = 0;
+    float glitterTimer = 0;
+    bool inGlitter = false;
+    public float glitterTime = 1;
+    const string emissionColorStr = "_EmissionColor";
+    public List<Renderer> meshRenders;
+    Dictionary<int, Color> renderEmissionStandColorDic = new Dictionary<int, Color>();
 
     //Enemy
     public Enemy enemy;
@@ -40,23 +53,38 @@ public class Player : MonoBehaviour
     Vector3 movement;
 
     CharacterController cCtrl;
+    bool inGame = false;
 
-    private void Start()
+    //ray
+    float camRayLength = 100f;
+    int floorMask;
+
+
+    private void Awake()
     {
         anim = GetComponent<Animator>();
         anim.speed = aniSpeed;
         cCtrl = GetComponent<CharacterController>();
         movement = new Vector3();
-
-        //attackEffect = GameManager.Instance.effectManager.GetEffect(4001);
-        //attackParticle = attackEffect.GetComponent<ParticleSystem>();
-        //attackParticle.Stop();
-        //emitter.AddDiffractionAbility();
+        floorMask = LayerMask.GetMask("InputRay");
+        //startColorrange = Method.GetColorrangeInRender(meshRenderer);
     }
+
+    private void Start()
+    {
+        meshRenders = new List<Renderer>();
+        foreach (var item in transform.GetComponentsInChildren<Renderer>())
+        {
+            renderEmissionStandColorDic.Add(meshRenders.Count, item.material.GetColor(emissionColorStr));
+            meshRenders.Add(item);
+        }
+    }
+
 
 
     private void FixedUpdate()
     {
+        if (!inGame) return;
         //Move
         if(!hadJoystick)
         {
@@ -70,7 +98,50 @@ public class Player : MonoBehaviour
         ComMovement();
 
         Attack();
-        
+
+        if (inGlitter)
+        {
+            glitterTimer += Time.deltaTime;
+            for (int i = 0; i < meshRenders.Count; i++)
+            {
+                Color color = Color.Lerp(meshRenders[i].material.GetColor(emissionColorStr), renderEmissionStandColorDic[i], glitterTimer / glitterTime);
+                meshRenders[i].material.SetColor(emissionColorStr, color);
+            }
+            if (glitterTimer >= glitterTime) inGlitter = false;
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            skill.ReleaseSkill();
+        }
+    }
+
+    public void OnWin()
+    {
+        inGame = false;
+        //停止发射武器
+        emitter.Attack(false);
+        anim.Play("OverShow");
+        SceneManager.Instance.gameUI.ShowClear();
+    }
+
+    void OverInStage()
+    {
+        emitter.SetActive(true);
+        SceneManager.Instance.StartWave();
+        inGame = true;
+
+        skill = SceneManager.Instance.effectManager.GetEffect(4006).GetComponent<PlayerBoomSkill>();
+        skill.player = transform;
+    }
+
+    void FullGround()
+    {
+        GameObject effect = SceneManager.Instance.effectManager.GetEffect(4007);
+        effect.transform.position = transform.position;
+        effect.transform.localScale = Vector3.one;
+        Handheld.Vibrate();
     }
 
     void ComMovement()
@@ -81,9 +152,9 @@ public class Player : MonoBehaviour
             h = joystick.movement.x;
             v = joystick.movement.z;
         }
+        Move(h, v);
         Turning();
         Animating(h, v);
-        Move(h, v);
     }
 
 
@@ -105,12 +176,17 @@ public class Player : MonoBehaviour
         {
             movement = movement.normalized;
         }
-        movement = movement * speed * Time.deltaTime;
+        
+        movement =  movement* speed * Time.deltaTime;
+
+        //cCtrl.Move(movement);
         cCtrl.SimpleMove(movement);
+        //transform.Translate(movement);
     }
 
     void Attack()
     {
+
         if (inAttack)
         {
             //attackEffect.transform.position = attackEffectPos.position;
@@ -132,45 +208,87 @@ public class Player : MonoBehaviour
                 inAttack = true;
                 //shootParticle.gameObject.SetActive(true);
                 emitter.Attack(true);
-
             }
         }
         anim.SetBool(aniID_Attack, inAttack);
     }
 
-
+    public bool StartGame
+    {
+        set
+        {
+            anim.SetBool(aniID_StartGame, value);
+        }
+    }
 
 
     #region 转向
     float ratio = 0;
+    Vector3 point = new Vector3();
     void Turning()
     {
         enemy = SceneManager.Instance.enemyManager.FindCloseEnemy(attackDis);
         if (enemy != null  )
-        { 
-            //transform.LookAt(enemy.transform.position);
-            Vector3 playerToMouse = enemy.transform.position - transform.position;
-            playerToMouse.y = 0f;
-            //lerp
-            Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
-            if (Mathf.Abs(transform.rotation.eulerAngles.y - newRotation.eulerAngles.y) > 5)
+        {
+            point = enemy.transform.position;
+        }
+        else
+        {
+            Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit floorHit;
+            if (Physics.Raycast(camRay, out floorHit, camRayLength, floorMask))
             {
-                transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, 5 * Time.deltaTime);
-                ratio = 1;
-                anim.SetFloat(aniID_Turning, ratio);
+                point = floorHit.point;
             }
             else
             {
-                transform.rotation = newRotation;
-                ratio *= 0.9f;
-                if (ratio < 0.1) ratio = 0;
-                anim.SetFloat(aniID_Turning, ratio);
+                return;
             }
         }
-        if(enemy == null && anim.GetFloat(aniID_Turning) != 0)
+        //转向具体点
+        //transform.LookAt(enemy.transform.position);
+        Vector3 playerToMouse = point - transform.position;
+        playerToMouse.y = 0f;
+        //lerp
+        Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
+        if (Mathf.Abs(transform.rotation.eulerAngles.y - newRotation.eulerAngles.y) > 10)
+        {
+            transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, 5 * Time.deltaTime);
+            ratio = 1;
+            anim.SetFloat(aniID_Turning, ratio);
+        }
+        else
+        {
+            //emitter.bulletPos.LookAt(enemy.transform);
+            transform.rotation = newRotation;
+            ratio *= 0.5f;
+            if (ratio < 0.1) ratio = 0;
+            anim.SetFloat(aniID_Turning, 0);
+        }
+
+        if (enemy == null && anim.GetFloat(aniID_Turning) != 0)
         {
             anim.SetFloat(aniID_Turning, 0);
         }
     }
     #endregion
+
+    //闪光
+    void Glitter()
+    {
+        for (int i = 0; i < meshRenders.Count; i++)
+        {
+            meshRenders[i].material.SetColor(emissionColorStr, Color.white);
+        }
+
+        glitterTimer = 0;
+        inGlitter = true;
+    }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        Glitter();
+        //hitting = Method.SetRenderColorRange(meshRenderer, 5);
+
+    }
 }

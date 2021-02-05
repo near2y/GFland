@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WaveData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <AllWaveList ID="1" WaveID="0" DelayTime="0" PointID="1001" EnemyID="2009">
+    <EnemyName>boss1</EnemyName>
+    <SpwanCount>1</SpwanCount>
+    <SpwanInterval>0</SpwanInterval>
+    <NextWaveActiveNum>0</NextWaveActiveNum>
+    <MaxTime>1500</MaxTime>
+    <SceneName>scene06</SceneName>
+  </AllWaveList>
+</WaveData>

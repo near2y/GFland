@@ -1,0 +1,81 @@
+ManifestFileVersion: 0
+CRC: 4083709531
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 861b6b95ec93fcc928dfa6e3b8424027
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: f6e6af738fafbee794793bb5713f4e43
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 749d13942c52b2043bfc55cfefef2270, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 974043386b0ee854e9e22c301c78c1e1, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 36046aa766c07734c94553678aaf118c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 507c127970f00fe40adbc30ecdc1b1c9, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9ef39c1bcfcb17649a00a53e9f754c7f, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 58e68c8b172a02643beac504a8992a45, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 0d77a58d30637b4409aebe3af91b469b, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 136
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+- Class: 195
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+Assets:
+- "Assets/\u67AA\u706B\u4E4B\u5730/Effects/Materials/particle_orange_bullet_06.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/models/Enemy/boss01_skin.fbx"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Effects/Textures/particle_orange_bullet_08.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Animation/boss01_ani.controller"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Animation/Boss1/boss1_fly.anim"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Effects/Materials/particle_blue_puff.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Effects/Textures/particle_orange_bullet_06.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/prefabs/Boss1.prefab"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Animation/Boss1/boss01_ani.fbx"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Animation/Boss1/fireStage01.anim"
+- "Assets/\u67AA\u706B\u4E4B\u5730/models/Enemy/Materials/boss_egg.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/ms_boss1_1.jpg"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Effects/Textures/particle_blue_puff.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Effects/Materials/particle_orange_bullet_08.mat"
+Dependencies:
+- F:/Near2y/GFland/Assets/../AssetBundle/Android/ammotitan
+- F:/Near2y/GFland/Assets/../AssetBundle/Android/bossrotateshootbullet 1
+- F:/Near2y/GFland/Assets/../AssetBundle/Android/bossshootbullet
+- F:/Near2y/GFland/Assets/../AssetBundle/Android/ef_ms_turret_white_blue_light

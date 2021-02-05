@@ -1,0 +1,61 @@
+ManifestFileVersion: 0
+CRC: 2795737309
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 729c9f3db812c5131da72ddff40b54e5
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: cb5cff3a1350143ce413b676b0fb473f
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+Assets:
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/sc_scene_9.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/sc_di_01_m.jpg"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/4_0_AlbedoTransparency.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/sc06/cookie_circle.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/sc06/w1_decal_line.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/4_0_Normal.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/123_DefaultMaterial_AlbedoTransparency.jpg"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/123_DefaultMaterial_Normal.tga"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/ceshi_14.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/ceshi_08.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/sc06/w1_decal_end_l.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/sc06/w1_tall_panel.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/cookie_circle.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/w1_decal_a.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/w1_decal_end_l.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/ceshi_07.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/sc06/w1_decal_end_r.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/sc06/w1_decal_b.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/sc_g2_06/sc_g2_06_01.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/sc06/w1_decal_big.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/w1_tall_panel_glow.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/New Folder/Texture/6_15 - Default_MetallicSmoothness.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/w1_decal_end_r.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/6_15 - Default_Normal.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/w1_decal_big.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/w1_tall_panel_nom.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/prefabs/sc06.prefab"
+- "Assets/\u67AA\u706B\u4E4B\u5730/models/sc06.obj"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/123_DefaultMaterial_AlbedoTransparency_02.tga"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/6_15 - Default_AlbedoTransparency.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/w1_tall_panel.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/w1_decal_line.png"
+Dependencies: []

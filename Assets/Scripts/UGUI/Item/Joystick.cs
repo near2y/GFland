@@ -17,11 +17,12 @@ public class Joystick : MonoBehaviour
     [HideInInspector]
     public Vector3 movement;
 
-
+    RectTransform joystickRectTransform = null;
 
     // Start is called before the first frame update
     void Start()
     {
+        joystickRectTransform = transform.GetComponent<RectTransform>();
         canvas = RFramework.Instance.m_UIRoot.GetComponent<Canvas>();
         movement = new Vector3();
         ShowHide(false);
@@ -31,6 +32,9 @@ public class Joystick : MonoBehaviour
     private Vector3 fix = new Vector3();
     void Update()
     {
+        //movement.x = Input.GetAxis("Horizontal");
+        //movement.z = Input.GetAxis("Vertical");
+        //return;
         Smooth();
         BaseInput input = RFramework.Instance.m_UIEventSystem.currentInputModule.input;
         Vector2 worldPos = RFramework.Instance.m_UICamera.ScreenToWorldPoint(input.mousePosition);
@@ -64,9 +68,19 @@ public class Joystick : MonoBehaviour
             }
             if (Vector3.SqrMagnitude(knob.localPosition) >= safeRadius * safeRadius)
             {
-                movement.x = knob.localPosition.x / (moveArea.rect.width * 0.5f);
-                movement.z = knob.localPosition.y / (moveArea.rect.height * 0.5f);
+                movement.x = knob.localPosition.x / (moveArea.rect.width * 0.25f);
+                movement.z = knob.localPosition.y / (moveArea.rect.height * 0.25f);
             }
+
+            var euler = knob.localEulerAngles;
+            euler.z = Mathf.Atan(knob.rect.x / knob.rect.y);
+            knob.localEulerAngles = euler;
+            //knob.LookAt(uiPos);
+            //var rotation = knob.localRotation;
+            //var euler = rotation.eulerAngles;
+            //euler.x = euler.y = 0;
+            //rotation.eulerAngles = euler;
+            //knob.localRotation = rotation;
         }
     }
 

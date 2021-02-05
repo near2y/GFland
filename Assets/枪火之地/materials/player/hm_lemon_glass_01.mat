@@ -8,8 +8,9 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: hm_lemon_glass_01
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: ADDTIVEFOG _ALPHABLEND_OFF _ALPHABLEND_ON _ALPHATEST_OFF _ISVERTEXCOLOR_OFF
+  m_Shader: {fileID: 4800000, guid: 27bb4b2fc6a66134d881f5c9082d57a3, type: 3}
+  m_ShaderKeywords: ADDTIVEFOG _ALPHABLEND_OFF _ALPHAPREMULTIPLY_ON _ALPHATEST_OFF
+    _ISVERTEXCOLOR_OFF
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -68,14 +69,16 @@ Material:
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
+    - _DisplayHeight: 2.5
     - _DstBlend: 10
+    - _EdgeWidth: 0.1
     - _GlossMapScale: 1
-    - _Glossiness: 0
+    - _Glossiness: 0.96
     - _GlossyReflections: 1
     - _IsVertexColor: 0
     - _Lighting: 1
     - _Metallic: 0
-    - _Mode: 2
+    - _Mode: 3
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _RenderQueue: 2000
@@ -83,12 +86,13 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SpecularSource: 0
-    - _SrcBlend: 5
+    - _SrcBlend: 1
     - _UVSec: 0
     - _ZTest: 4
     - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 0.18614274, g: 0.70689416, b: 0.8396226, a: 0.3372549}
+    - _Color: {r: 0.8254717, g: 0.900074, b: 1, a: 0.50980395}
+    - _EdgeColor: {r: 0.2509804, g: 0.6666667, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0, g: 0, b: 0, a: 0}
     - _TintColor: {r: 1, g: 1, b: 1, a: 0}

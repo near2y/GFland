@@ -29,17 +29,24 @@ public class Drone : Enemy
         }
         //从哪一帧开始播放登场动画
         anim.Play(EnemyState.InStage);
-        //恢复血量
-        hp = 100;
+    }
+
+    private void Update()
+    {
+        if (!died) 
+        {
+            if (hp <= 0)
+            {
+                Dying();
+                return;
+            }
+            BaseUpdate();
+        } 
     }
 
     private void OnParticleCollision(GameObject other)
     {
-        hp -= SceneManager.Instance.player.ATK;
-        if (hp <= 0 && !died)
-        {
-            Dying();
-        }
+        OnHit(other);
     }
 
 }

@@ -16,6 +16,7 @@ public class Spider : Enemy
     public int id_SpwanType = Animator.StringToHash("SpwanType");
 
 
+
     public override void InStage(Transform target, Transform spwanPoint)
     {
         Init(target, spwanPoint);
@@ -33,21 +34,32 @@ public class Spider : Enemy
         else if(spwanPoint.tag == SpwanPointTag.Full)
         {
             //落下来的
-            anim.SetFloat(id_SpwanType, 0);
+            anim.SetFloat(id_SpwanType, 0.5f);
             anim.Play(EnemyState.InStage);
-
         }
-        //恢复血量
-        hp = 100;
-
+        attackTimer = attackInterval;
+        if (meshRenderer != null) 
+        {
+            startColorRange = meshRenderer.material.GetFloat("_colorrange");
+        }
     }
+
+    private void Update()
+    {
+        if (!died)
+        {
+            if (hp <= 0)
+            {
+                Dying();
+                return;
+            }
+            BaseUpdate();
+        } 
+    }
+
 
     private void OnParticleCollision(GameObject other)
     {
-        hp -= SceneManager.Instance.player.ATK;
-        if (hp <= 0 && !died)
-        {
-            Dying();
-        }
+        OnHit(other);
     }
 }

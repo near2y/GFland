@@ -6,7 +6,15 @@ using UnityEngine.AI;
 public class EnemyBehaviorBase : StateMachineBehaviour
 {
     [HideInInspector]
-    public  Enemy enemy;
+    public Enemy enemy;
+
+    [HideInInspector]
+    public Near2yCallBack EnterCallBack;
+    [HideInInspector]
+    public Near2yCallBack UpdateCallBack;
+    [HideInInspector]
+    public Near2yCallBack ExitCallBack;
+
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

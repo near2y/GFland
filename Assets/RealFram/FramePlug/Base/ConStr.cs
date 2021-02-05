@@ -11,7 +11,7 @@ public class ConStr
 
     //场景名称
     public const string EMPTYSCENE = "Empty";
-    public const string MENUSCENE = "MenuScene";
+    public const string MENUSCENE = "Frist_Set_test";
     public const string GameSCENE = "scene07";
 
 

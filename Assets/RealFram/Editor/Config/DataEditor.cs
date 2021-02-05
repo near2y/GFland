@@ -17,6 +17,7 @@ public class DataEditor
     public static string RegPath = Application.dataPath + "/../Data/Reg/";
     public static string WaveXmlPath = Application.dataPath + "/../Data/Excel/Wave/";
 
+
     [MenuItem("Assets/类转xml")]
     public static void AssetsClassToXml()
     {
@@ -38,7 +39,12 @@ public class DataEditor
         for (int i = 0; i < objs.Length; i++)
         {
             string path = AssetDatabase.GUIDToAssetPath(strs[i]);
-            string refName = objs[i].name.Remove(objs[i].name.IndexOf("_"));
+            int index = objs[i].name.IndexOf("_");
+            string refName = objs[i].name;
+            if (index >= 0)
+            {
+                refName = objs[i].name.Remove(index);
+            }
             EditorUtility.DisplayProgressBar("文件下的xml转成二进制", "正在扫描" + objs[i].name + "... ...", 1.0f / objs.Length * i);
             XmlToBinary(objs[i].name,path,refName);
         }
@@ -302,6 +308,8 @@ public class DataEditor
     {
         UnityEngine.Object[] objs = Selection.objects;
         string[] strs = Selection.assetGUIDs;
+        Debug.LogError("near2y:"+objs.Length);
+
         for (int i = 0; i < objs.Length; i++)
         {
             string name = objs[i].name;
@@ -334,10 +342,7 @@ public class DataEditor
             string path = AssetDatabase.GUIDToAssetPath(strs[i]);
             ExcelToXml(name, objs[i].name, path);
             XmlToBinary(objs[i].name, path, name);
-
         }
-        AssetDatabase.Refresh();
-        EditorUtility.ClearProgressBar();
     }
 
     public static void ExcelToXml(string name,string exName = null,string path = null)
@@ -407,6 +412,9 @@ public class DataEditor
                         sheetDataDic.Add(worksheet.Name, sheetData);
                     }
                 }
+                stream.Close();
+                stream.Dispose();
+
             }
         }
         catch (Exception e)
@@ -436,6 +444,7 @@ public class DataEditor
         BinarySerializeOpt.Xmlserialize(XmlPath + xmlName, objClass);
         //BinarySerializeOpt.BinarySerilize(BinaryPath + className + ".bytes", objClass);
         Debug.Log(excelName + "表导入unity完成！");
+        //刷新
         AssetDatabase.Refresh();
     }
 
@@ -1122,6 +1131,8 @@ public class DataEditor
         {
             Debug.LogError(name + "xml转二进制失败！");
         }
+                AssetDatabase.Refresh();
+        EditorUtility.ClearProgressBar();
     }
 
     /// <summary>

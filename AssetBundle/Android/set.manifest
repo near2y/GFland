@@ -1,0 +1,92 @@
+ManifestFileVersion: 0
+CRC: 431818893
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 271990e00d142ad474899ac2836b2a5e
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 82019c0f56e9a1087d1853da28bb424b
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+Assets:
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/Frist_Set/prop_02_Normal.tga"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/Frist_Set/Set_Reply warehouse_01_Emission.tga"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/Frist_Set/Set_Reply warehouse_screen_01_Emission.tga"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/Frist_Set/prop_02_MetallicSmoothness.tga"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/Frist_Set/Set_floor_01l_AlbedoTransparency.tga"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/Frist_Set/ketboard_02.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/prefabs/Frist_Set/SET.prefab"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/Frist_Set/VignetteMask.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/models/Frist_Set/glow_02.FBX"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/Frist_Set/prop_02_Emission.tga"
+- "Assets/\u67AA\u706B\u4E4B\u5730/models/Frist_Set/screen_01.FBX"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/Frist_Set/Prop_AlbedoTransparency.tga"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/Frist_Set/Set_floor_01_Emission.tga"
+- "Assets/\u67AA\u706B\u4E4B\u5730/models/Frist_Set/Set_wall_01.FBX"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/Frist_Set/ketboard_01.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/Frist_Set/Prop_Emission.tga"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/Frist_Set/Set_Reply warehouse_01.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/Frist_Set/top_01.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/Frist_Set/Set_floor_01_MetallicSmoothness.tga"
+- "Assets/\u67AA\u706B\u4E4B\u5730/models/Frist_Set/prop_02.FBX"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/Frist_Set/top_AlbedoTransparency.tga"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/Frist_Set/screen_01.jpg"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/Frist_Set/keyboard.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/Frist_Set/Set_wall_01_AlbedoTransparency.tga"
+- "Assets/\u67AA\u706B\u4E4B\u5730/models/Frist_Set/prop_01.FBX"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/Frist_Set/Prop_Normal.tga"
+- "Assets/\u67AA\u706B\u4E4B\u5730/models/Frist_Set/glow_01.FBX"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/Frist_Set/Set_glass_05.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/Frist_Set/glow_01.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/Frist_Set/Set_Reply warehouse_screen_01.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/models/Frist_Set/Set_Reply warehouse_screen_01.FBX"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/Frist_Set/Prop_MetallicSmoothness.tga"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/Frist_Set/Set_wall_01.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/models/Frist_Set/Set_glass_03.FBX"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/Frist_Set/Set_floor_01_Normal.tga"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/Frist_Set/prop_01.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/models/Frist_Set/Set_floor_01.FBX"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/Frist_Set/Set_wall_01_Emission.tga"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/Frist_Set/Set_glass_03.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/Frist_Set/Set_Reply warehouse_01_AlbedoTransparency.tga"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/Frist_Set/Set_Reply warehouse_01_Normal.tga"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/Frist_Set/screen_01.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/models/Frist_Set/Set_glass_02.FBX"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/Frist_Set/Set_Reply warehouse_01_MetallicSmoothness.tga"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/Frist_Set/Set_floor_01.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/Frist_Set/HexShape.psd"
+- "Assets/\u67AA\u706B\u4E4B\u5730/models/Frist_Set/top_01.FBX"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/Frist_Set/prop_02_AlbedoTransparency.tga"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/Frist_Set/top_MetallicSmoothness.tga"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/Frist_Set/top_Normal.tga"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/Frist_Set/Set_wall_01_MetallicSmoothness.tga"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/Frist_Set/Set_wall_01_Normal.tga"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/Frist_Set/Set_Reply warehouse_screen_01_AlbedoTransparency.tga"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/Frist_Set/glow_02.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/Frist_Set/Set_glass_01.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/Frist_Set/prop_02.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/models/Frist_Set/Set_Reply warehouse_01.FBX"
+Dependencies: []

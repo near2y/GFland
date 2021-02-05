@@ -38,13 +38,13 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -187,6 +187,36 @@ PrefabInstance:
       propertyPath: m_WindowRoot
       value: 
       objectReference: {fileID: 964421253}
+    - target: {fileID: 573091145827960600, guid: 627a5a8c41b49e44980bbdaf631cffc4,
+        type: 3}
+      propertyPath: waveID.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 573091145827960600, guid: 627a5a8c41b49e44980bbdaf631cffc4,
+        type: 3}
+      propertyPath: waveID
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 573091145827960600, guid: 627a5a8c41b49e44980bbdaf631cffc4,
+        type: 3}
+      propertyPath: waveID.Array.data[0]
+      value: 0601
+      objectReference: {fileID: 0}
+    - target: {fileID: 573091145827960600, guid: 627a5a8c41b49e44980bbdaf631cffc4,
+        type: 3}
+      propertyPath: waveID.Array.data[1]
+      value: 0101
+      objectReference: {fileID: 0}
+    - target: {fileID: 573091145827960600, guid: 627a5a8c41b49e44980bbdaf631cffc4,
+        type: 3}
+      propertyPath: waveID.Array.data[2]
+      value: 0301
+      objectReference: {fileID: 0}
+    - target: {fileID: 573091145827960600, guid: 627a5a8c41b49e44980bbdaf631cffc4,
+        type: 3}
+      propertyPath: waveID.Array.data[3]
+      value: 0701
+      objectReference: {fileID: 0}
     - target: {fileID: 857055388798680080, guid: 627a5a8c41b49e44980bbdaf631cffc4,
         type: 3}
       propertyPath: m_RootOrder

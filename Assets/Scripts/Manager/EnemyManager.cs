@@ -13,7 +13,7 @@ public class EnemyManager :  MonoBehaviour
     /// </summary>
     public List<Enemy> enemyList;
 
-    public float sqrTargetDis;
+    public int enemyAliveCount = 0;
 
     void Start()
     {
@@ -26,7 +26,7 @@ public class EnemyManager :  MonoBehaviour
     /// </summary>
     /// <param name="id"></param>
     /// <returns></returns>
-    public void Spwan(int id,Transform fullPoint)
+    public Enemy Spwan(int id,Transform fullPoint,bool extra =false)
     {
         //生成
         EnemyBase data = enemyData.FindByID(id);
@@ -39,8 +39,10 @@ public class EnemyManager :  MonoBehaviour
         //obj.transform.position = fullPoint.position;
         //obj.transform.rotation = fullPoint.rotation;
         enemy.InStage(SceneManager.Instance.player.transform,fullPoint);
-
-        //加到集合中
+        enemy.hp = data.Hp;
+        //计数
+        if(!extra)enemyAliveCount++;
+        return enemy;
     }
 
     /// <summary>
@@ -50,36 +52,38 @@ public class EnemyManager :  MonoBehaviour
     public Enemy FindCloseEnemy(float attackDis)
     {
         Enemy enemy = null;
-        float sqrDis = 0;
-        if (enemyList.Count > 0)
+        float standard = attackDis * attackDis;
+        for (int i = 0; i < enemyList.Count; i++)
         {
-            enemy = enemyList[0];
-            sqrDis = enemy.targetSqrDis;
-            for(int i = 1; i < enemyList.Count; i++)
+            if (enemyList[i].died || enemyList[i].targetSqrDis>standard || enemyList[i].invalid) continue;
+            if(enemy == null)
             {
-                if(sqrDis > enemyList[i].targetSqrDis)
-                {
-                    sqrDis = enemyList[i].targetSqrDis;
-                    enemy = enemyList[i];
-                }
+                enemy = enemyList[i];
+            }
+            if (enemy.targetSqrDis > enemyList[i].targetSqrDis)
+            {
+                enemy = enemyList[i];
             }
         }
-        sqrTargetDis = sqrDis;
-        if (sqrDis > attackDis*attackDis) enemy = null; 
         return enemy;
     }
 
-    public void ClearEnemy(Enemy enemy)
+    public void ClearEnemy(Enemy enemy,bool extra = false)
     {
         if (enemy != null)
         {
+            enemy.Release();
             enemyList.Remove(enemy);
-            SceneManager.Instance.waveManager.CurrentWave.aliveEnemyNum--;
+            if(!extra)SceneManager.Instance.waveManager.CurrentWave.aliveEnemyNum--;
+            if(!extra)enemyAliveCount--;
         }
     }
 
     public void AddEnemy(Enemy enemy)
     {
+        if (enemy.addedInGame) return;
         enemyList.Add(enemy);
+        enemy.addedInGame = true;
     }
+
 }

@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2815487282
+CRC: 2097074899
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 6fbacceb28ba54b054c681c211fee9ee
+    Hash: ca2336a4bfcb19d08b0507c05d97314f
   TypeTreeHash:
     serializedVersion: 2
-    Hash: c5a20caa0d4c21d8fe7638042b830a6f
+    Hash: 0c901a4ff7efef622051987735726b26
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -50,15 +50,16 @@ ClassTypes:
 - Class: 195
   Script: {instanceID: 0}
 Assets:
-- "Assets/\u67AA\u706B\u4E4B\u5730/Models/Enemy/Materials/drone.mat"
-- "Assets/\u67AA\u706B\u4E4B\u5730/Models/Enemy/drone_ani.fbx"
-- "Assets/\u67AA\u706B\u4E4B\u5730/Prefabs/drone.prefab"
-- "Assets/\u67AA\u706B\u4E4B\u5730/Models/Enemy/drone_ani/birth1.anim"
-- "Assets/\u67AA\u706B\u4E4B\u5730/Models/Enemy/drone_ani/die.anim"
+- "Assets/\u67AA\u706B\u4E4B\u5730/models/Enemy/Materials/drone.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/models/Enemy/drone_ani.fbx"
+- "Assets/\u67AA\u706B\u4E4B\u5730/prefabs/drone.prefab"
+- "Assets/\u67AA\u706B\u4E4B\u5730/models/Enemy/drone_ani/birth1.anim"
+- "Assets/\u67AA\u706B\u4E4B\u5730/models/Enemy/drone_ani/die.anim"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Texture/ms_drone_white_02.jpg"
-- "Assets/\u67AA\u706B\u4E4B\u5730/Models/Enemy/drone_ani/birth2.anim"
+- "Assets/\u67AA\u706B\u4E4B\u5730/models/Enemy/drone_ani/birth2.anim"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Texture/ms_drone_white_01.jpg"
-- "Assets/\u67AA\u706B\u4E4B\u5730/Models/Enemy/drone_ani/idle.anim"
-- "Assets/\u67AA\u706B\u4E4B\u5730/Materials/Enemy/drone.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/models/Enemy/drone_ani/idle.anim"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/Enemy/drone.mat"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Animation/Enemy/DroneAC.controller"
-Dependencies: []
+Dependencies:
+- "F:/Near2y/SVN/shejiAPP/\u7A0B\u5E8F\u5DE5\u7A0B/Assets/../AssetBundle/Android/ammotitan"

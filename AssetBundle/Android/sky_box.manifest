@@ -1,0 +1,37 @@
+ManifestFileVersion: 0
+CRC: 1059921635
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 201b7f5d6ac97ab7139591358e82fec8
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: da869911090449ccfac3e6eca2b87de3
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 64
+  Script: {instanceID: 0}
+Assets:
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/Frist_Set/Space_environment.jpg"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/Frist_Set/PLANE_01.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/prefabs/Frist_Set/sky_box.prefab"
+- "Assets/\u67AA\u706B\u4E4B\u5730/models/Frist_Set/sky_box.FBX"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/Frist_Set/sky_box.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/Frist_Set/PIANE_SPECA_02.png"
+Dependencies: []

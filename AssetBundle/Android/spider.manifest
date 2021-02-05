@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 615649932
+CRC: 3302576551
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 30e6f210630aa86dec3467585ea0025e
+    Hash: 1803d757b4433f362d49a861f7219652
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 90e3db9f0a6ad16db2d4966da9519132
+    Hash: 1f0444c2769431e214f8bc77a133760f
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -48,10 +48,12 @@ ClassTypes:
 - Class: 195
   Script: {instanceID: 0}
 Assets:
-- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/spider/ms_spider_green_01.tga"
-- "Assets/\u67AA\u706B\u4E4B\u5730/Materials/Enemy/ms_spider_green_01.mat"
-- "Assets/\u67AA\u706B\u4E4B\u5730/Prefabs/spider.prefab"
-- "Assets/\u67AA\u706B\u4E4B\u5730/Models/Enemy/ms_spider_green.FBX"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/ms_spider_green_01.tga"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/ms_spider_green_01.jpg"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/Enemy/ms_spider_green_04.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/prefabs/spider.prefab"
+- "Assets/\u67AA\u706B\u4E4B\u5730/models/Enemy/ms_spider_green.FBX"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Texture/ms_spider_green_02.jpg"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Animation/Enemy/SpiderAC.controller"
-Dependencies: []
+Dependencies:
+- "F:/Near2y/SVN/shejiAPP/\u7A0B\u5E8F\u5DE5\u7A0B/Assets/../AssetBundle/Android/ammotitan"

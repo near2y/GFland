@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2288720221
+CRC: 4107682866
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 02e3520bfda51e0d20a3609401de66dd
+    Hash: 21edf4ea284bf5c3804773f5a87eedb3
   TypeTreeHash:
     serializedVersion: 2
     Hash: 6a6c6d41d3b4b9856b897225f9eb2399
@@ -22,4 +22,4 @@ ClassTypes:
 Assets:
 - "Assets/\u67AA\u706B\u4E4B\u5730/Effects/Prefabs/enemyBullet.prefab"
 Dependencies:
-- F:/Near2y/GFland/Assets/../AssetBundle/Android/ef_bl_gun01
+- "F:/Near2y/SVN/shejiAPP/\u7A0B\u5E8F\u5DE5\u7A0B/Assets/../AssetBundle/Android/boss1"

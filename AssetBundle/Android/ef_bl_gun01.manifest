@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1588884396
+CRC: 2190910693
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 20ee371d15923d396f8f73ef8aaf5b18
+    Hash: 821f1f3f8fd7380146f592752f68521a
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 8e7a9a5bc260fb3cb7f278e39396d550
+    Hash: 6a6c6d41d3b4b9856b897225f9eb2399
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -15,16 +15,11 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 21
   Script: {instanceID: 0}
-- Class: 28
-  Script: {instanceID: 0}
-- Class: 48
-  Script: {instanceID: 0}
 - Class: 198
   Script: {instanceID: 0}
 - Class: 199
   Script: {instanceID: 0}
 Assets:
-- "Assets/\u67AA\u706B\u4E4B\u5730/Effects/Materials/particle_orange_bullet_06.mat"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Effects/Prefabs/ef_bl_gun01.prefab"
-- "Assets/\u67AA\u706B\u4E4B\u5730/Effects/Textures/particle_orange_bullet_06.png"
-Dependencies: []
+Dependencies:
+- "F:/Near2y/SVN/shejiAPP/\u7A0B\u5E8F\u5DE5\u7A0B/Assets/../AssetBundle/Android/boss1"

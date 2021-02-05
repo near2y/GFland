@@ -36,6 +36,10 @@ public class WaveManager
         inited = true;
 
         waveIndex = 0;
+        while (!waveBaseListDic.ContainsKey(waveIndex))
+        {
+            waveIndex++;
+        }
         waveBehaviorDic[waveIndex].Active();
     }
 
@@ -62,6 +66,15 @@ public class WaveManager
                 }
                 //TODO最后一波的问题
 
+            }
+        }
+        else
+        {
+            //在最后一波中
+            if(waveBehaviorDic[waveIndex].overSpwan &&  SceneManager.Instance.enemyManager.enemyAliveCount == 0)
+            {
+                SceneManager.Instance.OnWin();
+                inited = false;
             }
         }
 

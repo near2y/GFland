@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2026945732
+CRC: 898062684
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 67ed25217de903fd7abcddb0a20c8747
+    Hash: 3110fb447e005df4e56025cfbb1e45f5
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 7f9158ef341766811e47f1954d0650cc
+    Hash: 890b331cbe68a7b8bd8c3e96f2af8dd3
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -40,8 +40,9 @@ ClassTypes:
 - Class: 195
   Script: {instanceID: 0}
 Assets:
-- "Assets/\u67AA\u706B\u4E4B\u5730/Prefabs/spider3.prefab"
-- "Assets/\u67AA\u706B\u4E4B\u5730/Materials/Enemy/ms_spider_green_03.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/prefabs/spider3.prefab"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/Enemy/ms_spider_green_03.mat"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Texture/ms_spider_green_04.jpg"
 Dependencies:
-- F:/Near2y/GFland/Assets/../AssetBundle/Android/spider
+- "F:/Near2y/SVN/shejiAPP/\u7A0B\u5E8F\u5DE5\u7A0B/Assets/../AssetBundle/Android/ammotitan"
+- "F:/Near2y/SVN/shejiAPP/\u7A0B\u5E8F\u5DE5\u7A0B/Assets/../AssetBundle/Android/spider"

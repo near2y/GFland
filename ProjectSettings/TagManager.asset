@@ -18,13 +18,13 @@ TagManager:
   - Player
   - Ground
   - AirGround
-  - ' AirWall'
+  - AirWall
   - Enemy
-  - 
-  - 
-  - 
-  - 
-  - 
+  - PostProcess
+  - Edge
+  - InputRay
+  - Ammo
+  - PlayerBullet
   - 
   - 
   - 

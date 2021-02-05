@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class EnemyBehaviorAttack : EnemyBehaviorBase
 {
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        enemy.agent.isStopped = true;
-        if(enemy.emitter != null)
+        if(enemy.agent != null)
+        {
+            enemy.agent.isStopped = true;
+        }
+        if (enemy.emitter != null)
         {
             enemy.emitter.SingleShot(enemy.emitter.bulletPos.position, enemy.emitter.bulletPos.position+ enemy.transform.forward);
         }
@@ -23,8 +27,11 @@ public class EnemyBehaviorAttack : EnemyBehaviorBase
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        if(enemy.agent != null)
+        {
+            enemy.agent.isStopped = false;
+        }
         enemy.anim.SetBool(enemy.id_Attack, false);
-        enemy.agent.isStopped = false;
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

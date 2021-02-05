@@ -18,11 +18,16 @@ public abstract class  Enemy : MonoBehaviour
     public float attackSpeedRatio = 1;
     //登场速度比例
     public float inStageSpeedRatio = 1;
+    //怪物材质
+    public Renderer meshRenderer = null;
+    //怪物爆炸特效大小
+    public float boomEffectSize = 1;
 
     [Header("< 调试相关 >")]
     public Transform startPos;
     public Transform agentTarget;
     public Emitter emitter = null;
+    public bool invalid = false;
 
 
     [HideInInspector]
@@ -33,18 +38,38 @@ public abstract class  Enemy : MonoBehaviour
     public Collider bodyCollider;
     [HideInInspector]
     public float targetSqrDis;
+    [HideInInspector]
+    public bool completeInStage= false;
+    [HideInInspector]
+    public float attackTimer = 0;
+    [HideInInspector]
+    public bool addedInGame = false;
 
     [HideInInspector]
     public int id_Attack = Animator.StringToHash("Attack");
 
-    protected bool died = false;
+    [HideInInspector]
+    public bool died = false;
+    [HideInInspector]
+    public bool lookPlayerInAttack = false;
+    protected float startColorRange = 1;
+    protected float startAniSpeed = 0;
 
-    private void Awake()
+    protected int otherGameID = 0;
+    protected ParticleSystem otherParticleSystem = null;
+    protected List<ParticleCollisionEvent> collisionEvents;
+    protected bool needPlayDying = true;
+
+
+    protected void Awake()
     {
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         bodyCollider = GetComponent<Collider>();
         emitter = GetComponent<Emitter>();
+        startColorRange = Method.GetColorrangeInRender(meshRenderer);
+        collisionEvents = new List<ParticleCollisionEvent>();
+
     }
 
     //把敌人放入场景中
@@ -63,9 +88,17 @@ public abstract class  Enemy : MonoBehaviour
         foreach (EnemyBehaviorBase behaviour in behaviours)
         {
             behaviour.enemy = this;
+            if(behaviour.GetType() == typeof(EnemyBehaviorDying))
+            {
+                behaviour.EnterCallBack = () =>
+                {
+                      
+                };
+            }
         }
         //攻击范围
         //agent.stoppingDistance = attackRange;
+        startPos = start;
         //初始位置
         transform.position = start.position;
         transform.rotation = start.rotation;
@@ -73,21 +106,84 @@ public abstract class  Enemy : MonoBehaviour
         agentTarget = target;
         //不再处于死亡状态
         died = false;
-        //玩家与敌人的距离平方
-        targetSqrDis = Vector3.SqrMagnitude(transform.position - agentTarget.position);
+        //恢复render
+        if (meshRenderer != null)
+        {
+            meshRenderer.material.SetFloat("_DissvoleRange", 0);
+            Method.SetRenderColorRange(meshRenderer, startColorRange);
+        }
+        //开启emitter
+        if(emitter != null)emitter.SetActive(true);
+        startAniSpeed = anim.speed;
+
+        //attackTimer
+        attackTimer = attackInterval;
+
+        //added
+        addedInGame = false;
+    }
+
+    protected void FullGround(float size)
+    {
+        GameObject effect = SceneManager.Instance.effectManager.GetEffect(4007);
+        effect.transform.position = transform.position;
+        effect.transform.localScale = Vector3.one * size;
     }
 
     public void Release()
     {
+        anim.speed = startAniSpeed;
+        attackTimer = attackInterval;
         ObjectManager.Instance.ReleaseObject(gameObject,recycleParent:false);
-
     }
 
     public void Dying()
     {
+        if(emitter!=null)emitter.SetActive(false);
         died = true;
-        anim.Play(EnemyState.Dying);
-        SceneManager.Instance.enemyManager.ClearEnemy(this);
+        if(needPlayDying)anim.Play(EnemyState.Dying);
+        //手机震动
+        //Handheld.Vibrate();
+        ////相机震动
+        //SceneManager.Instance.gameCamera.ShakeCamera(Random.Range(0.5f, 1.5f), Random.Range(0.1f, 0.3f));
+        //变黑
+        if (meshRenderer != null)
+        {
+            Method.SetRenderColorRange(meshRenderer, 0.3f);
+        }
+        //爆炸特效
+        GameObject boomEffect = SceneManager.Instance.effectManager.GetEffect(4005);
+        boomEffect.transform.localScale = Vector3.one * boomEffectSize;
+        boomEffect.transform.position = transform.position;
+
+    }
+
+    protected void BaseUpdate()
+    {
+        targetSqrDis = Vector3.SqrMagnitude(transform.position - agentTarget.position);
+        if (hitting)
+        {
+            hitting = Method.LerpRenderColorRange(meshRenderer, startColorRange);
+        }
+    }
+
+    protected bool hitting = false;
+    protected void OnHit(GameObject other,float colorrange = 15)
+    {
+        if (other.GetInstanceID() != otherGameID)
+        {
+            otherParticleSystem = other.GetComponent<ParticleSystem>();
+        }
+        int count = otherParticleSystem.GetCollisionEvents(gameObject, collisionEvents);
+        float sub = SceneManager.Instance.player.ATK * count;
+        HitSubHp(sub, colorrange);
+    }
+
+    public void HitSubHp(float subHp,float colorrange)
+    {
+        hp -= subHp; 
+        if (meshRenderer == null) return;
+        hitting = Method.SetRenderColorRange(meshRenderer, colorrange);
     }
 }
 

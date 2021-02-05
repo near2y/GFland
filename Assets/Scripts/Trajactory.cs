@@ -66,10 +66,9 @@ public class Trajactory : MonoBehaviour
         get { return inPlay; }
     }
 
-    public void Spwan(Vector3 position,Vector3 targetPos,int count = 1)
+    public void Spwan(Vector3 position,Vector3 targetPos)
     {
         system.Stop();
-        bulletProp.ShootCount = count;
         bulletProp.Loop = false;
         transform.position = position;
         transform.LookAt(targetPos);
@@ -83,7 +82,6 @@ public class Trajactory : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-
         Diffraction(other);
         Penetrate(other);
     }
@@ -113,4 +111,23 @@ public class Trajactory : MonoBehaviour
             pTrajactory.Spwan(point, penetratePos);
         }
     }
+
+    //弹道
+    public int TrajactoryCount
+    {
+        get
+        {
+            return bulletProp.TrajactoryCount;
+        }
+    }
+
+
+
+    public void SetTrajactoryCount(int count,float interval)
+    {
+        var shape = system.shape;
+        shape.radius = interval * count;
+        bulletProp.TrajactoryCount = count;
+    }
+
 }

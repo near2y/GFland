@@ -88,4 +88,18 @@ public class BulletProp
         }
     }
 
+    int trajactoryCount = 0;
+    public int TrajactoryCount
+    {
+        get { return trajactoryCount; }
+        set
+        {
+            trajactoryCount = value;
+            if (value <= 0) return;
+            emission.GetBursts(bursts);
+            bursts[0].count = trajactoryCount;
+            emission.SetBursts(bursts);
+        }
+    }
+
 }

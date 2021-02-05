@@ -1,0 +1,31 @@
+ManifestFileVersion: 0
+CRC: 1280871950
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 638d60afdd3705496653bc0581e5e3d6
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 9df1cc680fb72bb976988b3da13e762a
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+Assets:
+- "Assets/\u67AA\u706B\u4E4B\u5730/Effects/Prefabs/MuzzleFlash.prefab"
+Dependencies:
+- "F:/Near2y/SVN/shejiAPP/\u7A0B\u5E8F\u5DE5\u7A0B/Assets/../AssetBundle/Android/player"
