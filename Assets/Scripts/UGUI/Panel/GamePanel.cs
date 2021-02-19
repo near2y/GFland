@@ -8,4 +8,6 @@ public class GamePanel : MonoBehaviour
     public Joystick joystick;
     public Button homeBtn;
     public Button nextGameBtn;
+    public Button skillBtn;
+
 }

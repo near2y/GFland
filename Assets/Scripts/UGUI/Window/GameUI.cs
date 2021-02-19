@@ -6,8 +6,8 @@ public class GameUI : Window
 {
     public GamePanel m_Panel;
 
-    private List<GameObject> balls = new List<GameObject>();
 
+    private List<GameObject> balls = new List<GameObject>();
 
 
 
@@ -16,11 +16,17 @@ public class GameUI : Window
         m_Panel = GameObject.GetComponent<GamePanel>();
         AddBtnClickListener(m_Panel.homeBtn, ClickHomeBtn);
         AddBtnClickListener(m_Panel.nextGameBtn, ClickNextBtn);
+        AddBtnClickListener(m_Panel.skillBtn, ClickSkillBtn);
 
         m_Panel.nextGameBtn.gameObject.SetActive(false);
+        //m_Panel.skillBtn.interactable = false;
+        m_Panel.skillBtn.gameObject.SetActive(false);
+        //SceneManager.Instance.gameUI.m_Panel.skillBtn.gameObject.SetActive(false);
+
+
     }
 
-    
+
 
     public override void OnClose()
     {
@@ -42,6 +48,25 @@ public class GameUI : Window
         GameManager.Instance.GameStart();
     }
 
+    void ClickSkillBtn()
+    {
+        SceneManager.Instance.player.skill.ReleaseSkill();
+        //m_Panel.skillBtn.interactable = false;
+        m_Panel.skillBtn.gameObject.SetActive(false);
+        ////TODO
+        ////伪等待时间
+        //GameManager.Instance.mono.StartCoroutine(WaitSkillCool());
+    }
+
+
+    IEnumerator WaitSkillCool()
+    {
+        m_Panel.skillBtn.interactable = false;
+        yield return new WaitForSeconds(10);
+        m_Panel.skillBtn.interactable = true;
+        
+    }
+
 
     public void ShowClear()
     {
@@ -49,6 +74,7 @@ public class GameUI : Window
         m_Panel.joystick.gameObject.SetActive(false);
         
     }
+
 
 }
 

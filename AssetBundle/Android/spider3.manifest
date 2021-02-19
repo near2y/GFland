@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 898062684
+CRC: 3257979134
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 3110fb447e005df4e56025cfbb1e45f5
+    Hash: bcd50dc0c4c4540141b32af2d21e5895
   TypeTreeHash:
     serializedVersion: 2
     Hash: 890b331cbe68a7b8bd8c3e96f2af8dd3
@@ -44,5 +44,5 @@ Assets:
 - "Assets/\u67AA\u706B\u4E4B\u5730/materials/Enemy/ms_spider_green_03.mat"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Texture/ms_spider_green_04.jpg"
 Dependencies:
-- "F:/Near2y/SVN/shejiAPP/\u7A0B\u5E8F\u5DE5\u7A0B/Assets/../AssetBundle/Android/ammotitan"
-- "F:/Near2y/SVN/shejiAPP/\u7A0B\u5E8F\u5DE5\u7A0B/Assets/../AssetBundle/Android/spider"
+- F:/Near2y/GFland/Assets/../AssetBundle/Android/ammotitan
+- F:/Near2y/GFland/Assets/../AssetBundle/Android/spider

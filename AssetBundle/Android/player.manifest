@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 4182660946
+CRC: 2091266825
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 814c5b07a35c9ffded8b5081cacff29d
+    Hash: cfafd1e0edf4256fa9f2a5a7f350fc97
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 7216b574e469fa4cea0d6ccb37854917
+    Hash: d898dfc040b2a869768aaa5acacf6d57
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -41,6 +41,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 93edd37c35bc41c4f872dc83b137ae41, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 5d7184de7f23be84d98231ba4553c80d, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 195bd5e52cce9d941a7698f5f850653d, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 137
@@ -54,8 +56,12 @@ Assets:
 - "Assets/\u67AA\u706B\u4E4B\u5730/Texture/player/hm_lemon_01.png"
 - "Assets/\u67AA\u706B\u4E4B\u5730/materials/player/bl_gun03.mat"
 - "Assets/\u67AA\u706B\u4E4B\u5730/materials/player/bl_gun00.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/models/yyy.obj"
 - "Assets/\u67AA\u706B\u4E4B\u5730/materials/player/bl_gun02.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Shader/SkillProgress.shader"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Animation/Player/lemon_show.fbx"
+- "Assets/\u67AA\u706B\u4E4B\u5730/models/yyyy+.obj"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/SkillProgress1.mat"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Texture/player/bl_gun01.png"
 - "Assets/\u67AA\u706B\u4E4B\u5730/materials/player/bl_gun04.mat"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Animation/PlayerAC.controller"
@@ -66,6 +72,8 @@ Assets:
 - "Assets/\u67AA\u706B\u4E4B\u5730/prefabs/player.prefab"
 - "Assets/\u67AA\u706B\u4E4B\u5730/models/player/lemon_skin.fbx"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Effects/Materials/MuzzleFlash.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/materials/SkillProgress2.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/icon_meter.png"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Effects/Models/MuzzleFlash_mesh.fbx"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Animation/Player/hm_lemon_ani.fbx"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Effects/Animations/MuzzleFlash.anim"
@@ -77,7 +85,9 @@ Assets:
 - "Assets/\u67AA\u706B\u4E4B\u5730/Animation/Player/playerBirth.anim"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Animation/Player/run_right.anim"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Shader/GFLandShaders/GFLandStandard.shader"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/icon_meter_line.png"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Texture/player/bl_gun04.png"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Effects/Textures/MuzzleFlash.tga"
 Dependencies:
+- F:/Near2y/GFland/Assets/../AssetBundle/Android/skillprogress
 - F:/Near2y/GFland/Assets/../AssetBundle/Android/muzzleflash

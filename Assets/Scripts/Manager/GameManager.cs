@@ -17,6 +17,8 @@ public class GameManager : MonoSingleton<GameManager>
     [HideInInspector]
     public MonoBehaviour mono;
 
+    public int playerTrajactoryCount = 1;
+
 
     private void Start()
     {

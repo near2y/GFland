@@ -171,6 +171,22 @@ public class Window
         }
     }
 
+    //public void AddBtnDownListener(Button btn, params UnityAction[] actionList)
+    //{
+    //    if (!Button.ReferenceEquals(btn, null))
+    //    {
+    //        if (!m_AllBtns.Contains(btn))
+    //        {
+    //            m_AllBtns.Add(btn);
+    //        }
+    //        btn.RemoveAllListeners();
+    //        foreach (UnityAction action in actionList)
+    //        {
+    //            btn.onClick.AddListener(action);
+    //        }
+    //    }
+    //}
+
     /// <summary>
     /// 添加Toggle监听事件
     /// 会移除原来所有的监听事件

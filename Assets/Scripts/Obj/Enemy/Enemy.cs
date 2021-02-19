@@ -145,7 +145,7 @@ public abstract class  Enemy : MonoBehaviour
         //手机震动
         //Handheld.Vibrate();
         ////相机震动
-        //SceneManager.Instance.gameCamera.ShakeCamera(Random.Range(0.5f, 1.5f), Random.Range(0.1f, 0.3f));
+        SceneManager.Instance.gameCamera.ShakeCamera(Random.Range(0.5f, 4f), Random.Range(0.5f, 1f));
         //变黑
         if (meshRenderer != null)
         {
@@ -168,7 +168,7 @@ public abstract class  Enemy : MonoBehaviour
     }
 
     protected bool hitting = false;
-    protected void OnHit(GameObject other,float colorrange = 15)
+    protected void OnHit(GameObject other,float colorrange = 2f)
     {
         if (other.GetInstanceID() != otherGameID)
         {

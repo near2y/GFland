@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 4083709531
+CRC: 3771969804
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 861b6b95ec93fcc928dfa6e3b8424027
+    Hash: 8696a0af58af0b0f1139b8763090fbce
   TypeTreeHash:
     serializedVersion: 2
-    Hash: f6e6af738fafbee794793bb5713f4e43
+    Hash: 036c32939dd39e0ffaad3d96939ca20e
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -36,9 +36,9 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 749d13942c52b2043bfc55cfefef2270, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 974043386b0ee854e9e22c301c78c1e1, type: 3}
-- Class: 114
   Script: {fileID: 11500000, guid: 36046aa766c07734c94553678aaf118c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 974043386b0ee854e9e22c301c78c1e1, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 507c127970f00fe40adbc30ecdc1b1c9, type: 3}
 - Class: 114
@@ -66,7 +66,6 @@ Assets:
 - "Assets/\u67AA\u706B\u4E4B\u5730/Animation/boss01_ani.controller"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Animation/Boss1/boss1_fly.anim"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Effects/Materials/particle_blue_puff.mat"
-- "Assets/\u67AA\u706B\u4E4B\u5730/Effects/Textures/particle_orange_bullet_06.png"
 - "Assets/\u67AA\u706B\u4E4B\u5730/prefabs/Boss1.prefab"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Animation/Boss1/boss01_ani.fbx"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Animation/Boss1/fireStage01.anim"

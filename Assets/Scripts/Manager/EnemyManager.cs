@@ -76,6 +76,7 @@ public class EnemyManager :  MonoBehaviour
             enemyList.Remove(enemy);
             if(!extra)SceneManager.Instance.waveManager.CurrentWave.aliveEnemyNum--;
             if(!extra)enemyAliveCount--;
+            SceneManager.Instance.player.playerSkillBar.SkillProgress+=5;
         }
     }
 

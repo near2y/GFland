@@ -130,7 +130,7 @@ public class Boss1 : Enemy
 
     private void OnParticleCollision(GameObject other)
     {
-        OnHit(other,4);
+        OnHit(other,2f);
         anim.SetFloat(id_Hp, hp);
     }
 }

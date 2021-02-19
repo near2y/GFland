@@ -26,7 +26,7 @@ public class Method
     public static bool LerpRenderColorRange(Renderer renderer, float value)
     {
         if (renderer == null) return false;
-        float res = Mathf.Lerp(renderer.material.GetFloat("_colorrange"), value, 50 * Time.deltaTime);
+        float res = Mathf.Lerp(renderer.material.GetFloat("_colorrange"), value, 15 * Time.deltaTime);
         if (res - value < 0.3f)
         {
             res = value;

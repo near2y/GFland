@@ -33,7 +33,7 @@ Shader "Shader Forge/rongjie_001" {
             #include "UnityCG.cginc"
             #pragma multi_compile_fwdbase
             #pragma multi_compile_fog
-            #pragma only_renderers d3d9 d3d11 glcore gles 
+            #pragma only_renderers d3d9 d3d11 glcore gles gles3 
             #pragma target 3.0
             uniform sampler2D _MainTex; uniform float4 _MainTex_ST;
             uniform float4 _TintColor;
@@ -64,8 +64,7 @@ Shader "Shader Forge/rongjie_001" {
                 float faceSign = ( facing >= 0 ? 1 : -1 );
                 float4 _MainTex_var = tex2D(_MainTex,TRANSFORM_TEX(i.uv0, _MainTex));
                 float4 _Wenli_01_var = tex2D(_Wenli_01,TRANSFORM_TEX(i.uv0, _Wenli_01));
-                float node_5183 = (dot(_Wenli_01_var.rgb,float3(0.3,0.59,0.11))*_Wenli_01_var.a);
-                float node_798 = (_MainTex_var.a*i.vertexColor.a*_TintColor.a*node_5183);
+                float node_798 = (_MainTex_var.a*i.vertexColor.a*_TintColor.a*(dot(_Wenli_01_var.rgb,float3(0.3,0.59,0.11))*_Wenli_01_var.a));
                 clip(step(_node_7437,node_798) - 0.5);
 ////// Lighting:
 ////// Emissive:

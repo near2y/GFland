@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
     public float ATK = 5;
     public Emitter emitter = null;
     public PlayerBoomSkill skill = null;
+    public PlayerSkillBar playerSkillBar = null;
 
     [Header("< 玩家游戏中变量展示 >")]
     public Joystick joystick = null;
@@ -68,6 +69,7 @@ public class Player : MonoBehaviour
         movement = new Vector3();
         floorMask = LayerMask.GetMask("InputRay");
         //startColorrange = Method.GetColorrangeInRender(meshRenderer);
+        //StartGame = false;
     }
 
     private void Start()
@@ -78,6 +80,7 @@ public class Player : MonoBehaviour
             renderEmissionStandColorDic.Add(meshRenders.Count, item.material.GetColor(emissionColorStr));
             meshRenders.Add(item);
         }
+        playerSkillBar.SkillProgress = 0;
     }
 
 
@@ -110,11 +113,6 @@ public class Player : MonoBehaviour
             if (glitterTimer >= glitterTime) inGlitter = false;
         }
 
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            skill.ReleaseSkill();
-        }
     }
 
     public void OnWin()
@@ -128,12 +126,34 @@ public class Player : MonoBehaviour
 
     void OverInStage()
     {
+        //TODO
+        return;
+        emitter.trajactoryCount = GameManager.Instance.playerTrajactoryCount;
         emitter.SetActive(true);
         SceneManager.Instance.StartWave();
         inGame = true;
 
         skill = SceneManager.Instance.effectManager.GetEffect(4006).GetComponent<PlayerBoomSkill>();
         skill.player = transform;
+    }
+
+    public void StartGame()
+    {
+        if (inGame) return;
+        inGame = true;
+        skill = SceneManager.Instance.effectManager.GetEffect(4006).GetComponent<PlayerBoomSkill>();
+        skill.player = transform;
+        anim.SetBool(aniID_StartGame, true);
+        SceneManager.Instance.gameUI = UIManager.Instance.PopUpWindow(ConStr.GAMEPANEL, true) as GameUI;
+    }
+
+
+    public void OverChooseProp()
+    {
+        emitter.trajactoryCount = GameManager.Instance.playerTrajactoryCount;
+        emitter.SetActive(true);
+        SceneManager.Instance.StartWave();
+        if (!SceneManager.Instance.bossGame) StartGame();
     }
 
     void FullGround()
@@ -213,13 +233,13 @@ public class Player : MonoBehaviour
         anim.SetBool(aniID_Attack, inAttack);
     }
 
-    public bool StartGame
-    {
-        set
-        {
-            anim.SetBool(aniID_StartGame, value);
-        }
-    }
+    //public bool StartGame
+    //{
+    //    set
+    //    {
+    //        anim.SetBool(aniID_StartGame, value);
+    //    }
+    //}
 
 
     #region 转向

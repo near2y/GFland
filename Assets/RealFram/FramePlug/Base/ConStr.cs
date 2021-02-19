@@ -8,6 +8,7 @@ public class ConStr
     public const string LOADINGPANEL = "LoadPanel.prefab";
     public const string MENUPANEL = "MenuPanel.prefab";
     public const string GAMEPANEL = "GamePanel.prefab";
+    public const string CHOOSEPROPPANEL = "ChoosePropPanel.prefab";
 
     //场景名称
     public const string EMPTYSCENE = "Empty";

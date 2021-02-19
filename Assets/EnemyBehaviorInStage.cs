@@ -35,7 +35,9 @@ public class EnemyBehaviorInStage : EnemyBehaviorBase
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         enemy.anim.speed =  startAniSpeed;
-        SceneManager.Instance.player.StartGame = true;
+        if (SceneManager.Instance.bossGame) SceneManager.Instance.player.StartGame();
+
+        //SceneManager.Instance.player.StartGame = true;
 
     }
 

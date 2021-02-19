@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Joystick : MonoBehaviour
+public class Joystick : MonoBehaviour, IPointerDownHandler,IPointerUpHandler
 {
     public RectTransform knob;
     public RectTransform safeArea;
@@ -40,28 +40,21 @@ public class Joystick : MonoBehaviour
         {
             KnobMove();
         }
-
-        if (!inShow && Input.GetMouseButtonDown(0))
-        {
-            Vector3 mousePos;
-            ShowHide(true);
-            mouseScreenPos.Set(Input.mousePosition.x, Input.mousePosition.y);
-            RectTransformUtility.ScreenPointToWorldPointInRectangle(
-                canvasRect, mouseScreenPos , RFramework.Instance.m_UICamera, out mousePos);
-            joystickRectTransform.position = mousePos;
-        }
-
-        if (Input.GetMouseButtonUp(0))
-        {
-            ShowHide(false);
-        }
-
-
     }
+
+
     public void ShowHide(bool state)
     {
         moveArea.gameObject.SetActive(state);
         inShow = state;
+        if(state)
+        {
+            Vector3 mousePos;
+            mouseScreenPos.Set(Input.mousePosition.x, Input.mousePosition.y);
+            RectTransformUtility.ScreenPointToWorldPointInRectangle(
+                canvasRect, mouseScreenPos, RFramework.Instance.m_UICamera, out mousePos);
+            moveArea.position = mousePos;
+        }
     }
 
     void KnobMove()
@@ -70,9 +63,9 @@ public class Joystick : MonoBehaviour
         //Vector2 mouseScreenPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         mouseScreenPos.Set(Input.mousePosition.x, Input.mousePosition.y);
         RectTransformUtility.ScreenPointToWorldPointInRectangle(
-            joystickRectTransform, mouseScreenPos, RFramework.Instance.m_UICamera, out mousePos);
+            moveArea, mouseScreenPos, RFramework.Instance.m_UICamera, out mousePos);
 
-        Vector2 joyScreenPos = RectTransformUtility.WorldToScreenPoint(RFramework.Instance.m_UICamera, joystickRectTransform.position);
+        Vector2 joyScreenPos = RectTransformUtility.WorldToScreenPoint(RFramework.Instance.m_UICamera, moveArea.position);
         Vector2 off = mouseScreenPos - joyScreenPos;
         float dis = Vector2.SqrMagnitude(off);
         float radius = moveArea.rect.width * 0.5f - knob.rect.width * 0.35f;
@@ -91,13 +84,13 @@ public class Joystick : MonoBehaviour
         }
         //rotation
         float z;
-        if (mousePos.x > joystickRectTransform.position.x)
+        if (mousePos.x > moveArea.position.x)
         {
-            z = -Vector3.Angle(Vector3.up, mousePos - joystickRectTransform.position);
+            z = -Vector3.Angle(Vector3.up, mousePos - moveArea.position);
         }
         else
         {
-            z = Vector3.Angle(Vector3.up, mousePos - joystickRectTransform.position);
+            z = Vector3.Angle(Vector3.up, mousePos - moveArea.position);
         }
         knob.localRotation = Quaternion.Euler(0, 0, z);
 
@@ -132,4 +125,13 @@ public class Joystick : MonoBehaviour
         }
     }
 
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        ShowHide(true);
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        ShowHide(false);
+    }
 }

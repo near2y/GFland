@@ -23,7 +23,7 @@ public class SceneManager : MonoSingleton<SceneManager>
     private void Start()
     {
         Init();
-        player.StartGame = !bossGame;
+        //player.StartGame = !bossGame;
     }
 
     //初始化

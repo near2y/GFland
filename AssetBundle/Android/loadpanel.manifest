@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1536790055
+CRC: 3930014985
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: b04499dbf06652cf449ebc36d7a89c46
+    Hash: 85952be0df9c0b3963333251046d4004
   TypeTreeHash:
     serializedVersion: 2
     Hash: 3b96582a9421ec70a90adbff00057d96
@@ -39,4 +39,8 @@ ClassTypes:
   Script: {instanceID: 0}
 Assets:
 - "Assets/\u67AA\u706B\u4E4B\u5730/prefabs/UGUI/Panel/LoadPanel.prefab"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/UGUI/Loading/2.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/UGUI/Loading/4.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/UGUI/Loading/1.png"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/UGUI/Loading/3.png"
 Dependencies: []

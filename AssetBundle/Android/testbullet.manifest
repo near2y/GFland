@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3076409746
+CRC: 756095706
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: a6b19b9babd5b58e1cebe6a59c18f11e
+    Hash: 87b77d2d02bd6eb1ab89f245a089901e
   TypeTreeHash:
     serializedVersion: 2
     Hash: 8e7a9a5bc260fb3cb7f278e39396d550
@@ -25,9 +25,9 @@ ClassTypes:
   Script: {instanceID: 0}
 Assets:
 - "Assets/\u67AA\u706B\u4E4B\u5730/Effects/Prefabs/testBullet.prefab"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Effects/Textures/particle_orange_bullet_06.png"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Effects/Materials/particle_orange_bullet_07.mat"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Effects/Materials/tex_tx_guang 1.mat"
 Dependencies:
-- "F:/Near2y/SVN/shejiAPP/\u7A0B\u5E8F\u5DE5\u7A0B/Assets/../AssetBundle/Android/boss1"
-- "F:/Near2y/SVN/shejiAPP/\u7A0B\u5E8F\u5DE5\u7A0B/Assets/../AssetBundle/Android/ef_number_01"
-- "F:/Near2y/SVN/shejiAPP/\u7A0B\u5E8F\u5DE5\u7A0B/Assets/../AssetBundle/Android/ef_skill_01"
+- F:/Near2y/GFland/Assets/../AssetBundle/Android/ef_number_01
+- F:/Near2y/GFland/Assets/../AssetBundle/Android/ef_skill_01

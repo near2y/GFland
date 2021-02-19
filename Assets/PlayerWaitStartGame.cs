@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayerWaitStartGame : StateMachineBehaviour
 {
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    
-    //}
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        RFramework.Instance.m_UIRoot.gameObject.SetActive(false);
+        RFramework.Instance.m_UIRoot.gameObject.SetActive(true);
+        UIManager.Instance.PopUpWindow(ConStr.CHOOSEPROPPANEL, true);
+    }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -19,9 +21,8 @@ public class PlayerWaitStartGame : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        RFramework.Instance.m_UIRoot.gameObject.SetActive(false);
-        RFramework.Instance.m_UIRoot.gameObject.SetActive(true);
-        SceneManager.Instance.gameUI = UIManager.Instance.PopUpWindow(ConStr.GAMEPANEL, true) as GameUI;
+        //SceneManager.Instance.gameUI = UIManager.Instance.PopUpWindow(ConStr.GAMEPANEL, true) as GameUI;
+        //SceneManager.Instance.player.StartGame();
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

@@ -15,7 +15,7 @@ public class EnemyBehaviorWalk : EnemyBehaviorBase
         hadAgent = enemy.agent != null;
 
         startAniSpeed = enemy.anim.speed;
-        enemy.anim.speed = startAniSpeed * enemy.walkSpeedRatio;
+        enemy.anim.speed = enemy.walkSpeedRatio;
 
 
         if (hadAgent)
@@ -41,7 +41,9 @@ public class EnemyBehaviorWalk : EnemyBehaviorBase
             {
                 enemy.anim.SetBool(enemy.id_Attack, true);
                 enemy.attackTimer = 0;
+                enemy.anim.speed = startAniSpeed;
             }
+
         }
     }
 

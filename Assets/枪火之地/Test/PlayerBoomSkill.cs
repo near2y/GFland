@@ -45,6 +45,7 @@ public class PlayerBoomSkill : MonoBehaviour
         skill.Play();
         inSkill = true;
         skillTimer = 0;
+        SceneManager.Instance.player.playerSkillBar.SkillProgress = 0;
     }
 
     IEnumerator InBoom()

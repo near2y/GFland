@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2075488844
+CRC: 3919915184
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 523633bc4ac7f42ad91549684f3a789f
+    Hash: a80890ce896a167af4125dd6eb3578ec
   TypeTreeHash:
     serializedVersion: 2
     Hash: f27dd19b09bba3c5db07198d83ed105c
@@ -77,5 +77,5 @@ Assets:
 - Assets/Plugins/ErbGameArt/Epic toon VFX/Shaders/add_hdr_01.shader
 - "Assets/\u67AA\u706B\u4E4B\u5730/Effects/Textures/Snow4.png"
 Dependencies:
-- "F:/Near2y/SVN/shejiAPP/\u7A0B\u5E8F\u5DE5\u7A0B/Assets/../AssetBundle/Android/beattitan"
-- "F:/Near2y/SVN/shejiAPP/\u7A0B\u5E8F\u5DE5\u7A0B/Assets/../AssetBundle/Android/ef_sc_monster_disappear"
+- F:/Near2y/GFland/Assets/../AssetBundle/Android/beattitan
+- F:/Near2y/GFland/Assets/../AssetBundle/Android/ef_sc_monster_disappear

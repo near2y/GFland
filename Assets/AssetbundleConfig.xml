@@ -17,6 +17,7 @@
   <ABList Path="Assets/枪火之地/Effects/Prefabs/bossShootBullet.prefab" Crc="532092772" ABName="bossshootbullet" AssetName="bossShootBullet.prefab">
     <ABDependce>boss1</ABDependce>
   </ABList>
+  <ABList Path="Assets/枪火之地/prefabs/UGUI/Panel/ChoosePropPanel.prefab" Crc="2476667028" ABName="chooseproppanel" AssetName="ChoosePropPanel.prefab" />
   <ABList Path="Assets/RealFram/Data/Binary/BuffData.bytes" Crc="2262473451" ABName="data" AssetName="BuffData.bytes" />
   <ABList Path="Assets/RealFram/Data/Binary/BulletData.bytes" Crc="4110740475" ABName="data" AssetName="BulletData.bytes" />
   <ABList Path="Assets/RealFram/Data/Binary/EffectData.bytes" Crc="3883766571" ABName="data" AssetName="EffectData.bytes" />
@@ -66,10 +67,14 @@
     <ABDependce>player</ABDependce>
   </ABList>
   <ABList Path="Assets/枪火之地/prefabs/player.prefab" Crc="1850653287" ABName="player" AssetName="player.prefab">
+    <ABDependce>skillprogress</ABDependce>
     <ABDependce>muzzleflash</ABDependce>
   </ABList>
   <ABList Path="Assets/枪火之地/prefabs/sc06.prefab" Crc="2718072858" ABName="sc06" AssetName="sc06.prefab" />
   <ABList Path="Assets/枪火之地/prefabs/Frist_Set/SET.prefab" Crc="25282138" ABName="set" AssetName="SET.prefab" />
+  <ABList Path="Assets/枪火之地/prefabs/SkillProgress.prefab" Crc="2119082908" ABName="skillprogress" AssetName="SkillProgress.prefab">
+    <ABDependce>player</ABDependce>
+  </ABList>
   <ABList Path="Assets/枪火之地/prefabs/Frist_Set/sky_box.prefab" Crc="2711317654" ABName="sky_box" AssetName="sky_box.prefab" />
   <ABList Path="Assets/枪火之地/prefabs/spider.prefab" Crc="2986712521" ABName="spider" AssetName="spider.prefab">
     <ABDependce>ammotitan</ABDependce>
@@ -85,7 +90,6 @@
   <ABList Path="Assets/枪火之地/Effects/Prefabs/testBullet.prefab" Crc="182895824" ABName="testbullet" AssetName="testBullet.prefab">
     <ABDependce>ef_number_01</ABDependce>
     <ABDependce>ef_skill_01</ABDependce>
-    <ABDependce>boss1</ABDependce>
   </ABList>
   <ABList Path="Assets/枪火之地/prefabs/turret.prefab" Crc="920475430" ABName="turret" AssetName="turret.prefab">
     <ABDependce>ammotitan</ABDependce>
