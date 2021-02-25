@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2834923329
+CRC: 948054439
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 64fae5fb23525d030169867d74e1f171
+    Hash: e17eba818cbfc7214546bf67d3e54288
   TypeTreeHash:
     serializedVersion: 2
     Hash: b389834424bffed160eca0f5f8bdfd28
@@ -51,10 +51,8 @@ Assets:
 - "Assets/\u67AA\u706B\u4E4B\u5730/Texture/UGUI/Gaming/3.png"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Texture/UGUI/Gaming/2.png"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Animation/UGUI/Btn_Skill.controller"
-- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/UGUI/Gaming/5.png"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Texture/UGUI/nextGame.png"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Texture/UGUI/Clear.png"
-- "Assets/\u67AA\u706B\u4E4B\u5730/Texture/UGUI/Gaming/6.png"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Texture/UGUI/Gaming/1.png"
 - "Assets/\u67AA\u706B\u4E4B\u5730/prefabs/UGUI/Panel/GamePanel.prefab"
 Dependencies:

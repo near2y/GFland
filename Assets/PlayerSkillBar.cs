@@ -33,6 +33,7 @@ public class PlayerSkillBar : MonoBehaviour
         var euler = transform.rotation.eulerAngles;
         euler.y = 180;
         transform.rotation = Quaternion.Euler(euler);
+        if (SceneManager.Instance.gameUI == null) return;
         if(m_lastSkillProgress != m_skillProgress)
         {
             m_lastSkillProgress = (int)Mathf.Lerp(m_lastSkillProgress, m_skillProgress, 10 * Time.deltaTime);

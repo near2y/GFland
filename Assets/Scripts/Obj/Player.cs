@@ -77,8 +77,12 @@ public class Player : MonoBehaviour
         meshRenders = new List<Renderer>();
         foreach (var item in transform.GetComponentsInChildren<Renderer>())
         {
-            renderEmissionStandColorDic.Add(meshRenders.Count, item.material.GetColor(emissionColorStr));
-            meshRenders.Add(item);
+            if (item.material.HasProperty(emissionColorStr))
+            {
+                renderEmissionStandColorDic.Add(meshRenders.Count, item.material.GetColor(emissionColorStr));
+                meshRenders.Add(item);
+            }
+
         }
         playerSkillBar.SkillProgress = 0;
     }
