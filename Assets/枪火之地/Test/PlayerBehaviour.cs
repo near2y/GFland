@@ -1,31 +1,37 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
-using UnityEngine.AI;
 
-public class PlayerTest : MonoBehaviour
+
+[Serializable]
+public class PlayerBehaviour
 {
-    public Movement m_movement = null;
+    PlayerTest m_Player;
 
-
+    bool hadAni = false;
     Animator ani;
     Vector3 lastPosition;
     Quaternion lastRotation = new Quaternion();
+    Transform transform;
+    Vector3 aniDir = new Vector3();
+
 
     int m_VerticalID = Animator.StringToHash("Vertical");
     int m_HorizontalID = Animator.StringToHash("Horizontal");
     int m_RotateID = Animator.StringToHash("Rotate");
 
-    private void Start()
+    public PlayerBehaviour(PlayerTest p)
     {
-        ani = GetComponent<Animator>();
+        m_Player = p;
+        ani = m_Player.GetComponent<Animator>();
+        hadAni = ani != null;
+        transform = m_Player.transform;
         lastPosition = transform.position;
         lastRotation = transform.rotation;
     }
 
-    Vector3 aniDir = new Vector3();
     public void MoveAnimate(float h, float v)
     {
+        if (!hadAni) return;
         if (transform.position != lastPosition)
         {
             aniDir.Set(h, 0, v);
@@ -43,13 +49,12 @@ public class PlayerTest : MonoBehaviour
         }
         //turn
         float rot = 1;
-        if(transform.rotation != lastRotation)
+        if (transform.rotation != lastRotation)
         {
             rot = 0;
             lastRotation = transform.rotation;
         }
-        ani.SetFloat(m_RotateID, Mathf.Lerp(ani.GetFloat(m_RotateID),rot,0.3f ));
+        ani.SetFloat(m_RotateID, Mathf.Lerp(ani.GetFloat(m_RotateID), rot, 0.3f));
     }
-
 
 }

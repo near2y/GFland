@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
@@ -60,7 +61,6 @@ public class Player : MonoBehaviour
     //ray
     float camRayLength = 100f;
     int floorMask;
-
 
     private void Awake()
     {

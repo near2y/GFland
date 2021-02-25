@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.AI;
+using UnityEditorInternal;
 
 [CustomEditor(typeof(Movement))]
 public class MovementInspectorEditor : Editor
 {
     Movement m_Movement = null;
+
 
     private void OnEnable()
     {
@@ -32,7 +34,15 @@ public class MovementInspectorEditor : Editor
                 break;
         }
         GUILayout.Space(5);
-        if(GUILayout.Button("移除移动模块", GUILayout.Height(25)))
+
+        serializedObject.Update();
+        GUIContent callBackLabel = new GUIContent();
+        callBackLabel.text = "移动完成的回调函数";
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("completeMovement"),callBackLabel,true);
+        serializedObject.ApplyModifiedProperties();
+
+
+        if (GUILayout.Button("移除移动模块", GUILayout.Height(25)))
         {
             RemoveCCR();
             RemoveAgent();
@@ -58,7 +68,6 @@ public class MovementInspectorEditor : Editor
         GUILayout.EndVertical();
     }
 
-    MovementLookType m_Flags;
 
     private void SetCharactorCtrolModel()
     {
@@ -94,6 +103,7 @@ public class MovementInspectorEditor : Editor
                 
                 break;
         }
+
 
         GUILayout.EndVertical();
     }

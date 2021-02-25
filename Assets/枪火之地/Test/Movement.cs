@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class Movement :MonoBehaviour
 {
@@ -31,13 +32,19 @@ public class Movement :MonoBehaviour
     public float m_LookLerp = 1;
     Vector3 m_LastRotationEuler = new Vector3();
 
+
     //===========    寻路 ===================
     public bool m_AddNavmeshAgent = false;
     public NavMeshAgent m_agent = null;
 
+
+    //===========   回调 ====================
+    public MovementEvent completeMovement = new MovementEvent();
+
     private void Start()
     {
         m_SimpleMoveInput = Vector3.zero;
+
     }
 
     public void InitJoyStick(Joystick joy)
@@ -51,7 +58,6 @@ public class Movement :MonoBehaviour
         {
             Debug.LogError("初始化摇杆出错！请检查代码！");
         }
-
     }
 
     public void FixedUpdate()
@@ -94,6 +100,8 @@ public class Movement :MonoBehaviour
             }
             m_ccr.SimpleMove(m_SimpleMoveInput* moveSpeed * Time.deltaTime);
             LookTurning();
+
+            completeMovement.Invoke(h,v);
         }
     }
 
@@ -169,4 +177,19 @@ public enum MovementLookAxisType
     Y = 1<<1,
     Z = 2<<1,
     All = ~0,
+}
+
+[Serializable]
+public class MovementCallBack
+{
+    [SerializeField]
+    public string scriptName;
+    [SerializeField]
+    public Component script;
+}
+
+[Serializable]
+public class MovementEvent : UnityEvent<float ,float>
+{
+
 }
