@@ -5,10 +5,12 @@ using UnityEngine.EventSystems;
 
 public class RFramework : MonoSingleton<RFramework>
 {
+    public bool m_Test = false;
     public RectTransform m_UIRoot = null;
     public RectTransform m_WindowRoot = null;
     public Camera m_UICamera = null;
     public EventSystem m_UIEventSystem = null;
+
 
 
     protected override void Awake()
@@ -20,18 +22,19 @@ public class RFramework : MonoSingleton<RFramework>
         ObjectManager.Instance.Init(transform.Find("RecyclePoolTrs"), transform.Find("SceneTrs"));
         GameMapManager.Instance.Init(this);
 
-
+        #region 初始化相关游戏资源
+        UIManager.Instance.Init(m_UIRoot, m_WindowRoot, m_UICamera, m_UIEventSystem);
+        RegisterUI();
+        #endregion
     }
 
     // Use this for initialization
     void Start ()
     {
-        #region 初始化相关游戏资源
-        UIManager.Instance.Init(m_UIRoot, m_WindowRoot, m_UICamera, m_UIEventSystem);
-        RegisterUI();
-        #endregion
-
-        GameMapManager.Instance.LoadScene(ConStr.MENUSCENE);
+        if (!m_Test) 
+        {
+            GameMapManager.Instance.LoadScene(ConStr.MENUSCENE);
+        }
         //UIManager.Instance.PopUpWindow(ConStr.MENUPANEL);
     }
 

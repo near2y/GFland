@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public abstract class  Enemy : MonoBehaviour
+public abstract class Enemy : MonoBehaviour
 {
     [Header("< 怪物参数相关 >")]
     //攻击射程

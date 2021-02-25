@@ -30,10 +30,11 @@ public class Player : MonoBehaviour
     public Emitter emitter = null;
     public PlayerBoomSkill skill = null;
     public PlayerSkillBar playerSkillBar = null;
+    public Transform playerSkillBarTrans = null;
 
-    [Header("< 玩家游戏中变量展示 >")]
-    public Joystick joystick = null;
-    public bool hadJoystick = false;
+    //[Header("< 玩家游戏中变量展示 >")]
+    //public Joystick joystick = null;
+    //public bool hadJoystick = false;
 
     Animator anim;
     Vector3 aniDir;
@@ -80,6 +81,7 @@ public class Player : MonoBehaviour
             renderEmissionStandColorDic.Add(meshRenders.Count, item.material.GetColor(emissionColorStr));
             meshRenders.Add(item);
         }
+        playerSkillBar = new PlayerSkillBar(playerSkillBarTrans);
         playerSkillBar.SkillProgress = 0;
     }
 
@@ -88,17 +90,20 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         if (!inGame) return;
-        //Move
-        if(!hadJoystick)
-        {
-            GameUI ui = UIManager.Instance.FindWindowByName<GameUI>(ConStr.GAMEPANEL);
-            if(ui!=null && ui.m_Panel.joystick != null)
-            {
-                hadJoystick = true;
-                joystick = ui.m_Panel.joystick;
-            }
-        }
-        ComMovement();
+        //skillBar
+        playerSkillBar.Update();
+
+        ////Move
+        //if(!hadJoystick)
+        //{
+        //    GameUI ui = UIManager.Instance.FindWindowByName<GameUI>(ConStr.GAMEPANEL);
+        //    if(ui!=null && ui.m_Panel.joystick != null)
+        //    {
+        //        hadJoystick = true;
+        //        joystick = ui.m_Panel.joystick;
+        //    }
+        //}
+        //ComMovement();
 
         Attack();
 
@@ -164,18 +169,18 @@ public class Player : MonoBehaviour
         Handheld.Vibrate();
     }
 
-    void ComMovement()
-    {
-        float h = 0, v = 0;
-        if (hadJoystick)
-        {
-            h = joystick.movement.x;
-            v = joystick.movement.z;
-        }
-        Move(h, v);
-        Turning();
-        Animating(h, v);
-    }
+    //void ComMovement()
+    //{
+    //    float h = 0, v = 0;
+    //    if (hadJoystick)
+    //    {
+    //        h = joystick.movement.x;
+    //        v = joystick.movement.z;
+    //    }
+    //    Move(h, v);
+    //    Turning();
+    //    Animating(h, v);
+    //}
 
 
     void Animating(float h,float v)

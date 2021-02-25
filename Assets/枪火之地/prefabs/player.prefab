@@ -177,7 +177,7 @@ MonoBehaviour:
   ATK: 8
   emitter: {fileID: 2697930127955747723}
   skill: {fileID: 0}
-  playerSkillBar: {fileID: 1903683486}
+  playerSkillBarTrans: {fileID: 7803677270833014656}
   joystick: {fileID: 0}
   hadJoystick: 0
   glitterTime: 0.3
@@ -3346,20 +3346,6 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &1903683486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6824744386224476487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 195bd5e52cce9d941a7698f5f850653d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bar1: {fileID: 6302725300209735725}
-  bar2: {fileID: 9044419672185328216}
 --- !u!1 &7077405924559495787
 GameObject:
   m_ObjectHideFlags: 0
@@ -3560,24 +3546,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d69afd1725d0e140a38c3a38a82295b, type: 3}
---- !u!1 &6824744386224476487 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3157400315151929937, guid: 6d69afd1725d0e140a38c3a38a82295b,
-    type: 3}
-  m_PrefabInstance: {fileID: 8459741452662342422}
-  m_PrefabAsset: {fileID: 0}
---- !u!23 &6302725300209735725 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 2454687488762469179, guid: 6d69afd1725d0e140a38c3a38a82295b,
-    type: 3}
-  m_PrefabInstance: {fileID: 8459741452662342422}
-  m_PrefabAsset: {fileID: 0}
---- !u!23 &9044419672185328216 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 640410282681651534, guid: 6d69afd1725d0e140a38c3a38a82295b,
-    type: 3}
-  m_PrefabInstance: {fileID: 8459741452662342422}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7803677270833014656 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1813597315372197014, guid: 6d69afd1725d0e140a38c3a38a82295b,

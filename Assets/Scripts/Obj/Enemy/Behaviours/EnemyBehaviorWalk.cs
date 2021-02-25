@@ -12,8 +12,10 @@ public class EnemyBehaviorWalk : EnemyBehaviorBase
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        hadAgent = enemy.agent != null;
+        //加入到enemyList
+        SceneManager.Instance.enemyManager.AddEnemy(enemy);
 
+        hadAgent = enemy.agent != null;
         startAniSpeed = enemy.anim.speed;
         enemy.anim.speed = enemy.walkSpeedRatio;
 
@@ -24,6 +26,7 @@ public class EnemyBehaviorWalk : EnemyBehaviorBase
             startAgentSpeed = enemy.agent.speed;
             enemy.agent.speed = startAgentSpeed * enemy.walkSpeedRatio;
         }
+        if (enemy.bodyCollider != null) enemy.bodyCollider.enabled = true;
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -58,15 +61,4 @@ public class EnemyBehaviorWalk : EnemyBehaviorBase
         }
     }
 
-    // OnStateMove is called right after Animator.OnAnimatorMove()
-    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that processes and affects root motion
-    //}
-
-    // OnStateIK is called right after Animator.OnAnimatorIK()
-    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that sets up animation IK (inverse kinematics)
-    //}
 }
