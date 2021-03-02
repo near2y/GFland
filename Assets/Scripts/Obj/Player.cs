@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     int aniID_Attack = Animator.StringToHash("Attack");
     int aniID_StartGame = Animator.StringToHash("StartGame");
 
+
     [Header("< 玩家参数 >")]
     public float speed = 3;
     public float attackDis = 5f;

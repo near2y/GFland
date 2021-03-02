@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class TestManager : MonoBehaviour
 {
-    public PlayerTest player = null;
+    public Movement test = null;
+    public GameObject spiderPre;
 
     private void Start()
     {
         GameUI gameUI = (GameUI)UIManager.Instance.PopUpWindow(ConStr.GAMEPANEL);
-        
 
-        if(player != null)
+        //var obj = Instantiate(spiderPre);
+
+        if (test != null)
         {
-            player.m_movement.InitJoyStick(gameUI.m_Panel.joystick);
+            test.InitJoyStick(gameUI.m_Panel.joystick);
         }
     }
 

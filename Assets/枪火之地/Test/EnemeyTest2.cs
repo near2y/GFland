@@ -1,23 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Scripting;
 
-public class EnemeyTest2 : MonoBehaviour
+public class EnemeyTest2 : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnParticleCollision(GameObject other)
-    {
-        Debug.Log("near2y");
-    }
 }

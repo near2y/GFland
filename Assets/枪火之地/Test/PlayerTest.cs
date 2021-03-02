@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,6 +9,10 @@ public class PlayerTest : MonoBehaviour
 {
     public Movement m_movement = null;
 
+
+    public bool hadAnimationment = false;
+
+    
 
     Animator ani;
     Vector3 lastPosition;
@@ -23,6 +29,15 @@ public class PlayerTest : MonoBehaviour
         lastRotation = transform.rotation;
     }
 
+    public void Near2y()
+    {
+        Debug.Log("Near2y");
+    }
+
+
+    /// <summary>
+    /// 移动动画控制函数
+    /// </summary>
     Vector3 aniDir = new Vector3();
     public void MoveAnimate(float h, float v)
     {
@@ -50,6 +65,5 @@ public class PlayerTest : MonoBehaviour
         }
         ani.SetFloat(m_RotateID, Mathf.Lerp(ani.GetFloat(m_RotateID),rot,0.3f ));
     }
-
-
 }
+

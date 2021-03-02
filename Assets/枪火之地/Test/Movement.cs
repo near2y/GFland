@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 
+
 public class Movement :MonoBehaviour
 {
     public float moveSpeed = 5;
@@ -16,6 +17,7 @@ public class Movement :MonoBehaviour
     public Rigidbody m_rigid = null;
 
     //==========   角色控制器 =================
+    #region 角色控制器
     public bool m_AddCharatorControl = false;
     public CharacterController m_ccr = null;
     Vector3 m_SimpleMoveInput = new Vector3();
@@ -31,11 +33,15 @@ public class Movement :MonoBehaviour
     public Transform m_LookTarget = null;
     public float m_LookLerp = 1;
     Vector3 m_LastRotationEuler = new Vector3();
+    #endregion
 
-
+    #region 寻路
     //===========    寻路 ===================
     public bool m_AddNavmeshAgent = false;
     public NavMeshAgent m_agent = null;
+    public Transform m_agentTarget = null;
+    public bool hadAgentTarget = false;
+    #endregion
 
 
     //===========   回调 ====================
@@ -60,7 +66,7 @@ public class Movement :MonoBehaviour
         }
     }
 
-    public void FixedUpdate()
+    public void MovementUpdate()
     {
         switch (m_type)
         {
@@ -76,10 +82,12 @@ public class Movement :MonoBehaviour
         }
     }
 
-
     void NavmeshUpdate()
     {
-
+        if (hadAgentTarget)
+        {
+            m_agent.SetDestination(m_agentTarget.position);
+        }
     }
 
     void CharactorUpdate()
@@ -100,7 +108,6 @@ public class Movement :MonoBehaviour
             }
             m_ccr.SimpleMove(m_SimpleMoveInput* moveSpeed * Time.deltaTime);
             LookTurning();
-
             completeMovement.Invoke(h,v);
         }
     }
@@ -177,15 +184,6 @@ public enum MovementLookAxisType
     Y = 1<<1,
     Z = 2<<1,
     All = ~0,
-}
-
-[Serializable]
-public class MovementCallBack
-{
-    [SerializeField]
-    public string scriptName;
-    [SerializeField]
-    public Component script;
 }
 
 [Serializable]

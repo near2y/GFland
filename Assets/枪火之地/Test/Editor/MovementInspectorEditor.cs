@@ -63,8 +63,11 @@ public class MovementInspectorEditor : Editor
         }
         GUILayout.Label("当前为导航移动");
         GUILayout.BeginVertical();
-        m_Movement.moveSpeed = EditorGUILayout.FloatField("移动速度", m_Movement.moveSpeed);
-        m_Movement.angelSpeed = EditorGUILayout.FloatField("转向速度", m_Movement.angelSpeed);
+        m_Movement.m_agent.speed = EditorGUILayout.FloatField("移动速度：", m_Movement.m_agent.speed);
+        m_Movement.m_agent.angularSpeed= EditorGUILayout.FloatField("转向速度：", m_Movement.m_agent.angularSpeed);
+        m_Movement.m_agent.stoppingDistance= EditorGUILayout.FloatField("停止距离：", m_Movement.m_agent.stoppingDistance);
+        m_Movement.m_agentTarget = (Transform)EditorGUILayout.ObjectField("目标对象：", m_Movement.m_agentTarget, typeof(Transform), true);
+        m_Movement.hadAgentTarget = m_Movement.m_agentTarget != null;
         GUILayout.EndVertical();
     }
 

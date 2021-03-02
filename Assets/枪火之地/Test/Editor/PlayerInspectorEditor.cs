@@ -9,7 +9,12 @@ using UnityEngine.AI;
 public class PlayerInspectorEditor :Editor
 {
     public PlayerTest PlayerTest { get { return target as PlayerTest; } }
+    SerializedProperty animationment;
 
+    private void OnEnable()
+    {
+        animationment = serializedObject.FindProperty("m_animationment");
+    }
 
     public override void OnInspectorGUI()
     {
@@ -28,8 +33,35 @@ public class PlayerInspectorEditor :Editor
             EditorGUILayout.ObjectField("移动组件",PlayerTest.m_movement, typeof(Movement), true);
         }
 
+        if (!PlayerTest.hadAnimationment)
+        {
+
+            if (GUILayout.Button("添加动画模块", GUILayout.Height(25)))
+            {
+                PlayerTest.hadAnimationment = true;
+            }
+        }
+
+
+        if (PlayerTest.hadAnimationment)
+        {
+            serializedObject.Update();
+            EditorGUILayout.PropertyField(animationment);
+            if (PlayerTest.hadAnimationment)
+            {
+                if (GUILayout.Button("移除动画模块", GUILayout.Height(25)))
+                {
+                    PlayerTest.hadAnimationment = false;
+                }
+            }
+            serializedObject.ApplyModifiedProperties();
+        }
+
+
     }
 
 }
+
+
 
 
