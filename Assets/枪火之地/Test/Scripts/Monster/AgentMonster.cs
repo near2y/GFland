@@ -9,6 +9,7 @@ public class AgentMonster : MonoBehaviour
 {
     public float m_Hp;
     public AnimateStateCompiler m_StateCompiler;
+    public DamageAbility m_DamageAbility;
 
     [Header("NavMeshAgent Role")]
     public Transform m_Target;
@@ -19,6 +20,7 @@ public class AgentMonster : MonoBehaviour
     private void Awake()
     {
         m_StateCompiler.Init(typeof(AgentMonster));
+        m_DamageAbility.Init(100, transform);
     }
 
     private void Start()
@@ -32,6 +34,7 @@ public class AgentMonster : MonoBehaviour
         {
             m_StateCompiler.m_Animator.Play("ToStage");
         }
+        m_DamageAbility.Update();
     }
 
 
@@ -59,7 +62,5 @@ public class AgentMonster : MonoBehaviour
         //TODO
         Debug.Log("增加到可攻击的怪物列表中");
     }
-
-
 }
 

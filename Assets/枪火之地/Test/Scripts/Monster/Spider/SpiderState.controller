@@ -121,7 +121,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Bind: {fileID: 0}
   m_EnterCallBackName: []
-  m_UpdateCallBackName: []
+  m_UpdateCallBackName:
+  - OnMove
   m_ExitCallBackName: []
 --- !u!1101 &1101249776816405626
 AnimatorStateTransition:
