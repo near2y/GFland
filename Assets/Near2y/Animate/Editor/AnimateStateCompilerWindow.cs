@@ -172,16 +172,29 @@ public class AnimateStateCompilerWindow : EditorWindow
     {
         if (names == null) return;
         EditorGUILayout.BeginHorizontal();
-        int length = EditorGUILayout.IntField(title, names.Length);
-        if (length != names.Length)
+        EditorGUILayout.LabelField(title + "    "+names.Length,GUILayout.Width(180));
+        if(GUILayout.Button(" +", GUILayout.Height(18), GUILayout.Width(18)))
         {
-            names = new string[length];
+            string[] newNames = new string[names.Length + 1];
+            names.CopyTo(newNames, 0);
+            names = newNames;
+        }
+        if (GUILayout.Button(" -", GUILayout.Height(18), GUILayout.Width(18)))
+        {
+            if (names.Length >= 1)
+            {
+                string[] newNames = new string[names.Length - 1];
+                for (int i = 0; i < newNames.Length; i++)
+                {
+                    newNames[i] = names[i];
+                }
+                names = newNames;
+            }
         }
         EditorGUILayout.BeginVertical();
         for (int i = 0; i < names.Length; i++)
         {
             names[i] = GUILayout.TextField(names[i]);
-
         }
         EditorGUILayout.EndVertical();
         EditorGUILayout.EndHorizontal();
