@@ -7,25 +7,23 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class AgentMonster : MonoBehaviour
 {
-    
     public float m_Hp;
-    public Transform m_Target;
-
     public AnimateStateCompiler m_StateCompiler;
 
-
+    [Header("NavMeshAgent Role")]
+    public Transform m_Target;
     NavMeshAgent m_Agent;
-    BehaviourCallBack m_callback;
+
 
 
     private void Awake()
     {
-
-        m_Agent = GetComponent<NavMeshAgent>();
-
-
-
         m_StateCompiler.Init(typeof(AgentMonster));
+    }
+
+    private void Start()
+    {
+        m_Agent = GetComponent<NavMeshAgent>();
     }
 
     private void Update()
@@ -40,7 +38,7 @@ public class AgentMonster : MonoBehaviour
     public void SpwanMonster()
     {
         //登场
-
+        Debug.Log("near2y spwan monster");
         //
     }
 

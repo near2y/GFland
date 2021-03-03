@@ -97,10 +97,12 @@ public class AnimateStateCompilerWindow : EditorWindow
                 GUILayout.Label("当前状态缺少行为脚本");
                 if (GUILayout.Button("添加行为脚本"))
                 {
-                    state.AddStateMachineBehaviour<BehaviourBase>();
+                    BehaviourBase b = state.AddStateMachineBehaviour<BehaviourBase>();
+                    b.m_EnterCallBackName = new string[0];
+                    b.m_UpdateCallBackName = new string[0];
+                    b.m_ExitCallBackName = new string[0];
                 }
                 EditorGUILayout.EndHorizontal();
-
             }
             else
             {
@@ -115,67 +117,75 @@ public class AnimateStateCompilerWindow : EditorWindow
                 EditorGUILayout.EndHorizontal();
                 EditorGUILayout.Space();
 
+
                 var behaviour = state.behaviours[0] as BehaviourBase;
-                EditorGUILayout.BeginHorizontal();
-                GUILayout.Label("进入状态的回调函数名称：");
-                behaviour.m_EnterCallBackName = GUILayout.TextField(behaviour.m_EnterCallBackName);
-                EditorGUILayout.EndHorizontal();
-                EditorGUILayout.Space();
+                SetCallBacksName("进入状态调用函数数量", ref behaviour.m_EnterCallBackName);
+                SetCallBacksName("状态的每帧回调函数名称", ref behaviour.m_UpdateCallBackName);
+                SetCallBacksName("状态的离开回调函数名称", ref behaviour.m_ExitCallBackName);
 
-                EditorGUILayout.BeginHorizontal();
-                GUILayout.Label("状态的每帧回调函数名称：");
-                behaviour.m_UpdateCallBackName = GUILayout.TextField(behaviour.m_UpdateCallBackName);
-                EditorGUILayout.EndHorizontal();
-                EditorGUILayout.Space();
+                SetDisplayAllMethodsName();
 
-                EditorGUILayout.BeginHorizontal();
-                GUILayout.Label("状态的离开回调函数名称：");
-                behaviour.m_ExitCallBackName = GUILayout.TextField(behaviour.m_ExitCallBackName);
-                EditorGUILayout.EndHorizontal();
-                EditorGUILayout.Space();
-
-                if (m_Component != null)
-                {
-                    if (m_showFunctionName)
-                    {
-                        if (GUILayout.Button("隐藏当前脚本所有函数名称"))
-                        {
-                            m_showFunctionName = false;
-                        }
-                        MethodInfo[] methods = m_Component.GetType().GetMethods();
-                        int row = Mathf.FloorToInt(methods.Length / 3);
-                        int index = 0;
-                        m_FunctionNameBegin = EditorGUILayout.BeginScrollView(m_FunctionNameBegin);
-                        for (int i = 0; i < row; i++)
-                        {
-                            EditorGUILayout.BeginHorizontal();
-                            for (int j = 0; j < 3; j++)
-                            {
-                                EditorGUILayout.BeginVertical();
-                                GUILayout.TextField(methods[index].Name);
-                                EditorGUILayout.EndVertical();
-                                index++;
-                            }
-                            EditorGUILayout.EndHorizontal();
-                        }
-                        EditorGUILayout.EndScrollView();
-                    }
-                    else
-                    {
-                        if (GUILayout.Button("显示当前脚本所有函数名称"))
-                        {
-                            m_showFunctionName = true;
-                        }
-                    }
-
-
-
-                }
             }
-
-
             EditorGUILayout.EndVertical();
         }
+    }
+
+    void SetDisplayAllMethodsName()
+    {
+        if (m_Component != null)
+        {
+            if (m_showFunctionName)
+            {
+                if (GUILayout.Button("隐藏当前脚本所有函数名称"))
+                {
+                    m_showFunctionName = false;
+                }
+                MethodInfo[] methods = m_Component.GetType().GetMethods();
+                int row = Mathf.FloorToInt(methods.Length / 3);
+                int index = 0;
+                m_FunctionNameBegin = EditorGUILayout.BeginScrollView(m_FunctionNameBegin);
+                for (int i = 0; i < row; i++)
+                {
+                    EditorGUILayout.BeginHorizontal();
+                    for (int j = 0; j < 3; j++)
+                    {
+                        EditorGUILayout.BeginVertical();
+                        GUILayout.TextField(methods[index].Name);
+                        EditorGUILayout.EndVertical();
+                        index++;
+                    }
+                    EditorGUILayout.EndHorizontal();
+                }
+                EditorGUILayout.EndScrollView();
+            }
+            else
+            {
+                if (GUILayout.Button("显示当前脚本所有函数名称"))
+                {
+                    m_showFunctionName = true;
+                }
+            }
+        }
+    }
+
+    void SetCallBacksName(string title, ref string[] names)
+    {
+        if (names == null) return;
+        EditorGUILayout.BeginHorizontal();
+        int length = EditorGUILayout.IntField(title, names.Length);
+        if (length != names.Length)
+        {
+            names = new string[length];
+        }
+        EditorGUILayout.BeginVertical();
+        for (int i = 0; i < names.Length; i++)
+        {
+            names[i] = GUILayout.TextField(names[i]);
+
+        }
+        EditorGUILayout.EndVertical();
+        EditorGUILayout.EndHorizontal();
+        EditorGUILayout.Space();
     }
 
 

@@ -13,11 +13,11 @@ public class BehaviourBase : StateMachineBehaviour
     public MonoBehaviour m_Bind = null;
 
     [SerializeField]
-    public string m_EnterCallBackName;
+    public string[] m_EnterCallBackName;
     [SerializeField]
-    public string m_UpdateCallBackName;
+    public string[] m_UpdateCallBackName;
     [SerializeField]
-    public string m_ExitCallBackName;
+    public string[] m_ExitCallBackName;
 
     BehaviourCallBack m_EnterDelegate;
     BehaviourCallBack m_UpdateDelegate;
@@ -59,7 +59,19 @@ public class BehaviourBase : StateMachineBehaviour
     }
 
 
-    void AddDelegate(ref BehaviourCallBack callBack,string name,System.Type type)
+    void AddDelegate(ref BehaviourCallBack callBack,string[] names,System.Type type)
+    {
+        foreach (var name in names)
+        {
+            AddDelegate(ref callBack, name, type);
+        }
+        var m = type.GetMethod(name);
+        if (m != null)
+        {
+            callBack += (BehaviourCallBack)m.CreateDelegate(typeof(BehaviourCallBack), m_Bind);
+        }
+    }
+    void AddDelegate(ref BehaviourCallBack callBack, string name, System.Type type)
     {
         var m = type.GetMethod(name);
         if (m != null)
