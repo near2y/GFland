@@ -17,12 +17,12 @@ public class Drone : Enemy
         Init(target, spwanPoint);
 
         //登场方式
-        if (spwanPoint.tag == SpwanPointTag.Climb)
+        if (spwanPoint.tag == SpawnPointTag.Climb)
         {
             //从地下飞上来的
             anim.SetFloat(id_SpwanType, 1);
         }
-        else if (spwanPoint.tag == SpwanPointTag.Full)
+        else if (spwanPoint.tag == SpawnPointTag.Full)
         {
             //落下来的
             anim.SetFloat(id_SpwanType, 0);

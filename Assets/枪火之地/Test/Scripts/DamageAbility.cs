@@ -11,6 +11,7 @@ public class DamageAbility
     Action m_CompleteCallBack;
     bool m_InHit;
     Dictionary<Material, float> m_MaterialDic = new Dictionary<Material, float>();
+
     const string str_colorrange = "_colorrange";
 
     public void Update()

@@ -37,7 +37,7 @@ public class EnemyPoints
 
 }
 
-public class SpwanPointTag
+public class SpawnPointTag
 {
     public static string Climb = "Climb";
     public static string Full = "Full";

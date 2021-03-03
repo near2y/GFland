@@ -24,14 +24,14 @@ public class Spider : Enemy
         float attcakType = melee ? 1 : 0;
         anim.SetFloat(id_Melee, attcakType);
         //登场方式
-        if (spwanPoint.tag == SpwanPointTag.Climb)
+        if (spwanPoint.tag == SpawnPointTag.Climb)
         {
             //爬上来的
             anim.SetFloat(id_SpwanType, 1);
             //从哪一帧开始播放登场动画
             anim.Play(EnemyState.InStage, 0, Random.Range(startRange.x, startRange.y));
         }
-        else if(spwanPoint.tag == SpwanPointTag.Full)
+        else if(spwanPoint.tag == SpawnPointTag.Full)
         {
             //落下来的
             anim.SetFloat(id_SpwanType, 0.5f);

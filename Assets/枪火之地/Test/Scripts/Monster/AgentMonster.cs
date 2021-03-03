@@ -15,6 +15,10 @@ public class AgentMonster : MonoBehaviour
     public Transform m_Target;
     NavMeshAgent m_Agent;
 
+    public MonsterSpawnType m_SpawnType;
+    public Vector2 m_SpawnRange;
+
+    int m_idSpawnType = Animator.StringToHash("SpawnType");
 
 
     private void Awake()
@@ -32,35 +36,54 @@ public class AgentMonster : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            m_StateCompiler.m_Animator.Play("ToStage");
+            SpawnMonster();
         }
         m_DamageAbility.Update();
     }
 
 
-    public void SpwanMonster()
+    public virtual void SpawnMonster()
     {
-        //登场
-        Debug.Log("near2y spwan monster");
-        //
+        //播放出场方式
+        m_StateCompiler.m_Animator.Play("ToStage",0,Random.Range(m_SpawnRange.x,m_SpawnRange.y));
+    }
+
+    public virtual void SetSpawnType()
+    {
+        m_StateCompiler.m_Animator.SetFloat(m_idSpawnType, (float)m_SpawnType);
     }
 
 
-    public void OnMove()
+    public virtual void UpdateMove()
     {
-        if(m_Target != null)
+        if (m_Target != null)
         {
             m_Agent.SetDestination(m_Target.position);
         }
     }
 
-
-
-    //添加到场景
-    void AddInStage()
+    public virtual void EnterMove()
     {
-        //TODO
-        Debug.Log("增加到可攻击的怪物列表中");
+        m_Agent.isStopped = false;
     }
+
+    public virtual void OutMove()
+    {
+        m_Agent.isStopped = true;
+    }
+
+}
+
+
+public class SpawnType
+{
+
+}
+
+public enum MonsterSpawnType
+{
+    Full = 0,
+    Climb,
+
 }
 
