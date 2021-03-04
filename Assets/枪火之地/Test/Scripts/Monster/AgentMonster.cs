@@ -81,7 +81,7 @@ public abstract class AgentMonster : MonoBehaviour
 
     protected virtual void JudgeAttack()
     {
-        if (m_AttackAblity.RfreshTimer && m_TargetDisSqr < m_AttackAblity.m_AttackDistanceSqr && Method.InSight(transform, m_Target, 20) )
+        if (m_AttackAblity.RfreshTimer && m_TargetDisSqr < m_AttackAblity.m_AttackDistanceSqr && Method.InSight(transform, m_Target, 35) )
         {
             m_StateCompiler.m_Animator.SetTrigger(m_idAttack);
             m_AttackAblity.Reset();
@@ -96,6 +96,9 @@ public abstract class AgentMonster : MonoBehaviour
         //TODO从队列中移除
         //
     }
+
+
+
 }
 
 

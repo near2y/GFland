@@ -22,4 +22,8 @@ public class MonsterSpider : AgentMonster
         m_StateCompiler.m_Animator.SetFloat(m_idSpawnType, (float)m_SpawnType);
     }
 
+    public virtual void EnterAttack()
+    {
+        m_Agent.isStopped = true;
+    }
 }

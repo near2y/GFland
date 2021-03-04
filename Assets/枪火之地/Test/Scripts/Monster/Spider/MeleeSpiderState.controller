@@ -6,7 +6,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SpiderState
+  m_Name: MeleeSpiderState
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: SpawnType
@@ -145,6 +145,23 @@ MonoBehaviour:
   - UpdateMove
   m_ExitCallBackName:
   - OutMove
+--- !u!114 &114942941991288562
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb649582bb3f0e408d8c18838b841fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Bind: {fileID: 0}
+  m_EnterCallBackName:
+  - EnterAttack
+  m_UpdateCallBackName: []
+  m_ExitCallBackName: []
 --- !u!206 &206765936383276630
 BlendTree:
   m_ObjectHideFlags: 1
@@ -215,9 +232,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
-  m_TransitionOffset: 0
-  m_ExitTime: 0.625
+  m_TransitionDuration: 0.050149858
+  m_TransitionOffset: 0.23982026
+  m_ExitTime: 0.92477524
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -310,7 +327,8 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101010045249128580}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: 114942941991288562}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
