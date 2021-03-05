@@ -21,5 +21,11 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T>
         {
             Debug.LogError("Get a second instance of this class" + this.GetType());
         }
+
     }
+
 }
+
+
+
+

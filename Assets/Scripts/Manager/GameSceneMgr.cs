@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SceneManager : MonoSingleton<SceneManager>
+public class GameSceneMgr : MonoBehaviour
 {
     [Header("< 设置 >")]
-    public Transform effectParent = null;
 
     public Player player;
     public EnemyManager enemyManager;
     public WaveManager waveManager = null;
     public EffectManager effectManager = null;
-    public Transform pointsTrans;
+    [HideInInspector]
     public GameCamera gameCamera;
     public EnemyPoints enemyPoints;
     public GameUI gameUI = null;
@@ -23,23 +22,24 @@ public class SceneManager : MonoSingleton<SceneManager>
     private void Start()
     {
         Init();
-        //player.StartGame = !bossGame;
     }
 
     //初始化
     void Init()
     {
 
-        //points
-        enemyPoints = new EnemyPoints(pointsTrans);
+        //monsterPoints
+        enemyPoints = new EnemyPoints(GameObject.Find("MonsterPoint").transform);
         //player
         //player = ObjectManager.Instance.InstantiateObject(playerPrePath).GetComponent<Player>();
         //player.transform.SetParent(transform);
-        //gameCamera.SetTarget(player.transform);
+        //camera
+        gameCamera = GameObject.Find("Main Camera").GetComponent<GameCamera>();
+        //enemyManager
+        enemyManager = new EnemyManager(transform);
         //effectManager
-        Transform parent = effectParent == null ? transform : effectParent;
-        effectManager = new EffectManager(GameManager.Instance.effectData, parent);
-
+        effectManager = new EffectManager(GameManager.Instance.effectData, transform);
+        
     }
 
     //游戏胜利

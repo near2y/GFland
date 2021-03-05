@@ -21,7 +21,7 @@ public class MenuSceneManager : MonoSingleton<MenuSceneManager>
     void Start()
     {
         anim = GetComponent<Animator>();
-        
+
     }
 
     public void ToSkin()

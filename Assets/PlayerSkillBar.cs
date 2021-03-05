@@ -66,7 +66,7 @@ public class PlayerSkillBar
                 //bar1.material.SetColor(colorShaderName, yellow);
                 //bar2.material.SetColor(colorShaderName, yellow);
                 //SceneManager.Instance.gameUI.m_Panel.skillBtn.interactable = true;
-                SceneManager.Instance.gameUI.m_Panel.skillBtn.gameObject.SetActive(true);
+                GameManager.Instance.gameSceneMgr.gameUI.m_Panel.skillBtn.gameObject.SetActive(true);
             }
             else
             {
@@ -77,7 +77,7 @@ public class PlayerSkillBar
                 //bar1.material.SetColor(colorShaderName, green);
                 //bar2.material.SetColor(colorShaderName, green);
                 //SceneManager.Instance.gameUI.m_Panel.skillBtn.interactable = false;
-                SceneManager.Instance.gameUI.m_Panel.skillBtn.gameObject.SetActive(false);
+                GameManager.Instance.gameSceneMgr.gameUI.m_Panel.skillBtn.gameObject.SetActive(false);
             }
         }
     }

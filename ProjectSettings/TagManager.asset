@@ -16,15 +16,15 @@ TagManager:
   - 
   - 
   - Player
+  - Monster
   - Ground
-  - AirGround
-  - AirWall
-  - Enemy
-  - PostProcess
-  - Edge
-  - InputRay
-  - Ammo
   - PlayerBullet
+  - MonsterBullet
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

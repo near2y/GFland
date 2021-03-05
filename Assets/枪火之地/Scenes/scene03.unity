@@ -175,7 +175,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20315974}
-  m_LocalRotation: {x: 0.011270716, y: 0.9824611, z: -0.17504765, w: 0.06325729}
+  m_LocalRotation: {x: 0.011270714, y: 0.9824611, z: -0.17504765, w: 0.06325728}
   m_LocalPosition: {x: -6.2, y: 1.6400001, z: -2.7800007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -193,7 +193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 33929708}
   - component: {fileID: 33929709}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: control_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +285,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 915c7b29161ba9a419533c1b2b27fde0, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 915c7b29161ba9a419533c1b2b27fde0, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -293,7 +293,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 915c7b29161ba9a419533c1b2b27fde0, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 915c7b29161ba9a419533c1b2b27fde0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -518,7 +518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -526,7 +526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -534,7 +534,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -542,7 +542,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100008, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -550,7 +550,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100008, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -558,7 +558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1135,7 +1135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 304429557}
   - component: {fileID: 304429558}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1385,6 +1385,10 @@ MonoBehaviour:
     m_ParentHash: 756556552
   - m_Hash: -1739653306
     m_ParentHash: 756556552
+  - m_Hash: -190613879
+    m_ParentHash: 756556552
+  - m_Hash: -1752896643
+    m_ParentHash: 756556552
 --- !u!4 &356563217
 Transform:
   m_ObjectHideFlags: 0
@@ -1401,7 +1405,7 @@ Transform:
   - {fileID: 20315976}
   - {fileID: 1304991429}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &356563218
 MonoBehaviour:
@@ -1508,7 +1512,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &393982294
 GameObject:
@@ -1889,7 +1893,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: dd8b9b740a12cca44a4b4dd2adcac36f, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: dd8b9b740a12cca44a4b4dd2adcac36f, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1897,7 +1901,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: dd8b9b740a12cca44a4b4dd2adcac36f, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: dd8b9b740a12cca44a4b4dd2adcac36f, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -1905,7 +1909,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: dd8b9b740a12cca44a4b4dd2adcac36f, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dd8b9b740a12cca44a4b4dd2adcac36f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2236,7 +2240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 702469544}
   - component: {fileID: 702469545}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: control_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2328,7 +2332,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 915c7b29161ba9a419533c1b2b27fde0, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 915c7b29161ba9a419533c1b2b27fde0, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2336,7 +2340,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 915c7b29161ba9a419533c1b2b27fde0, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 915c7b29161ba9a419533c1b2b27fde0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2520,7 +2524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: dd8b9b740a12cca44a4b4dd2adcac36f, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: dd8b9b740a12cca44a4b4dd2adcac36f, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2528,7 +2532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: dd8b9b740a12cca44a4b4dd2adcac36f, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: dd8b9b740a12cca44a4b4dd2adcac36f, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2536,7 +2540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: dd8b9b740a12cca44a4b4dd2adcac36f, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dd8b9b740a12cca44a4b4dd2adcac36f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2608,7 +2612,7 @@ GameObject:
   m_Component:
   - component: {fileID: 743890792}
   - component: {fileID: 743890791}
-  m_Layer: 15
+  m_Layer: 10
   m_Name: rayCast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2640,7 +2644,7 @@ Transform:
   m_LocalScale: {x: 50, y: 1, z: 50}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &745076674
 Transform:
@@ -2666,7 +2670,7 @@ GameObject:
   m_Component:
   - component: {fileID: 745076674}
   - component: {fileID: 745499619}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: visual_015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2696,7 +2700,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 746806204}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enviroment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3109,7 +3113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3117,7 +3121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3125,7 +3129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3133,7 +3137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100008, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3141,7 +3145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100008, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3149,7 +3153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3253,51 +3257,6 @@ Transform:
   m_Father: {fileID: 1823172974}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: -7.5, z: 0}
---- !u!1 &911677673
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 911677675}
-  - component: {fileID: 911677674}
-  m_Layer: 0
-  m_Name: EnemyManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &911677674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 911677673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d7a199d9d0ab084facf0c32de81bd47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyList: []
-  enemyAliveCount: 0
---- !u!4 &911677675
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 911677673}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &914136338
 GameObject:
   m_ObjectHideFlags: 0
@@ -3505,7 +3464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: aacf099d34ffb1e4488aac9e2ebb66e0, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: aacf099d34ffb1e4488aac9e2ebb66e0, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3513,7 +3472,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: aacf099d34ffb1e4488aac9e2ebb66e0, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: aacf099d34ffb1e4488aac9e2ebb66e0, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3521,7 +3480,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: aacf099d34ffb1e4488aac9e2ebb66e0, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: aacf099d34ffb1e4488aac9e2ebb66e0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3825,7 +3784,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: aacf099d34ffb1e4488aac9e2ebb66e0, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: aacf099d34ffb1e4488aac9e2ebb66e0, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3833,7 +3792,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: aacf099d34ffb1e4488aac9e2ebb66e0, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: aacf099d34ffb1e4488aac9e2ebb66e0, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3841,7 +3800,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: aacf099d34ffb1e4488aac9e2ebb66e0, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: aacf099d34ffb1e4488aac9e2ebb66e0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4349,7 +4308,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1304991429}
   - component: {fileID: 1304991430}
-  m_Layer: 14
+  m_Layer: 1
   m_Name: Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4460,7 +4419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4468,7 +4427,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4476,7 +4435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4484,7 +4443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100008, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4492,7 +4451,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100008, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4500,7 +4459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f564ff108e18117418647ef04228d1d8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4785,7 +4744,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: dd8b9b740a12cca44a4b4dd2adcac36f, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: dd8b9b740a12cca44a4b4dd2adcac36f, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4793,7 +4752,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: dd8b9b740a12cca44a4b4dd2adcac36f, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: dd8b9b740a12cca44a4b4dd2adcac36f, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4801,7 +4760,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: dd8b9b740a12cca44a4b4dd2adcac36f, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dd8b9b740a12cca44a4b4dd2adcac36f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5784,13 +5743,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1711996745}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07c5cc48b2ee3784cb83c5e57f0523b3, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b827be55d349d74a8aaad376681f695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectParent: {fileID: 1711996747}
   player: {fileID: 1903683481}
-  enemyManager: {fileID: 911677674}
-  pointsTrans: {fileID: 228620925}
   gameCamera: {fileID: 1575499811}
   bossGame: 0
 --- !u!4 &1711996747
@@ -6088,7 +6044,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: aacf099d34ffb1e4488aac9e2ebb66e0, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: aacf099d34ffb1e4488aac9e2ebb66e0, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6096,7 +6052,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: aacf099d34ffb1e4488aac9e2ebb66e0, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: aacf099d34ffb1e4488aac9e2ebb66e0, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6104,7 +6060,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: aacf099d34ffb1e4488aac9e2ebb66e0, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: aacf099d34ffb1e4488aac9e2ebb66e0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6373,7 +6329,7 @@ PrefabInstance:
     - target: {fileID: 4544247076477855299, guid: a0bca176d6a0dfd4ea962a4ff76965a4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4544247076477855299, guid: a0bca176d6a0dfd4ea962a4ff76965a4,
         type: 3}
@@ -6587,7 +6543,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1969018851}
   - component: {fileID: 1969018852}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: control_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6869,7 +6825,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 915c7b29161ba9a419533c1b2b27fde0, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 915c7b29161ba9a419533c1b2b27fde0, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -6877,7 +6833,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 915c7b29161ba9a419533c1b2b27fde0, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 915c7b29161ba9a419533c1b2b27fde0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7097,7 +7053,7 @@ GameObject:
   - component: {fileID: 8762445205999777021}
   - component: {fileID: 8762445205998777917}
   - component: {fileID: 8762445205996775556}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: visual_010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7131,7 +7087,7 @@ GameObject:
   - component: {fileID: 8762445205996877029}
   - component: {fileID: 8762445205999776903}
   - component: {fileID: 8762445205998778055}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: visual_013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7149,7 +7105,7 @@ GameObject:
   - component: {fileID: 8762445205996877031}
   - component: {fileID: 8762445205999776897}
   - component: {fileID: 8762445205998778049}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: visual_012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7168,7 +7124,7 @@ GameObject:
   - component: {fileID: 8762445205999776907}
   - component: {fileID: 8762445205998778059}
   - component: {fileID: 258402105}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: visual_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7204,7 +7160,7 @@ GameObject:
   - component: {fileID: 8762445205996877037}
   - component: {fileID: 8762445205999776911}
   - component: {fileID: 8762445205998778063}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: visual_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7223,7 +7179,7 @@ GameObject:
   - component: {fileID: 8762445205999776905}
   - component: {fileID: 8762445205998778057}
   - component: {fileID: 8762445205996775568}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: visual_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7257,7 +7213,7 @@ GameObject:
   - component: {fileID: 8762445205996877041}
   - component: {fileID: 8762445205999776915}
   - component: {fileID: 8762445205998778067}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: visual_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7276,7 +7232,7 @@ GameObject:
   - component: {fileID: 8762445205999776909}
   - component: {fileID: 8762445205998778061}
   - component: {fileID: 8762445205996775572}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: visual_05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7310,7 +7266,7 @@ GameObject:
   - component: {fileID: 8762445205996877045}
   - component: {fileID: 8762445205999776919}
   - component: {fileID: 8762445205998778071}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: visual_08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7328,7 +7284,7 @@ GameObject:
   - component: {fileID: 8762445205996877047}
   - component: {fileID: 8762445205999776913}
   - component: {fileID: 8762445205998778065}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: visual_07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7346,7 +7302,7 @@ GameObject:
   - component: {fileID: 8762445205996877051}
   - component: {fileID: 8762445205999776917}
   - component: {fileID: 8762445205998778069}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: visual_09
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7362,7 +7318,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8762445205996876995}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sc_g2_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7381,7 +7337,7 @@ GameObject:
   - component: {fileID: 8762445205999777023}
   - component: {fileID: 8762445205998777919}
   - component: {fileID: 258402106}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: visual_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7400,7 +7356,7 @@ GameObject:
   - component: {fileID: 8762445205999777017}
   - component: {fileID: 8762445205998777913}
   - component: {fileID: 8762445205996775680}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: visual_00
   m_TagString: Untagged
   m_Icon: {fileID: 0}

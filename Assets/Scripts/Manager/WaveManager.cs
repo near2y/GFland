@@ -71,9 +71,9 @@ public class WaveManager
         else
         {
             //在最后一波中
-            if(waveBehaviorDic[waveIndex].overSpwan &&  SceneManager.Instance.enemyManager.enemyAliveCount == 0)
+            if(waveBehaviorDic[waveIndex].overSpwan &&  GameManager.Instance.gameSceneMgr.enemyManager.enemyAliveCount == 0)
             {
-                SceneManager.Instance.OnWin();
+                GameManager.Instance.gameSceneMgr.OnWin();
                 inited = false;
             }
         }

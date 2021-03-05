@@ -50,7 +50,7 @@ public class GameUI : Window
 
     void ClickSkillBtn()
     {
-        SceneManager.Instance.player.skill.ReleaseSkill();
+        GameManager.Instance.gameSceneMgr.player.skill.ReleaseSkill();
         //m_Panel.skillBtn.interactable = false;
         m_Panel.skillBtn.gameObject.SetActive(false);
         ////TODO

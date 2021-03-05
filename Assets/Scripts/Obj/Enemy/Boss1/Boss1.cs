@@ -40,7 +40,7 @@ public class Boss1 : Enemy
     private void Start()
     {
         targetPos.y = transform.position.y;
-        bossPoint.SetParent(SceneManager.Instance.transform);
+        bossPoint.SetParent(GameManager.Instance.gameSceneMgr.transform);
 
         //死亡的时候不通过dying进入到播放死亡动画
         needPlayDying = false;
@@ -125,7 +125,7 @@ public class Boss1 : Enemy
             startColorRange = meshRenderer.material.GetFloat("_colorrange");
         }
 
-        SceneManager.Instance.gameCamera.AddGroup(transform,0.6f,2f);
+        GameManager.Instance.gameSceneMgr.gameCamera.AddGroup(transform,0.6f,2f);
     }
 
     private void OnParticleCollision(GameObject other)

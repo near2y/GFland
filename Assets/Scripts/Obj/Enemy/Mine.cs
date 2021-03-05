@@ -63,7 +63,7 @@ public class Mine : Enemy
         bodyCollider.enabled = true;
         anim.Play(EnemyState.InStage);
         rig.AddForce(-(transform.right).normalized * 10, ForceMode.Impulse);
-        SceneManager.Instance.enemyManager.AddEnemy(this);
+        GameManager.Instance.gameSceneMgr.enemyManager.AddEnemy(this);
     }
 
 
@@ -75,7 +75,7 @@ public class Mine : Enemy
         float startColorRange = meshRenderer.material.GetFloat("_colorrange");
         meshRenderer.material.SetFloat("_colorrange", 0.3f);
         //显示爆炸特效
-        GameObject effect = SceneManager.Instance.effectManager.GetEffect(effectID);
+        GameObject effect = GameManager.Instance.gameSceneMgr.effectManager.GetEffect(effectID);
         effect.transform.position = transform.position;
         //变回原来的样子
         anim.Play(EnemyState.Dying);
@@ -84,7 +84,7 @@ public class Mine : Enemy
         //回收
         yield return new WaitForSeconds(0.1f);
         meshRenderer.material.SetFloat("_colorrange", startColorRange);
-        SceneManager.Instance.enemyManager.ClearEnemy(this,true);
+        GameManager.Instance.gameSceneMgr.enemyManager.ClearEnemy(this,true);
     }
 
     new public void Dying()

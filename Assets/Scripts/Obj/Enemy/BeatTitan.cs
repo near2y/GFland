@@ -43,7 +43,7 @@ public class BeatTitan : Enemy
 
     void ShowEffect(int effectID)
     {
-        GameObject effect = SceneManager.Instance.effectManager.GetEffect(effectID);
+        GameObject effect = GameManager.Instance.gameSceneMgr.effectManager.GetEffect(effectID);
         effect.transform.position = effectPos.position;
         effect.transform.rotation = effectPos.rotation;
     }

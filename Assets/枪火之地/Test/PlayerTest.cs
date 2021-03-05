@@ -11,7 +11,7 @@ public class PlayerTest : MonoBehaviour
 
 
     public bool hadAnimationment = false;
-
+    public CharacterController characterController;
     
 
     Animator ani;
@@ -25,8 +25,14 @@ public class PlayerTest : MonoBehaviour
     private void Start()
     {
         ani = GetComponent<Animator>();
+        characterController = GetComponent<CharacterController>();
         lastPosition = transform.position;
         lastRotation = transform.rotation;
+    }
+
+    private void Update()
+    {
+        //m_movement.MovementUpdate();
     }
 
     public void Near2y()

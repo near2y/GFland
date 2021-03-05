@@ -48,12 +48,12 @@ public class ShootTitan : Enemy
         if (died) return;
         if (isLeft == 1)
         {
-            leftAmmo = SceneManager.Instance.enemyManager.Spwan(ammoID, transform,true) as Mine;
+            leftAmmo = GameManager.Instance.gameSceneMgr.enemyManager.Spwan(ammoID, transform,true) as Mine;
             leftAmmo.InStage(agentTarget,leftHand);
         }
         else
         {
-            rightAmmo = SceneManager.Instance.enemyManager.Spwan(ammoID, transform,true) as Mine;
+            rightAmmo = GameManager.Instance.gameSceneMgr.enemyManager.Spwan(ammoID, transform,true) as Mine;
             rightAmmo.InStage(agentTarget,rightHand);
         }
     }
@@ -110,13 +110,13 @@ public class ShootTitan : Enemy
         if (leftAmmo != null)
         {
             Debug.Log("near2y回收了炮弹1");
-            SceneManager.Instance.enemyManager.ClearEnemy(leftAmmo, true);
+            GameManager.Instance.gameSceneMgr.enemyManager.ClearEnemy(leftAmmo, true);
             leftAmmo = null;
         }
         if (rightAmmo != null)
         {
             Debug.Log("near2y回收了炮弹2");
-            SceneManager.Instance.enemyManager.ClearEnemy(rightAmmo, true);
+            GameManager.Instance.gameSceneMgr.enemyManager.ClearEnemy(rightAmmo, true);
             rightAmmo = null;
         }
     }

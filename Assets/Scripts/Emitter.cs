@@ -38,7 +38,7 @@ public class Emitter : MonoBehaviour
     {
         if (active && shootTrajactory == null)
         {
-            GameObject shootObj = SceneManager.Instance.effectManager.GetEffect(bulletID);
+            GameObject shootObj = GameManager.Instance.gameSceneMgr.effectManager.GetEffect(bulletID);
             //shootObj.transform.SetParent(transform);
             shootObj.transform.localPosition = Vector3.zero;
             shootObj.transform.localEulerAngles = Vector3.zero;
@@ -46,7 +46,7 @@ public class Emitter : MonoBehaviour
             shootTrajactory = shootObj.AddComponent<Trajactory>();
             shootTrajactory.Init(this, bulletSpeed, shootCount, bulletFrequency, shootFrequency);
             shootTrajactory.SetTrajactoryCount(trajactoryCount, trajactoryInterval);
-            targets = SceneManager.Instance.enemyManager.enemyList;
+            targets = GameManager.Instance.gameSceneMgr.enemyManager.m_EnemyList;
             for (int i = 0; i < penetrateCount; i++)
             {
                 AddPenetrateAbility();
@@ -106,7 +106,7 @@ public class Emitter : MonoBehaviour
         {
             t = t.dTrajactory;
         }
-        GameObject shootObj = SceneManager.Instance.effectManager.GetEffect(bulletID);
+        GameObject shootObj = GameManager.Instance.gameSceneMgr.effectManager.GetEffect(bulletID);
         shootObj.transform.localPosition = Vector3.zero;
         shootObj.transform.localEulerAngles = Vector3.zero;
         t.dTrajactory = shootObj.AddComponent<Trajactory>();
@@ -120,7 +120,7 @@ public class Emitter : MonoBehaviour
         {
             t = t.pTrajactory;
         }
-        GameObject shootObj = SceneManager.Instance.effectManager.GetEffect(bulletID);
+        GameObject shootObj = GameManager.Instance.gameSceneMgr.effectManager.GetEffect(bulletID);
         shootObj.transform.localPosition = Vector3.zero;
         shootObj.transform.localEulerAngles = Vector3.zero;
         t.pTrajactory = shootObj.AddComponent<Trajactory>();

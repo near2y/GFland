@@ -21,12 +21,12 @@ public class ChoosePropUI : Window
     {
         UIManager.Instance.CloseWindow(Name);
         GameManager.Instance.playerTrajactoryCount++;
-        SceneManager.Instance.player.OverChooseProp();
+        GameManager.Instance.gameSceneMgr.player.OverChooseProp();
     }
 
     void ClickCloseBtn()
     {
         UIManager.Instance.CloseWindow(Name);
-        SceneManager.Instance.player.OverChooseProp();
+        GameManager.Instance.gameSceneMgr.player.OverChooseProp();
     }
 }

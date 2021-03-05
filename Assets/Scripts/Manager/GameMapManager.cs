@@ -53,6 +53,12 @@ public class GameMapManager : Singleton<GameMapManager>
         UIManager.Instance.PopUpWindow(ConStr.LOADINGPANEL,true,index);
     }
 
+    public void LoadScene(string name, Action complete,int index = 1)
+    {
+        LoadSceneOverCallBack = complete;
+        LoadScene(name, index);
+    }
+
     /// <summary>
     /// 设置场景环境
     /// </summary>
@@ -66,21 +72,21 @@ public class GameMapManager : Singleton<GameMapManager>
 
     IEnumerator LoadSceneAsync(string name)
     {
-        if (!Action.ReferenceEquals(LoadSceneEnterCallBack,null))
+        if (LoadSceneEnterCallBack!=null)
         {
             LoadSceneEnterCallBack();
         }
         ClearCache();
         AlreadyLoadScene = false;
         AsyncOperation unloadScene = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(ConStr.EMPTYSCENE, LoadSceneMode.Single);
-        while(!AsyncOperation.ReferenceEquals(unloadScene,null) && !unloadScene.isDone)
+        while(unloadScene!=null && !unloadScene.isDone)
         {
             yield return new WaitForEndOfFrame();
         }
         LoadingProgress = 0;
         int targetProgress = 0;
         AsyncOperation asyncScene = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(name);
-        if(!AsyncOperation.ReferenceEquals(asyncScene,null) && !asyncScene.isDone)
+        if(asyncScene!=null && !asyncScene.isDone)
         {
             asyncScene.allowSceneActivation = false;
             while (asyncScene.progress<0.9f)
@@ -90,7 +96,6 @@ public class GameMapManager : Singleton<GameMapManager>
                 //smooth
                 while (LoadingProgress < targetProgress)
                 {
-                    Debug.Log("near2y " + LoadingProgress);
                     ++LoadingProgress;
                     yield return new WaitForEndOfFrame();
                 }
@@ -106,7 +111,7 @@ public class GameMapManager : Singleton<GameMapManager>
             LoadingProgress = 100;
             asyncScene.allowSceneActivation = true;
             AlreadyLoadScene = true;
-            if (!Action.ReferenceEquals(LoadSceneOverCallBack, null))
+            if (LoadSceneOverCallBack!= null)
             {
                 LoadSceneOverCallBack();
             }

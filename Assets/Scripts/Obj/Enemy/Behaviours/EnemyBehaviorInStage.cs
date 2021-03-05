@@ -33,7 +33,7 @@ public class EnemyBehaviorInStage : EnemyBehaviorBase
     {
         enemy.anim.speed =  startAniSpeed;
         enemy.completeInStage = true;
-        if (SceneManager.Instance.bossGame) SceneManager.Instance.player.StartGame();
+        if (GameManager.Instance.gameSceneMgr.bossGame) GameManager.Instance.gameSceneMgr.player.StartGame();
 
     }
 }

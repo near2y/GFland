@@ -2957,8 +2957,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7609614126212335909}
   - component: {fileID: 7609614126204626795}
-  - component: {fileID: 7609614126212044102}
-  - component: {fileID: 7609614126212044108}
   - component: {fileID: 7609614126212044106}
   m_Layer: 0
   m_Name: lemon_skin2
@@ -3002,68 +3000,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7609614126212044102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7609614126212044101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad0db38389ff61e4187c71e2f63bc94c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_movement: {fileID: 7609614126212044108}
-  m_animationment:
-    minHp: 0
-    maxHp: 31
-  hadAnimationment: 0
---- !u!114 &7609614126212044108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7609614126212044101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c87dd4cb0fb81c14d9fcc20727151ed7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 150
-  angelSpeed: 120
-  m_type: 0
-  m_rigid: {fileID: 0}
-  m_AddCharatorControl: 1
-  m_ccr: {fileID: 7609614126212044106}
-  m_ctrlType: 0
-  m_lookType: -1
-  m_inputLayer:
-    serializedVersion: 2
-    m_Bits: 15
-  m_lookAxisType: 2
-  m_Joystick: {fileID: 0}
-  hadJoystick: 0
-  m_inputLength: 100
-  m_LookTarget: {fileID: 0}
-  m_LookLerp: 0.306
-  m_AddNavmeshAgent: 0
-  m_agent: {fileID: 0}
-  completeMovement:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7609614126212044102}
-        m_MethodName: MoveAnimate
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!143 &7609614126212044106
 CharacterController:
   m_ObjectHideFlags: 0

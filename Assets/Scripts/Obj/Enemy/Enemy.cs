@@ -125,7 +125,7 @@ public abstract class Enemy : MonoBehaviour
 
     protected void FullGround(float size)
     {
-        GameObject effect = SceneManager.Instance.effectManager.GetEffect(4007);
+        GameObject effect = GameManager.Instance.gameSceneMgr.effectManager.GetEffect(4007);
         effect.transform.position = transform.position;
         effect.transform.localScale = Vector3.one * size;
     }
@@ -145,14 +145,14 @@ public abstract class Enemy : MonoBehaviour
         //手机震动
         //Handheld.Vibrate();
         ////相机震动
-        SceneManager.Instance.gameCamera.ShakeCamera(Random.Range(0.5f, 4f), Random.Range(0.5f, 1f));
+        GameManager.Instance.gameSceneMgr.gameCamera.ShakeCamera(Random.Range(0.5f, 4f), Random.Range(0.5f, 1f));
         //变黑
         if (meshRenderer != null)
         {
             Method.SetRenderColorRange(meshRenderer, 0.3f);
         }
         //爆炸特效
-        GameObject boomEffect = SceneManager.Instance.effectManager.GetEffect(4005);
+        GameObject boomEffect = GameManager.Instance.gameSceneMgr.effectManager.GetEffect(4005);
         boomEffect.transform.localScale = Vector3.one * boomEffectSize;
         boomEffect.transform.position = transform.position;
 
@@ -175,7 +175,7 @@ public abstract class Enemy : MonoBehaviour
             otherParticleSystem = other.GetComponent<ParticleSystem>();
         }
         int count = otherParticleSystem.GetCollisionEvents(gameObject, collisionEvents);
-        float sub = SceneManager.Instance.player.ATK * count;
+        float sub = GameManager.Instance.gameSceneMgr.player.ATK * count;
         HitSubHp(sub, colorrange);
     }
 

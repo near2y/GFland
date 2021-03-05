@@ -22,7 +22,7 @@ public class Boss1BehaviourState1 : EnemyBehaviorBase
             enemy.agent.enabled = true;
         }
 
-        if (SceneManager.Instance != null)
+        if (GameManager.Instance.gameSceneMgr != null)
         {
             GameManager.Instance.mono.StartCoroutine(AddBoss());
         }
@@ -42,7 +42,7 @@ public class Boss1BehaviourState1 : EnemyBehaviorBase
     IEnumerator AddBoss()
     {
         yield return new WaitForSeconds(1);
-        SceneManager.Instance.enemyManager.AddEnemy(enemy);
+        GameManager.Instance.gameSceneMgr.enemyManager.AddEnemy(enemy);
         enemy.completeInStage = true;
     }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Player : MonoBehaviour
@@ -34,9 +35,9 @@ public class Player : MonoBehaviour
     public PlayerSkillBar playerSkillBar = null;
     public Transform playerSkillBarTrans = null;
 
-    //[Header("< 玩家游戏中变量展示 >")]
-    //public Joystick joystick = null;
-    //public bool hadJoystick = false;
+    [Header("< 玩家游戏中变量展示 >")]
+    public Joystick joystick = null;
+    public bool hadJoystick = false;
 
     Animator anim;
     Vector3 aniDir;
@@ -69,13 +70,18 @@ public class Player : MonoBehaviour
         anim.speed = aniSpeed;
         cCtrl = GetComponent<CharacterController>();
         movement = new Vector3();
-        floorMask = LayerMask.GetMask("InputRay");
+        floorMask = LayerMask.GetMask("Ground");
         //startColorrange = Method.GetColorrangeInRender(meshRenderer);
         //StartGame = false;
+
     }
 
     private void Start()
     {
+
+        var scene = SceneManager.GetActiveScene();
+        var objs = scene.GetRootGameObjects();
+
         meshRenders = new List<Renderer>();
         foreach (var item in transform.GetComponentsInChildren<Renderer>())
         {
@@ -94,17 +100,17 @@ public class Player : MonoBehaviour
         //skillBar
         playerSkillBar.Update();
 
-        ////Move
-        //if(!hadJoystick)
-        //{
-        //    GameUI ui = UIManager.Instance.FindWindowByName<GameUI>(ConStr.GAMEPANEL);
-        //    if(ui!=null && ui.m_Panel.joystick != null)
-        //    {
-        //        hadJoystick = true;
-        //        joystick = ui.m_Panel.joystick;
-        //    }
-        //}
-        //ComMovement();
+        //Move
+        if (!hadJoystick)
+        {
+            GameUI ui = UIManager.Instance.FindWindowByName<GameUI>(ConStr.GAMEPANEL);
+            if (ui != null && ui.m_Panel.joystick != null)
+            {
+                hadJoystick = true;
+                joystick = ui.m_Panel.joystick;
+            }
+        }
+        ComMovement();
 
         Attack();
 
@@ -127,7 +133,7 @@ public class Player : MonoBehaviour
         //停止发射武器
         emitter.Attack(false);
         anim.Play("OverShow");
-        SceneManager.Instance.gameUI.ShowClear();
+        GameManager.Instance.gameSceneMgr.gameUI.ShowClear();
     }
 
     void OverInStage()
@@ -136,10 +142,10 @@ public class Player : MonoBehaviour
         return;
         emitter.trajactoryCount = GameManager.Instance.playerTrajactoryCount;
         emitter.SetActive(true);
-        SceneManager.Instance.StartWave();
+        GameManager.Instance.gameSceneMgr.StartWave();
         inGame = true;
 
-        skill = SceneManager.Instance.effectManager.GetEffect(4006).GetComponent<PlayerBoomSkill>();
+        skill = GameManager.Instance.gameSceneMgr.effectManager.GetEffect(4006).GetComponent<PlayerBoomSkill>();
         skill.player = transform;
     }
 
@@ -147,10 +153,11 @@ public class Player : MonoBehaviour
     {
         if (inGame) return;
         inGame = true;
-        skill = SceneManager.Instance.effectManager.GetEffect(4006).GetComponent<PlayerBoomSkill>();
+        skill = GameManager.Instance.gameSceneMgr.effectManager.GetEffect(4006).GetComponent<PlayerBoomSkill>();
         skill.player = transform;
         anim.SetBool(aniID_StartGame, true);
-        SceneManager.Instance.gameUI = UIManager.Instance.PopUpWindow(ConStr.GAMEPANEL, true) as GameUI;
+        GameManager.Instance.gameSceneMgr.gameUI = UIManager.Instance.PopUpWindow(ConStr.GAMEPANEL, true) as GameUI;
+
     }
 
 
@@ -158,30 +165,30 @@ public class Player : MonoBehaviour
     {
         emitter.trajactoryCount = GameManager.Instance.playerTrajactoryCount;
         emitter.SetActive(true);
-        SceneManager.Instance.StartWave();
-        if (!SceneManager.Instance.bossGame) StartGame();
+        GameManager.Instance.gameSceneMgr.StartWave();
+        if (!GameManager.Instance.gameSceneMgr.bossGame) StartGame();
     }
 
     void FullGround()
     {
-        GameObject effect = SceneManager.Instance.effectManager.GetEffect(4007);
+        GameObject effect = GameManager.Instance.gameSceneMgr.effectManager.GetEffect(4007);
         effect.transform.position = transform.position;
         effect.transform.localScale = Vector3.one;
         Handheld.Vibrate();
     }
 
-    //void ComMovement()
-    //{
-    //    float h = 0, v = 0;
-    //    if (hadJoystick)
-    //    {
-    //        h = joystick.movement.x;
-    //        v = joystick.movement.z;
-    //    }
-    //    Move(h, v);
-    //    Turning();
-    //    Animating(h, v);
-    //}
+    void ComMovement()
+    {
+        float h = 0, v = 0;
+        if (hadJoystick)
+        {
+            h = joystick.movement.x;
+            v = joystick.movement.z;
+        }
+        Move(h, v);
+        Turning();
+        Animating(h, v);
+    }
 
 
     void Animating(float h,float v)
@@ -253,7 +260,7 @@ public class Player : MonoBehaviour
     Vector3 point = new Vector3();
     void Turning()
     {
-        enemy = SceneManager.Instance.enemyManager.FindCloseEnemy(attackDis);
+        enemy = GameManager.Instance.gameSceneMgr.enemyManager.FindCloseEnemy(attackDis);
         if (enemy != null  )
         {
             point = enemy.transform.position;

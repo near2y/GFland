@@ -13,7 +13,7 @@ public class EnemyBehaviorWalk : EnemyBehaviorBase
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         //加入到enemyList
-        SceneManager.Instance.enemyManager.AddEnemy(enemy);
+        GameManager.Instance.gameSceneMgr.enemyManager.AddEnemy(enemy);
 
         hadAgent = enemy.agent != null;
         startAniSpeed = enemy.anim.speed;

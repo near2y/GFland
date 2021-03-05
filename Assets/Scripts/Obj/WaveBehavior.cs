@@ -85,8 +85,8 @@ public class WaveBehavior
     IEnumerator ISpwanEnemy(int waveIndex,int spwanIndex, WaveBase wave)
     {
         yield return new WaitForSeconds(wave.SpwanInterval/1000 * spwanIndex);
-        Transform point = SceneManager.Instance.enemyPoints.FindPointByID(wave.PointID);
-        SceneManager.Instance.enemyManager.Spwan(wave.EnemyID,point);
+        Transform point = GameManager.Instance.gameSceneMgr.enemyPoints.FindPointByID(wave.PointID);
+        GameManager.Instance.gameSceneMgr.enemyManager.Spwan(wave.EnemyID,point);
         aliveEnemyNum++;
         if (waveIndex == waveBaseList.Count - 1 && spwanIndex == wave.SpwanCount - 1)
         {
