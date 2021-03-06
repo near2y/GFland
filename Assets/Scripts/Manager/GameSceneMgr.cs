@@ -32,7 +32,8 @@ public class GameSceneMgr : MonoBehaviour
         var enemyPointObj = GameObject.Find("MonsterPoint");
         if (enemyPointObj != null)enemyPoints = new EnemyPoints(enemyPointObj.transform);
         //player
-        if(m_Player != null)m_Player = GameObject.Instantiate(m_PlayerPre).GetComponent<GFLandPlayer>();
+        if (m_Player != null) m_Player = GameObject.Instantiate(m_PlayerPre).GetComponent<GFLandPlayer>();
+        if (player == null) player = GameObject.Find("player").GetComponent<Player>();
         //TODO
         //camera
         gameCamera = GameObject.Find("Main Camera").GetComponent<GameCamera>();
