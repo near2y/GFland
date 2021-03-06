@@ -5,8 +5,11 @@ using UnityEngine;
 public class GameSceneMgr : MonoBehaviour
 {
     [Header("< 设置 >")]
-
+    [HideInInspector]
     public Player player;
+    public GameObject m_PlayerPre;
+    [HideInInspector]
+    public GFLandPlayer m_Player;
     public EnemyManager enemyManager;
     public WaveManager waveManager = null;
     public EffectManager effectManager = null;
@@ -15,9 +18,6 @@ public class GameSceneMgr : MonoBehaviour
     public EnemyPoints enemyPoints;
     public GameUI gameUI = null;
     public bool bossGame = false;
-    
-
-
 
     private void Start()
     {
@@ -27,19 +27,19 @@ public class GameSceneMgr : MonoBehaviour
     //初始化
     void Init()
     {
-
+        GameManager.Instance.gameSceneMgr = this;
         //monsterPoints
-        enemyPoints = new EnemyPoints(GameObject.Find("MonsterPoint").transform);
+        var enemyPointObj = GameObject.Find("MonsterPoint");
+        if (enemyPointObj != null)enemyPoints = new EnemyPoints(enemyPointObj.transform);
         //player
-        //player = ObjectManager.Instance.InstantiateObject(playerPrePath).GetComponent<Player>();
-        //player.transform.SetParent(transform);
+        if(m_Player != null)m_Player = GameObject.Instantiate(m_PlayerPre).GetComponent<GFLandPlayer>();
+        //TODO
         //camera
         gameCamera = GameObject.Find("Main Camera").GetComponent<GameCamera>();
         //enemyManager
         enemyManager = new EnemyManager(transform);
         //effectManager
         effectManager = new EffectManager(GameManager.Instance.effectData, transform);
-        
     }
 
     //游戏胜利
@@ -54,14 +54,8 @@ public class GameSceneMgr : MonoBehaviour
     public void StartWave()
     {
         //waveManager
-        waveManager = new WaveManager(GameManager.Instance.waveData, this);
+        waveManager = new WaveManager(GameManager.Instance.waveJson, this);
         startedWave = true;
-
-        //TODO
-        ////?
-        //RFramework.instance.m_UIRoot.gameObject.SetActive(false);
-        //RFramework.instance.m_UIRoot.gameObject.SetActive(true);
-        //gameUI = UIManager.Instance.PopUpWindow(ConStr.GAMEPANEL, true) as GameUI;
     }
 
 
@@ -73,9 +67,5 @@ public class GameSceneMgr : MonoBehaviour
             waveManager.Update();
         }
     }
-
-
-    
-
     
 }

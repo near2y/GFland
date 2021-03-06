@@ -10,7 +10,7 @@ public class GameManager : MonoSingleton<GameManager>
     int gameIndex = 0;
 
     [HideInInspector]
-    public WaveData waveData;
+    public WaveJson waveJson;
 
     [HideInInspector]
     public EffectData effectData;
@@ -34,9 +34,10 @@ public class GameManager : MonoSingleton<GameManager>
         //TODO
         if (gameIndex >= waveID.Length) gameIndex = 0;
         //===========================
-        string wavePath = "Assets/RealFram/Data/Binary/WaveData_" + waveID[gameIndex] + ".bytes";
-        waveData = ConfigerManager.Instance.FindData<WaveData>(wavePath);
-        GameMapManager.Instance.LoadScene(waveData.AllWaveList[0].SceneName,CompleteLoadScene, 2);
+        string wavePath = "Assets/RealFram/Data/Json/WaveJson/WaveData_" + waveID[gameIndex] + ".json";
+        waveJson = new WaveJson(wavePath);
+        //=============================
+        GameMapManager.Instance.LoadScene(waveJson.AllWaveList[0].SceneName,CompleteLoadScene, 2);
     }
 
     void CompleteLoadScene()

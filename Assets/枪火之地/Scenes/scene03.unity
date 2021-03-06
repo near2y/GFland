@@ -175,7 +175,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20315974}
-  m_LocalRotation: {x: 0.011270714, y: 0.9824611, z: -0.17504765, w: 0.06325728}
+  m_LocalRotation: {x: 0.011270716, y: 0.9824611, z: -0.17504765, w: 0.06325729}
   m_LocalPosition: {x: -6.2, y: 1.6400001, z: -2.7800007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5144,8 +5144,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1575499810}
-  m_LocalRotation: {x: -0.4383711, y: 0, z: 0, w: -0.89879405}
-  m_LocalPosition: {x: 0, y: 9.4363, z: 5.321718}
+  m_LocalRotation: {x: 0.11095517, y: 0.5299574, z: -0.07018566, w: 0.83779955}
+  m_LocalPosition: {x: -3.9948745, y: 1.2360853, z: 7.8024073}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5747,6 +5747,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1903683481}
+  m_PlayerPre: {fileID: 0}
+  m_Player: {fileID: 0}
   gameCamera: {fileID: 1575499811}
   bossGame: 0
 --- !u!4 &1711996747

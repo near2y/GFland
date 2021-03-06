@@ -14,4 +14,5 @@ public class MenuPanel : MonoBehaviour
     public Button m_LeftSkinBtn;
     public Button m_RightSkinBtn;
     public Button m_ChooseSkinBtn;
+    public Text m_Test;
 }

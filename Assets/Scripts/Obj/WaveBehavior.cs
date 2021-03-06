@@ -5,6 +5,7 @@ using UnityEngine;
 /// <summary>
 /// 波次的行为
 /// </summary>
+
 public class WaveBehavior
 {
     List<WaveBase> waveBaseList = null;

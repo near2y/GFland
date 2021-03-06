@@ -13,11 +13,6 @@ public class AnimateStateCompiler
     public UnityEvent m_UnityEvent;
     public MonoBehaviour m_Mono;
 
-    public AnimateStateCompiler()
-    {
-
-    }
-
     public void Init(System.Type type)
     {
         var behaviours = m_Animator.GetBehaviours<BehaviourBase>();

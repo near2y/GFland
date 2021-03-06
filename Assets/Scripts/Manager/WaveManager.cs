@@ -6,7 +6,7 @@ public class WaveManager
 {
 
     bool inited = false;
-    WaveData waveData = null;
+    WaveJson waveJson = null;
     Dictionary<int, List<WaveBase>> waveBaseListDic = new Dictionary<int, List<WaveBase>>();
     Dictionary<int, WaveBehavior> waveBehaviorDic = new Dictionary<int, WaveBehavior>();
     int waveIndex = 0;
@@ -14,9 +14,9 @@ public class WaveManager
     public WaveBehavior CurrentWave { get { return waveBehaviorDic[waveIndex]; } }
     
 
-    public WaveManager(WaveData data,MonoBehaviour mono)
+    public WaveManager(WaveJson data,MonoBehaviour mono)
     {
-        waveData = data;
+        waveJson = data;
         foreach (WaveBase waveBase in data.AllWaveList)
         {
             List<WaveBase> list = null;

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SimpleJSON;
+using UnityEngine.Networking;
 
 public class MenuUI : Window
 {
@@ -19,6 +21,11 @@ public class MenuUI : Window
         AddBtnClickListener(m_Panel.m_ChooseSkinBtn, ClickChooseSkinBtn);
 
         m_Panel.m_SkinPop.gameObject.SetActive(false);
+
+        string jsonPath = "Assets/RealFram/Data/Json/EquipmentJson.json";
+
+        var js = JSON.Parse(ResourceManager.Instance.LoadResource<Object>(jsonPath).ToString());
+        m_Panel.m_Test.text = js[0]["装备名"];
     }
 
 

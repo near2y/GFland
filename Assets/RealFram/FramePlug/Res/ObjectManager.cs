@@ -227,7 +227,6 @@ public class ObjectManager : Singleton<ObjectManager>
             resouceObj.m_bClear = bClear;
             //ResouceManager提供加载方法
             resouceObj = ResourceManager.Instance.LoadResource(path, resouceObj);
-
             if (resouceObj.m_ResItem.m_Obj != null)
             {
                 resouceObj.m_CloneObj = GameObject.Instantiate(resouceObj.m_ResItem.m_Obj) as GameObject;

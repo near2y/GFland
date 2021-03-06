@@ -12,13 +12,8 @@ public class TestManager : MonoBehaviour
     private void Start()
     {
         GameUI gameUI = (GameUI)UIManager.Instance.PopUpWindow(ConStr.GAMEPANEL);
-
-        //var obj = Instantiate(spiderPre);
-
-        if (test != null)
-        {
-            test.InitJoyStick(gameUI.m_Panel.joystick);
-        }
+        GFLandPlayer player = GameManager.Instance.gameSceneMgr.m_Player;
+        player.m_Movement.InitMovement(player.transform, gameUI.m_Panel.joystick);
     }
 
 }

@@ -18,3 +18,5 @@ MonoBehaviour:
   m_AllFileDirAB:
   - ABName: data
     Path: Assets/RealFram/Data/Binary
+  - ABName: json
+    Path: Assets/RealFram/Data/Json

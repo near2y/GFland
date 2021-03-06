@@ -22,6 +22,7 @@
   <ABList Path="Assets/RealFram/Data/Binary/BulletData.bytes" Crc="4110740475" ABName="data" AssetName="BulletData.bytes" />
   <ABList Path="Assets/RealFram/Data/Binary/EffectData.bytes" Crc="3883766571" ABName="data" AssetName="EffectData.bytes" />
   <ABList Path="Assets/RealFram/Data/Binary/EnemyData.bytes" Crc="3841643933" ABName="data" AssetName="EnemyData.bytes" />
+  <ABList Path="Assets/RealFram/Data/Binary/hero.json" Crc="3503654962" ABName="data" AssetName="hero.json" />
   <ABList Path="Assets/RealFram/Data/Binary/SceneData.bytes" Crc="3874122375" ABName="data" AssetName="SceneData.bytes" />
   <ABList Path="Assets/RealFram/Data/Binary/WaveData.bytes" Crc="2240778075" ABName="data" AssetName="WaveData.bytes" />
   <ABList Path="Assets/RealFram/Data/Binary/WaveData_0101.bytes" Crc="3399961353" ABName="data" AssetName="WaveData_0101.bytes" />
@@ -58,6 +59,12 @@
     <ABDependce>joystick</ABDependce>
   </ABList>
   <ABList Path="Assets/枪火之地/prefabs/UGUI/JoyStick.prefab" Crc="2390278486" ABName="joystick" AssetName="JoyStick.prefab" />
+  <ABList Path="Assets/RealFram/Data/Json/EquipmentJson.json" Crc="2337307316" ABName="json" AssetName="EquipmentJson.json" />
+  <ABList Path="Assets/RealFram/Data/Json/WaveJson/WaveData_0101.json" Crc="1351482167" ABName="json" AssetName="WaveData_0101.json" />
+  <ABList Path="Assets/RealFram/Data/Json/WaveJson/WaveData_0201.json" Crc="3724737748" ABName="json" AssetName="WaveData_0201.json" />
+  <ABList Path="Assets/RealFram/Data/Json/WaveJson/WaveData_0301.json" Crc="313064522" ABName="json" AssetName="WaveData_0301.json" />
+  <ABList Path="Assets/RealFram/Data/Json/WaveJson/WaveData_0601.json" Crc="1514730030" ABName="json" AssetName="WaveData_0601.json" />
+  <ABList Path="Assets/RealFram/Data/Json/WaveJson/WaveData_0701.json" Crc="2531455664" ABName="json" AssetName="WaveData_0701.json" />
   <ABList Path="Assets/枪火之地/prefabs/UGUI/Panel/LoadPanel.prefab" Crc="2748887832" ABName="loadpanel" AssetName="LoadPanel.prefab" />
   <ABList Path="Assets/枪火之地/prefabs/UGUI/Panel/MenuPanel.prefab" Crc="1438290998" ABName="menupanel" AssetName="MenuPanel.prefab" />
   <ABList Path="Assets/枪火之地/prefabs/mine.prefab" Crc="681152991" ABName="mine" AssetName="mine.prefab">

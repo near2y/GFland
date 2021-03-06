@@ -114,38 +114,38 @@ public class Movement :MonoBehaviour
 
     void LookTurning()
     {
-        if (m_lookType.Equals(MovementLookType.None)) return;
-        m_inputPoint = transform.position;
-        if (m_lookType.HasFlag(MovementLookType.Input))
-        {
-            Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit floorHit;
-            if (Physics.Raycast(camRay, out floorHit, m_inputLength, m_inputLayer))
-            {
-                m_inputPoint = floorHit.point;
-            }
-        }
-        if (m_lookType.HasFlag(MovementLookType.Target))
-        {
-            if (m_LookTarget != null) m_inputPoint = m_LookTarget.transform.position;
-        }
-        m_LastRotationEuler = transform.rotation.eulerAngles;
-        transform.LookAt(m_inputPoint);
-        var currentEuler = transform.rotation.eulerAngles;
-        if (!m_lookAxisType.HasFlag(MovementLookAxisType.X))
-        {
-            currentEuler.x = m_LastRotationEuler.x;
-        }
-        if (!m_lookAxisType.HasFlag(MovementLookAxisType.Y))
-        {
-            currentEuler.y = m_LastRotationEuler.y;
-        }
-        if (!m_lookAxisType.HasFlag(MovementLookAxisType.Z))
-        {
-            currentEuler.z = m_LastRotationEuler.z;
-        }
-        transform.rotation = Quaternion.Lerp(Quaternion.Euler(m_LastRotationEuler),Quaternion.Euler(currentEuler),m_LookLerp);
-        TurningAction?.Invoke();
+        //if (m_lookType.Equals(MovementLookType.None)) return;
+        //m_inputPoint = transform.position;
+        //if (m_lookType.HasFlag(MovementLookType.Input))
+        //{
+        //    Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //    RaycastHit floorHit;
+        //    if (Physics.Raycast(camRay, out floorHit, m_inputLength, m_inputLayer))
+        //    {
+        //        m_inputPoint = floorHit.point;
+        //    }
+        //}
+        //if (m_lookType.HasFlag(MovementLookType.Target))
+        //{
+        //    if (m_LookTarget != null) m_inputPoint = m_LookTarget.transform.position;
+        //}
+        //m_LastRotationEuler = transform.rotation.eulerAngles;
+        //transform.LookAt(m_inputPoint);
+        //var currentEuler = transform.rotation.eulerAngles;
+        //if (!m_lookAxisType.HasFlag(MovementLookAxisType.X))
+        //{
+        //    currentEuler.x = m_LastRotationEuler.x;
+        //}
+        //if (!m_lookAxisType.HasFlag(MovementLookAxisType.Y))
+        //{
+        //    currentEuler.y = m_LastRotationEuler.y;
+        //}
+        //if (!m_lookAxisType.HasFlag(MovementLookAxisType.Z))
+        //{
+        //    currentEuler.z = m_LastRotationEuler.z;
+        //}
+        //transform.rotation = Quaternion.Lerp(Quaternion.Euler(m_LastRotationEuler),Quaternion.Euler(currentEuler),m_LookLerp);
+        //TurningAction?.Invoke();
     }
 
     void RigidUpdate()
@@ -171,10 +171,8 @@ public enum MovementCtrlType
 
 public enum MovementLookType
 {
-    None = 0, // Custom name for "Nothing" option
-    Input = 1 << 0,
-    Target = 1 << 1,
-    All = ~0, // Custom name for "Everything" option
+    Input = 0,
+    Target,
 }
 
 public enum MovementLookAxisType
