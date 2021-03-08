@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TestManager : MonoBehaviour
 {
-    public Movement test = null;
     public GameObject spiderPre;
 
 

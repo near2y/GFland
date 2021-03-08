@@ -3039,8 +3039,13 @@ MonoBehaviour:
         m_Calls: []
     m_Mono: {fileID: 1802508098}
   m_Movement:
-    m_MoveSpeed: 150
+    m_MoveSpeed: 210
     m_LookType: -1
+    m_Layer:
+      serializedVersion: 2
+      m_Bits: 1024
+    m_LookLerp: 0.35
+  m_LookTarget: {fileID: 0}
 --- !u!1 &7609614126212044103
 GameObject:
   m_ObjectHideFlags: 0

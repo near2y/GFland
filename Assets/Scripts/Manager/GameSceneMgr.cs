@@ -8,6 +8,7 @@ public class GameSceneMgr : MonoBehaviour
     [HideInInspector]
     public Player player;
     public GameObject m_PlayerPre;
+    public Transform playerLookTarget;
     [HideInInspector]
     public GFLandPlayer m_Player;
     public EnemyManager enemyManager;
@@ -32,7 +33,11 @@ public class GameSceneMgr : MonoBehaviour
         var enemyPointObj = GameObject.Find("MonsterPoint");
         if (enemyPointObj != null)enemyPoints = new EnemyPoints(enemyPointObj.transform);
         //player
-        if (m_Player != null) m_Player = GameObject.Instantiate(m_PlayerPre).GetComponent<GFLandPlayer>();
+        if (m_Player != null) 
+        { 
+            m_Player = GameObject.Instantiate(m_PlayerPre).GetComponent<GFLandPlayer>();
+            m_Player.m_LookTarget = playerLookTarget;
+        }
         if (player == null) player = GameObject.Find("player").GetComponent<Player>();
         //TODO
         //camera
