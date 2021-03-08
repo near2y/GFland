@@ -80,6 +80,10 @@ public class JoystickMovement
             {
                 lookPoint = floorHit.point;
             }
+            else
+            {
+                return;
+            }
         }
         else
         {

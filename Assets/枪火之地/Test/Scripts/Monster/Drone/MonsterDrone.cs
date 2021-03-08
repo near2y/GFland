@@ -2,14 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterSpider : AgentMonster
+public class MonsterDrone : AgentMonster
 {
+
 
     public MonsterSpawnType m_SpawnType;
     public Vector2 m_SpawnRange;
 
+
+    protected override void InitStateCompiler()
+    {
+        m_StateCompiler.Init(typeof(MonsterDrone));
+
+    }
+
+
     int m_idSpawnType = Animator.StringToHash("SpawnType");
-   
+
 
     public void SetSpawnType()
     {
@@ -17,8 +26,5 @@ public class MonsterSpider : AgentMonster
     }
 
 
-    protected override void InitStateCompiler()
-    {
-        m_StateCompiler.Init(typeof(MonsterSpider));
-    }
+
 }

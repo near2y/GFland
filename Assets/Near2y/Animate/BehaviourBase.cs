@@ -39,22 +39,18 @@ public class BehaviourBase : StateMachineBehaviour
     {
 
 #if UNITY_EDITOR
-        if (!inited) Debug.LogError("没有初始化角色状态行为：" + animator.gameObject.name);
+        if (!inited) Debug.LogError("没有初始化角色状态行为：" + animator.gameObject.name+",情调用   animateStateCompiler.Init()");
 #endif
-
-        //m_Bind.SendMessage(m_EnterCallBackName,SendMessageOptions.DontRequireReceiver);
         m_EnterDelegate?.Invoke();
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        //m_Bind.SendMessage(m_UpdateCallBackName, SendMessageOptions.DontRequireReceiver);
         m_UpdateDelegate?.Invoke();
     }
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        //m_Bind.SendMessage(m_ExitCallBackName, SendMessageOptions.DontRequireReceiver);
         m_ExitDelegate?.Invoke();
     }
 

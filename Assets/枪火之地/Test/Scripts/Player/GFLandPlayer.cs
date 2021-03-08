@@ -13,13 +13,19 @@ public class GFLandPlayer : MonoBehaviour
     private void Start()
     {
         m_Movement.m_CompleteUpdate += MoveCallBack;
+        m_AnimateStateCompiler.Init(typeof(GFLandPlayer));
+        ToState(PlayerState.ToStage);
     }
 
-    private void Update()
+    public void ToState(int aniID)
+    {
+        m_AnimateStateCompiler.m_Animator.SetTrigger(aniID);
+    }
+
+    public void InGameMove()
     {
         m_Movement.UpdateMovement();
         m_Movement.UpdateLookAt(m_LookTarget);
-
     }
 
     #region Move Connect Animator
@@ -57,4 +63,12 @@ public class GFLandPlayer : MonoBehaviour
     }
     #endregion
 
+}
+
+public class PlayerState
+{
+    public static int ToStage = Animator.StringToHash("ToStage");
+    public static int ToRelive = Animator.StringToHash("ToRelive");
+    public static int ToDying = Animator.StringToHash("ToDying");
+    public static int ToWin = Animator.StringToHash("ToWin");
 }
