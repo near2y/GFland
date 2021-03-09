@@ -38,19 +38,19 @@ public class AnimateStateCompilerDrawer : PropertyDrawer
             var component = property.serializedObject.targetObject as Component;
             var hpRect = new Rect(15, position.y + 20, position.xMax, 16);
             var btnRect = new Rect(15, hpRect.y + 20+20, position.xMax, 25);
-            GUI.enabled = false;
 
             Animator anim = component.GetComponent<Animator>();
             var aniProp = property.FindPropertyRelative("m_Animator");
-            aniProp.objectReferenceValue = anim;
+            aniProp.objectReferenceValue = aniProp.objectReferenceValue!=null ? aniProp.objectReferenceValue : anim;
             EditorGUI.ObjectField(hpRect, aniProp, new GUIContent("动画控制器："));
 
+            GUI.enabled = false;
             MonoBehaviour mono = component as MonoBehaviour;
             var bind = property.FindPropertyRelative("m_Mono");
             bind.objectReferenceValue = mono;
             EditorGUI.ObjectField(new Rect(15, hpRect.y+20,position.xMax,16), bind, new GUIContent("所属脚本对象："));
             GUI.enabled = true;
-            if (anim == null)
+            if (aniProp.objectReferenceValue == null)
             {
                 if (GUI.Button(btnRect, "缺少动画控制器，点击添加"))
                 {
@@ -61,7 +61,7 @@ public class AnimateStateCompilerDrawer : PropertyDrawer
             {
                 if (GUI.Button(btnRect, "编辑动画状态的回调函数"))
                 {
-                    AnimateStateCompilerWindow.Open(anim,component);
+                    AnimateStateCompilerWindow.Open((Animator)aniProp.objectReferenceValue, component);
                 }
             }
 
