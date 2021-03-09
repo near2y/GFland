@@ -6,8 +6,6 @@ using UnityEngine;
 public abstract class Monster : MonoBehaviour
 {
     [HideInInspector]
-    public Animator m_Animator;
-    [HideInInspector]
     public DamageAbility m_DamageAbility;
     [HideInInspector]
     public Transform m_Target;
@@ -18,7 +16,6 @@ public abstract class Monster : MonoBehaviour
 
     protected void Awake()
     {
-        m_Animator = GetComponent<Animator>();
         m_DamageAbility.Init(100, transform, OutStage);
         InitStateCompiler();
     }
@@ -30,13 +27,13 @@ public abstract class Monster : MonoBehaviour
     public virtual void ToStage(Transform target)
     {
         m_Target = target;
-        m_Animator.SetTrigger(m_idToStage);
+        m_StateCompiler.m_Animator.SetTrigger(m_idToStage);
     }
 
     protected int m_idOutStage = Animator.StringToHash("OutStage");
     public virtual void OutStage()
     {
-        m_Animator.SetTrigger(m_idOutStage);
+        m_StateCompiler.m_Animator.SetTrigger(m_idOutStage);
     }
 
 

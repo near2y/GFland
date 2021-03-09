@@ -57,7 +57,7 @@ public class MonsterMine : Monster
     public void Shoot()
     {
         IsSleep = false;
-        m_Animator.SetTrigger(m_idShoot);
+        m_StateCompiler.m_Animator.SetTrigger(m_idShoot);
     }
 
     public void MoveToTarget()
@@ -81,6 +81,8 @@ public class MonsterMine : Monster
             MoveToTarget();
         }
     }
+
+    
 
 
 }

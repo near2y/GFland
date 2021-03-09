@@ -16,7 +16,6 @@ public class MonsterTurret : Monster
         if (m_AttackAblity.RfreshTimer)
         {
             //TODO
-            Debug.Log("炮台进行了一次攻击！");
             m_AttackAblity.Reset();
         }
     }
