@@ -5,8 +5,9 @@ using UnityEngine;
 public class TestManager : MonoBehaviour
 {
     public GameObject spiderPre;
+    public Transform monsterGather;
 
-    public Monster[] monsters;
+    List<Monster> monsters;
 
     int showMonsterIndex = 0;
     int outMonsterIndex = 0;
@@ -16,6 +17,11 @@ public class TestManager : MonoBehaviour
         GameUI gameUI = (GameUI)UIManager.Instance.PopUpWindow(ConStr.GAMEPANEL);
         player = GameManager.Instance.gameSceneMgr.m_Player;
         player.m_Movement.InitMovement(player.transform, gameUI.m_Panel.joystick);
+        monsters = new List<Monster>();
+        foreach (var monster in monsterGather.GetComponentsInChildren<Monster>())
+        {
+            monsters.Add(monster);
+        }
         showMonsterIndex = 0;
     }
 
@@ -24,7 +30,7 @@ public class TestManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            if (showMonsterIndex < monsters.Length)
+            if (showMonsterIndex < monsters.Count)
             {
                 monsters[showMonsterIndex].ToStage(player.transform);
                 showMonsterIndex++;
