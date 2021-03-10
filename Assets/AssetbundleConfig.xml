@@ -60,6 +60,7 @@
   </ABList>
   <ABList Path="Assets/枪火之地/prefabs/UGUI/JoyStick.prefab" Crc="2390278486" ABName="joystick" AssetName="JoyStick.prefab" />
   <ABList Path="Assets/RealFram/Data/Json/EquipmentJson.json" Crc="2337307316" ABName="json" AssetName="EquipmentJson.json" />
+  <ABList Path="Assets/RealFram/Data/Json/skillTest.json" Crc="644145895" ABName="json" AssetName="skillTest.json" />
   <ABList Path="Assets/RealFram/Data/Json/WaveJson/WaveData_0101.json" Crc="1351482167" ABName="json" AssetName="WaveData_0101.json" />
   <ABList Path="Assets/RealFram/Data/Json/WaveJson/WaveData_0201.json" Crc="3724737748" ABName="json" AssetName="WaveData_0201.json" />
   <ABList Path="Assets/RealFram/Data/Json/WaveJson/WaveData_0301.json" Crc="313064522" ABName="json" AssetName="WaveData_0301.json" />
@@ -76,6 +77,7 @@
   <ABList Path="Assets/枪火之地/prefabs/player.prefab" Crc="1850653287" ABName="player" AssetName="player.prefab">
     <ABDependce>skillprogress</ABDependce>
     <ABDependce>muzzleflash</ABDependce>
+    <ABDependce>drone</ABDependce>
   </ABList>
   <ABList Path="Assets/枪火之地/prefabs/sc06.prefab" Crc="2718072858" ABName="sc06" AssetName="sc06.prefab" />
   <ABList Path="Assets/枪火之地/prefabs/Frist_Set/SET.prefab" Crc="25282138" ABName="set" AssetName="SET.prefab" />

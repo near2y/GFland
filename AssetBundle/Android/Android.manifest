@@ -1,5 +1,5 @@
 ManifestFileVersion: 0
-CRC: 1660346866
+CRC: 3660728898
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
@@ -40,8 +40,9 @@ AssetBundleManifest:
     Info_9:
       Name: player
       Dependencies:
-        Dependency_0: skillprogress
-        Dependency_1: muzzleflash
+        Dependency_0: drone
+        Dependency_1: skillprogress
+        Dependency_2: muzzleflash
     Info_10:
       Name: sc06
       Dependencies: {}

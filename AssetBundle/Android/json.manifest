@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3638359994
+CRC: 3981530039
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: f3feb7a888165082056e6804295bf366
+    Hash: 683f9263ab770072d767befae658f54f
   TypeTreeHash:
     serializedVersion: 2
     Hash: 5ad585dd02dfb5016c0dad519eab8f49
@@ -18,4 +18,5 @@ Assets:
 - Assets/RealFram/Data/Json/WaveJson/WaveData_0101.json
 - Assets/RealFram/Data/Json/WaveJson/WaveData_0201.json
 - Assets/RealFram/Data/Json/WaveJson/WaveData_0601.json
+- Assets/RealFram/Data/Json/skillTest.json
 Dependencies: []

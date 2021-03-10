@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using SimpleJSON;
 
 public class GameManager : MonoSingleton<GameManager>
 {
@@ -20,12 +21,14 @@ public class GameManager : MonoSingleton<GameManager>
 
     public int playerTrajactoryCount = 1;
     public GameSceneMgr gameSceneMgr;
-
+    public SkillData skillJson;
 
     private void Start()
     {
         mono = this;
         effectData = ConfigerManager.Instance.FindData<EffectData>(CFG.TABLE_EFFECT);
+        skillJson = new SkillData();
+        var skill = skillJson.GetSkillByID(1101011);
     }
 
 

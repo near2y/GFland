@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2097074899
+CRC: 2525914686
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: ca2336a4bfcb19d08b0507c05d97314f
+    Hash: 062584010f615c6030c5c8e15b922685
   TypeTreeHash:
     serializedVersion: 2
     Hash: 0c901a4ff7efef622051987735726b26
@@ -53,13 +53,14 @@ Assets:
 - "Assets/\u67AA\u706B\u4E4B\u5730/models/Enemy/Materials/drone.mat"
 - "Assets/\u67AA\u706B\u4E4B\u5730/models/Enemy/drone_ani.fbx"
 - "Assets/\u67AA\u706B\u4E4B\u5730/prefabs/drone.prefab"
-- "Assets/\u67AA\u706B\u4E4B\u5730/models/Enemy/drone_ani/birth1.anim"
+- "Assets/\u67AA\u706B\u4E4B\u5730/models/Enemy/drone_ani/drone_Full.anim"
 - "Assets/\u67AA\u706B\u4E4B\u5730/models/Enemy/drone_ani/die.anim"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Texture/ms_drone_white_02.jpg"
-- "Assets/\u67AA\u706B\u4E4B\u5730/models/Enemy/drone_ani/birth2.anim"
+- "Assets/\u67AA\u706B\u4E4B\u5730/models/Enemy/drone_ani/drone_Up.anim"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Texture/ms_drone_white_01.jpg"
 - "Assets/\u67AA\u706B\u4E4B\u5730/models/Enemy/drone_ani/idle.anim"
 - "Assets/\u67AA\u706B\u4E4B\u5730/materials/Enemy/drone.mat"
+- "Assets/\u67AA\u706B\u4E4B\u5730/Shader/GFLandShaders/GFLandStandard.shader"
 - "Assets/\u67AA\u706B\u4E4B\u5730/Animation/Enemy/DroneAC.controller"
 Dependencies:
-- "F:/Near2y/SVN/shejiAPP/\u7A0B\u5E8F\u5DE5\u7A0B/Assets/../AssetBundle/Android/ammotitan"
+- F:/Near2y/GFland/Assets/../AssetBundle/Android/ammotitan
