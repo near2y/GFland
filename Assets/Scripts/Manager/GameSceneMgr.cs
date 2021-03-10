@@ -46,6 +46,7 @@ public class GameSceneMgr : MonoBehaviour
         enemyManager = new EnemyManager(transform);
         //effectManager
         effectManager = new EffectManager(GameManager.Instance.effectData, transform);
+
     }
 
     //游戏胜利

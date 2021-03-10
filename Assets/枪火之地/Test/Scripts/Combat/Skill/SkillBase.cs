@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using SimpleJSON;
+
+
 public class SkillBase
 {
     public int id;

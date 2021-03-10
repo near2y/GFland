@@ -7,45 +7,45 @@ public class CombatAbility
     /// <summary>
     /// 血量上限
     /// </summary>
-    public float hpBase;
+    public float hpBase = 0;
     /// <summary>
     /// 基础攻击力
     /// </summary>
-    public float attBase;
+    public float attBase = 0;
     /// <summary>
     /// 暴击率
     /// </summary>
-    public float criProp;
+    public float criProp = 0;
     /// <summary>
     /// 暴击伤害加成
     /// </summary>
-    public float criHurAddProp;
+    public float criHurAddProp = 0;
     /// <summary>
     /// 闪避率
     /// </summary>
-    public float evaProp;
+    public float evaProp = 0;
     /// <summary>
     /// 免伤率
     /// </summary>
-    public float harmReduceProp;
+    public float harmReduceProp = 0;
     /// <summary>
     ///  生命回复加成
     /// </summary>
-    public float cureAddProp;
+    public float cureAddProp = 0;
     /// <summary>
     /// 移动速度
     /// </summary>
-    public float spe;
+    public float spe = 0;
     /// <summary>
     /// 攻速
     /// </summary>
-    public float attSpeProp;
+    public float attSpeProp = 0;
     /// <summary>
     /// 金币加成
     /// </summary>
-    public float coinAddProp;
+    public float coinAddProp = 0;
     /// <summary>
     /// 能量获取加成
     /// </summary>
-    public float energyAddProp;
+    public float energyAddProp = 0;
 }

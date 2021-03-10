@@ -23,6 +23,7 @@ public class TestManager : MonoBehaviour
             monsters.Add(monster);
         }
         showMonsterIndex = 0;
+
     }
 
 
