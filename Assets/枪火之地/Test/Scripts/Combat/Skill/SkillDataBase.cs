@@ -7,6 +7,7 @@ public class SkillDataBase:IJsonData
     int id;
     public string name;
     public string icon;
+    public string describe;
     public int skillType;
     public string passiveType;
     public float range;
@@ -28,6 +29,7 @@ public class SkillDataBase:IJsonData
         id = jsData["技能id"];
         name = jsData["技能名"];
         icon = jsData["技能图标"];
+        describe = jsData["技能描述"];
         skillType = jsData["技能类别"];
         passiveType = jsData["被动技能类型"];
         range = jsData["施法距离"];

@@ -26,6 +26,12 @@ public class EffectManager
         return effect;
     }
 
+    public GameObject GetEffect(string path)
+    {
+        GameObject effect = ObjectManager.Instance.InstantiateObject(path);
+        return effect;
+    }
+
     IEnumerator AutoRelease(GameObject effect,float time)
     {
         yield return new WaitForSeconds(time / 1000);

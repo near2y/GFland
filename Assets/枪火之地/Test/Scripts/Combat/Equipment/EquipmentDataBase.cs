@@ -57,28 +57,11 @@ public class EquipmentDataBase:IJsonData
     /// </summary>
     public int sale;
     /// <summary>
-    /// 常规属性
+    /// 常规属性1
     /// </summary>
-    public CombatAbility baseAbility;
+    public EquipmentAbility prop1,prop2;
 
     public int ID { get { return id; } }
-
-    void SetProp(string prop)
-    {
-        string[] datas = prop.Split('|');
-    }
-
-
-
-    void SetAbility(string propName,object value)
-    {
-        baseAbility.GetType().GetField(propName).SetValue(baseAbility, value);    
-    }
-
-    public float GetAbility(string propName)
-    {
-        return (float)baseAbility.GetType().GetField(propName).GetValue(baseAbility);
-    }
 
     public void Init(JSONNode jsData)
     {
@@ -111,12 +94,31 @@ public class EquipmentDataBase:IJsonData
         levelUpNeedCoinBase = float.Parse(needCoinStrs[0]);
         levelUpNeedCoinRatio = float.Parse(needCoinStrs[1]);
 
-        baseAbility = new CombatAbility();
-        //string prop1 = jsData["常规属性1"];
-        //SetProp(prop1);
-        //string prop2 = jsData["常规属性2"];
-        //SetProp(prop2);
+        string p1Data = jsData["常规属性1"];
+        prop1 = new EquipmentAbility(p1Data);
+        string p2Data = jsData["常规属性2"];
+        prop2 = new EquipmentAbility(p2Data);
         sale = jsData["1级该装备分解返回金币数"];
+    }
+}
+
+public class EquipmentAbility
+{
+    string propName;
+    float propOriginalVal;
+    float propGrowVal;
+
+    public EquipmentAbility(string prop)
+    {
+        string[] datas = prop.Split('|');
+        propName = datas[0];
+        propOriginalVal = float.Parse(datas[1]);
+        propGrowVal = float.Parse(datas[2]);
+    }
+
+    public float GetValueByLevel(int level)
+    {
+        return propOriginalVal + propGrowVal * (level - 1);
     }
 }
 

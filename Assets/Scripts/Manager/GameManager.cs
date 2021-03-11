@@ -23,16 +23,16 @@ public class GameManager : MonoSingleton<GameManager>
     public GameSceneMgr gameSceneMgr;
     public JsonData<SkillDataBase> skillJson;
     public JsonData<EquipmentDataBase> equipmentJson;
+    public JsonData<EffectDataBase> effectJson;
 
     private void Start()
     {
         mono = this;
         effectData = ConfigerManager.Instance.FindData<EffectData>(CFG.TABLE_EFFECT);
         skillJson = new JsonData<SkillDataBase>(ConstGameSet.skillJsonUrl);
-        var skill = skillJson.GetDataByID(1101011);
         equipmentJson = new JsonData<EquipmentDataBase>(ConstGameSet.equipmentJsonUrl);
-        var equip = equipmentJson.GetDataByID(10101);
-        Debug.Log(equip.name);
+        effectJson = new JsonData<EffectDataBase>(ConstGameSet.effectJsonUrl);
+
     }
 
 

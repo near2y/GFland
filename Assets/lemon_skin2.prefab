@@ -3045,6 +3045,10 @@ MonoBehaviour:
       m_Bits: 1024
     m_LookLerp: 0.35
   m_LookTarget: {fileID: 0}
+  m_PlayerSkillMent:
+    m_SkillKey: 32
+    m_SkillID: 12585
+    m_Parent: {fileID: 0}
 --- !u!1 &7609614126212044103
 GameObject:
   m_ObjectHideFlags: 0

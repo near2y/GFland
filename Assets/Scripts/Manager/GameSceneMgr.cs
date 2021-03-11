@@ -20,6 +20,7 @@ public class GameSceneMgr : MonoBehaviour
     public GameUI gameUI = null;
     public bool bossGame = false;
 
+
     private void Start()
     {
         Init();
@@ -38,7 +39,7 @@ public class GameSceneMgr : MonoBehaviour
             m_Player = GameObject.Instantiate(m_PlayerPre).GetComponent<GFLandPlayer>();
             m_Player.m_LookTarget = playerLookTarget;
         }
-        if (player == null) player = GameObject.Find("player").GetComponent<Player>();
+        //if (player == null) player = GameObject.Find("player").GetComponent<Player>();
         //TODO
         //camera
         gameCamera = GameObject.Find("Main Camera").GetComponent<GameCamera>();

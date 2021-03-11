@@ -9,10 +9,13 @@ public class GFLandPlayer : MonoBehaviour
     [HideInInspector]
     public Transform m_LookTarget = null;
 
+    public PlayerSkillMent m_PlayerSkillMent;
+
 
 
     private void Start()
     {
+        m_PlayerSkillMent.Init(transform);
         m_Movement.m_CompleteUpdate += MoveCallBack;
         m_AnimateStateCompiler.Init(typeof(GFLandPlayer));
         ToState(PlayerState.ToStage);
@@ -27,6 +30,7 @@ public class GFLandPlayer : MonoBehaviour
     {
         m_Movement.UpdateMovement();
         m_Movement.UpdateLookAt(m_LookTarget);
+        m_PlayerSkillMent.Update();
     }
 
     #region Move Connect Animator
@@ -63,6 +67,7 @@ public class GFLandPlayer : MonoBehaviour
         m_AnimateStateCompiler.m_Animator.SetFloat(m_RotateID, Mathf.Lerp(m_AnimateStateCompiler.m_Animator.GetFloat(m_RotateID), rot, 0.3f));
     }
     #endregion
+
 
 
 
