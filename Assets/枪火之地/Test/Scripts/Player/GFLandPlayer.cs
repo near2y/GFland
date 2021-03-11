@@ -10,6 +10,7 @@ public class GFLandPlayer : MonoBehaviour
     public Transform m_LookTarget = null;
 
 
+
     private void Start()
     {
         m_Movement.m_CompleteUpdate += MoveCallBack;
@@ -62,6 +63,10 @@ public class GFLandPlayer : MonoBehaviour
         m_AnimateStateCompiler.m_Animator.SetFloat(m_RotateID, Mathf.Lerp(m_AnimateStateCompiler.m_Animator.GetFloat(m_RotateID), rot, 0.3f));
     }
     #endregion
+
+
+
+
 
 }
 

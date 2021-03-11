@@ -21,14 +21,18 @@ public class GameManager : MonoSingleton<GameManager>
 
     public int playerTrajactoryCount = 1;
     public GameSceneMgr gameSceneMgr;
-    public SkillData skillJson;
+    public JsonData<SkillDataBase> skillJson;
+    public JsonData<EquipmentDataBase> equipmentJson;
 
     private void Start()
     {
         mono = this;
         effectData = ConfigerManager.Instance.FindData<EffectData>(CFG.TABLE_EFFECT);
-        skillJson = new SkillData();
-        var skill = skillJson.GetSkillByID(1101011);
+        skillJson = new JsonData<SkillDataBase>(ConstGameSet.skillJsonUrl);
+        var skill = skillJson.GetDataByID(1101011);
+        equipmentJson = new JsonData<EquipmentDataBase>(ConstGameSet.equipmentJsonUrl);
+        var equip = equipmentJson.GetDataByID(10101);
+        Debug.Log(equip.name);
     }
 
 

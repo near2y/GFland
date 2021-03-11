@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SimpleJSON;
+using System;
+using System.IO;
 
 public class Method
 {
@@ -45,6 +48,11 @@ public class Method
     {
         if (renderer == null) return -1;
         return renderer.material.GetFloat("_colorrange");
+    }
+
+    public static JSONNode GetJsonByUrl(string url)
+    {
+        return JSON.Parse(File.ReadAllText(url).ToString());
     }
 
 

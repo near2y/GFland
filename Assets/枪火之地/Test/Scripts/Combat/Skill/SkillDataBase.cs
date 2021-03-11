@@ -2,9 +2,9 @@
 using SimpleJSON;
 
 
-public class SkillBase
+public class SkillDataBase:IJsonData
 {
-    public int id;
+    int id;
     public string name;
     public string icon;
     public int skillType;
@@ -21,8 +21,9 @@ public class SkillBase
     public List<BuffTime> buffTimes;
     public float addEnergy;
 
+    public int ID { get { return id; } }
 
-    public SkillBase(JSONNode jsData)
+    public void Init(JSONNode jsData)
     {
         id = jsData["技能id"];
         name = jsData["技能名"];
@@ -57,5 +58,6 @@ public class SkillBase
     }
     delegate T NewItem<T>(string data);
 }
+
 
 

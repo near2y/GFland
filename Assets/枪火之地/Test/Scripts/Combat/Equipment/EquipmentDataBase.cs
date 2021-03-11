@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using SimpleJSON;
 
-public class EquipmentBase
+public class EquipmentDataBase:IJsonData
 {
-    public int id;
+    int id;
     public string name;
     /// <summary>
     /// 所属部位
@@ -61,7 +61,26 @@ public class EquipmentBase
     /// </summary>
     public CombatAbility baseAbility;
 
-    public EquipmentBase(JSONNode jsData)
+    public int ID { get { return id; } }
+
+    void SetProp(string prop)
+    {
+        string[] datas = prop.Split('|');
+    }
+
+
+
+    void SetAbility(string propName,object value)
+    {
+        baseAbility.GetType().GetField(propName).SetValue(baseAbility, value);    
+    }
+
+    public float GetAbility(string propName)
+    {
+        return (float)baseAbility.GetType().GetField(propName).GetValue(baseAbility);
+    }
+
+    public void Init(JSONNode jsData)
     {
         id = jsData["装备id"];
         name = jsData["装备名"];
@@ -81,9 +100,9 @@ public class EquipmentBase
         levelUpNeedResNum = new List<int>();
         string needNumStr = jsData["升级需求材料数量"];
         string[] needNums = needNumStr.Split('|');
-        for(int i = 0; i < maxLevel -1; i++)
+        for (int i = 0; i < maxLevel - 1; i++)
         {
-            int index = Mathf.Max(i, needNumStr.Length - 1);
+            int index = Mathf.Min(i, needNums.Length - 1);
             int need = int.Parse(needNums[index]);
             levelUpNeedResNum.Add(need);
         }
@@ -92,27 +111,13 @@ public class EquipmentBase
         levelUpNeedCoinBase = float.Parse(needCoinStrs[0]);
         levelUpNeedCoinRatio = float.Parse(needCoinStrs[1]);
 
+        baseAbility = new CombatAbility();
         //string prop1 = jsData["常规属性1"];
-        //TODO
-
+        //SetProp(prop1);
+        //string prop2 = jsData["常规属性2"];
+        //SetProp(prop2);
         sale = jsData["1级该装备分解返回金币数"];
-
-
     }
-
-
-
-    void SetAbility(string propName,object value)
-    {
-        baseAbility.GetType().GetField(propName).SetValue(baseAbility, value);    
-    }
-
-    public float GetAbility(string propName)
-    {
-        return (float)baseAbility.GetType().GetField(propName).GetValue(baseAbility);
-    }
-
-
 }
 
 public enum EquipmentPart
