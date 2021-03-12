@@ -35,6 +35,10 @@ public class EffectDataBase : IJsonData
     /// </summary>
     public float scale;
     /// <summary>
+    /// 特效持续时间
+    /// </summary>
+    public float duration;
+    /// <summary>
     /// 播放规则
     /// </summary>
     public EffectPlayType playType;
@@ -56,6 +60,7 @@ public class EffectDataBase : IJsonData
         isFollow = jsData["特效是否跟随"] == "1";
         scale = jsData["大小"];
         playType = (EffectPlayType)int.Parse(jsData["播放规则"]);
+        duration = jsData["特效持续时间"];
     }
 }
 

@@ -25,6 +25,8 @@ public class GameManager : MonoSingleton<GameManager>
     public JsonData<EquipmentDataBase> equipmentJson;
     public JsonData<EffectDataBase> effectJson;
 
+    public ClassObjectPool<Skill> m_SkillClassPool = new ClassObjectPool<Skill>(200);
+
     private void Start()
     {
         mono = this;

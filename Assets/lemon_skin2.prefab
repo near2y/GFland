@@ -3032,7 +3032,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AnimateStateCompiler:
-    m_showProperty: 1
+    m_showProperty: 0
     m_Animator: {fileID: 7609614126204626795}
     m_UnityEvent:
       m_PersistentCalls:
@@ -3045,10 +3045,10 @@ MonoBehaviour:
       m_Bits: 1024
     m_LookLerp: 0.35
   m_LookTarget: {fileID: 0}
-  m_PlayerSkillMent:
-    m_SkillKey: 32
-    m_SkillID: 12585
-    m_Parent: {fileID: 0}
+  m_playerAttackSystem:
+    m_InitiantiveSkillData:
+      skillKey: 32
+      skillID: 1101011
 --- !u!1 &7609614126212044103
 GameObject:
   m_ObjectHideFlags: 0

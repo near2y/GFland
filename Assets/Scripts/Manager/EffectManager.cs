@@ -13,28 +13,66 @@ public class EffectManager
         effectParent = parent;
     }
 
-    public GameObject GetEffect(int id)
+    public GameObject GetEffect(int id,Transform trans)
     {
-        EffectBase data = effectData.FindByID(id);
-        GameObject effect = ObjectManager.Instance.InstantiateObject(data.PrefabPath);
-        effect.transform.SetParent(effectParent);
+        EffectDataBase data = GameManager.Instance.effectJson.GetDataByID(id);
+        GameObject effect = ObjectManager.Instance.InstantiateObject(data.prePath);
         effect.SetActive(true);
-        if(data.Duration > 0)
+        if (data.isFollow)
         {
-            GameManager.Instance.mono.StartCoroutine(AutoRelease(effect, data.Duration));
+            effect.transform.SetParent(trans);
+            effect.transform.localPosition = data.locationOff;
+        }
+        else
+        {
+            effect.transform.position = trans.position + data.locationOff;
+        }
+
+        if (data.duration > 0)
+        {
+            GameManager.Instance.mono.StartCoroutine(AutoRelease(effect, data.duration));
         }
         return effect;
     }
 
-    public GameObject GetEffect(string path)
+    public GameObject GetEffect(int id)
+    {
+        EffectDataBase data = GameManager.Instance.effectJson.GetDataByID(id);
+        GameObject effect = ObjectManager.Instance.InstantiateObject(data.prePath);
+        return effect;
+    }
+
+    public GameObject GetEffect(string path,float duration)
     {
         GameObject effect = ObjectManager.Instance.InstantiateObject(path);
+        effect.transform.SetParent(effectParent);
+        effect.SetActive(true);
+        if (duration > 0)
+        {
+            GameManager.Instance.mono.StartCoroutine(AutoRelease(effect, duration));
+        }
+        return effect;
+    }
+
+    public GameObject GetEffect(string path,float duration,Transform parent)
+    {
+        GameObject effect = GetEffect(path, duration);
+        effect.transform.position = parent.position;
+        effect.transform.SetParent(parent);
+        return effect;
+    }
+
+    public GameObject GetEffect(string path,float duration,Transform parent,Vector3 off)
+    {
+        GameObject effect = GetEffect(path, duration);
+        effect.transform.SetParent(parent);
+        effect.transform.localPosition = off;
         return effect;
     }
 
     IEnumerator AutoRelease(GameObject effect,float time)
     {
-        yield return new WaitForSeconds(time / 1000);
+        yield return new WaitForSeconds(time);
         ReleaseEffect(effect);
     }
 

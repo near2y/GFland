@@ -8,17 +8,21 @@ public class GFLandPlayer : MonoBehaviour
     public JoystickMovement m_Movement = new JoystickMovement();
     [HideInInspector]
     public Transform m_LookTarget = null;
-
-    public PlayerSkillMent m_PlayerSkillMent;
-
-
+    public PlayerAttackSystem m_playerAttackSystem;
 
     private void Start()
     {
-        m_PlayerSkillMent.Init(transform);
         m_Movement.m_CompleteUpdate += MoveCallBack;
         m_AnimateStateCompiler.Init(typeof(GFLandPlayer));
         ToState(PlayerState.ToStage);
+
+        m_playerAttackSystem.Init(this);
+
+    }
+
+    private void OnDestroy()
+    {
+        m_playerAttackSystem.OnDestroy();
     }
 
     public void ToState(int aniID)
@@ -30,7 +34,8 @@ public class GFLandPlayer : MonoBehaviour
     {
         m_Movement.UpdateMovement();
         m_Movement.UpdateLookAt(m_LookTarget);
-        m_PlayerSkillMent.Update();
+
+        m_playerAttackSystem.OnMoveUpdate();
     }
 
     #region Move Connect Animator
