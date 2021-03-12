@@ -72,10 +72,10 @@ public class Skill
     {
         var time = ratio * m_aniTimeLength;
         yield return new WaitForSeconds(time);
-        m_showEffect?.Invoke(id,m_Transform);
+        m_showEffect?.Invoke(id,m_Transform,m_Data.chantTime);
     }
 }
 
-public delegate GameObject SkillShowEffect(int i,Transform trans);
+public delegate GameObject SkillShowEffect(int i,Transform trans,float chantTime);
 
 

@@ -57,7 +57,7 @@ public class EffectDataBase : IJsonData
         string[] off = offData.Split('|');
 
         locationOff = new Vector3(float.Parse(off[0]), float.Parse(off[1]), float.Parse(off[2]));
-        isFollow = jsData["特效是否跟随"] == "1";
+        isFollow = jsData["特效是否跟随"].ToString() == "1";
         scale = jsData["大小"];
         playType = (EffectPlayType)int.Parse(jsData["播放规则"]);
         duration = jsData["特效持续时间"];

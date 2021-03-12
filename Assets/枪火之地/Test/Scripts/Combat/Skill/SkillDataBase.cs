@@ -21,6 +21,7 @@ public class SkillDataBase:IJsonData
     public List<EffectTime> effectTimes;
     public List<BuffTime> buffTimes;
     public float addEnergy;
+    public float chantTime;
 
     public int ID { get { return id; } }
 
@@ -43,6 +44,7 @@ public class SkillDataBase:IJsonData
         SetListData<EffectTime>(jsData, "特效帧", ref effectTimes, (string data) => { return new EffectTime(data); });
         SetListData<BuffTime>(jsData, "功能帧", ref buffTimes, (string data) => { return new BuffTime(data); });
         addEnergy = jsData["增加能量"];
+        chantTime = jsData["吟唱时间"];
     }
 
     void SetListData<T>(JSONNode jsNode, string name, ref List<T> list,NewItem<T> newItem)

@@ -13,7 +13,7 @@ public class EffectManager
         effectParent = parent;
     }
 
-    public GameObject GetEffect(int id,Transform trans)
+    public GameObject GetEffect(int id,Transform trans,float chantTime)
     {
         EffectDataBase data = GameManager.Instance.effectJson.GetDataByID(id);
         GameObject effect = ObjectManager.Instance.InstantiateObject(data.prePath);
@@ -25,48 +25,39 @@ public class EffectManager
         }
         else
         {
-            effect.transform.position = trans.position + data.locationOff;
+            if (chantTime > 0)
+            {
+                effect.transform.SetParent(trans);
+                effect.transform.localPosition = data.locationOff;
+                GameManager.Instance.mono.StartCoroutine(AutoRemoveFollow(chantTime,effect));
+            }
+            else
+            {
+                effect.transform.position = trans.position + data.locationOff;
+            }
         }
+
 
         if (data.duration > 0)
         {
             GameManager.Instance.mono.StartCoroutine(AutoRelease(effect, data.duration));
         }
+
+        effect.transform.localScale = Vector3.Scale(effect.transform.localScale, Vector3.one * data.scale);
         return effect;
+    }
+
+    IEnumerator AutoRemoveFollow(float time,GameObject effect)
+    {
+        yield return new WaitForSeconds(time);
+        effect.transform.SetParent(effectParent);
     }
 
     public GameObject GetEffect(int id)
     {
         EffectDataBase data = GameManager.Instance.effectJson.GetDataByID(id);
         GameObject effect = ObjectManager.Instance.InstantiateObject(data.prePath);
-        return effect;
-    }
-
-    public GameObject GetEffect(string path,float duration)
-    {
-        GameObject effect = ObjectManager.Instance.InstantiateObject(path);
-        effect.transform.SetParent(effectParent);
-        effect.SetActive(true);
-        if (duration > 0)
-        {
-            GameManager.Instance.mono.StartCoroutine(AutoRelease(effect, duration));
-        }
-        return effect;
-    }
-
-    public GameObject GetEffect(string path,float duration,Transform parent)
-    {
-        GameObject effect = GetEffect(path, duration);
-        effect.transform.position = parent.position;
-        effect.transform.SetParent(parent);
-        return effect;
-    }
-
-    public GameObject GetEffect(string path,float duration,Transform parent,Vector3 off)
-    {
-        GameObject effect = GetEffect(path, duration);
-        effect.transform.SetParent(parent);
-        effect.transform.localPosition = off;
+        
         return effect;
     }
 
@@ -80,6 +71,9 @@ public class EffectManager
 
     public void ReleaseEffect(GameObject effect)
     {
-        ObjectManager.Instance.ReleaseObject(effect,recycleParent:false);
+
+
+        //TODO 这里可以考虑优化   是否每次进行收回
+        ObjectManager.Instance.ReleaseObject(effect,recycleParent:true);
     }
 }
