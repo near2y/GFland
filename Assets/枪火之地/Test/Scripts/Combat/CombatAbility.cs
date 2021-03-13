@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -48,4 +49,29 @@ public class CombatAbility
     /// 能量获取加成
     /// </summary>
     public float energyAddProp = 0;
+    /// <summary>
+    /// 当前血量
+    /// </summary>
+    public float currentHp = 0;
+    /// <summary>
+    /// 当前所属 physics layer层
+    /// </summary>
+    public Int32 layer;
+
+    public void Reset()
+    {
+        hpBase = 0;
+        attBase = 0;
+        criProp = 0;
+        criHurAddProp = 0;
+        evaProp = 0;
+        harmReduceProp = 0;
+        cureAddProp = 0;
+        spe = 0;
+        attSpeProp = 0;
+        coinAddProp = 0;
+        energyAddProp = 0;
+        currentHp = 0;
+        layer = LayerMask.NameToLayer("Default");
+    }
 }

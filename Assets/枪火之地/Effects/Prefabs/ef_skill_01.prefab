@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2849863550645379038}
   - component: {fileID: 6968109024594767876}
   - component: {fileID: 1714693993137761172}
-  m_Layer: 17
+  m_Layer: 11
   m_Name: 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4776,7 +4776,7 @@ GameObject:
   - component: {fileID: 6455130551418806102}
   - component: {fileID: 1997683907473348592}
   - component: {fileID: 4199488700809096693}
-  m_Layer: 17
+  m_Layer: 11
   m_Name: dilie_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9532,7 +9532,7 @@ GameObject:
   - component: {fileID: 5399886746898855313}
   - component: {fileID: 2513040578125831084}
   - component: {fileID: 8592861340736994449}
-  m_Layer: 17
+  m_Layer: 11
   m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14297,7 +14297,7 @@ GameObject:
   - component: {fileID: 2296657066439255088}
   - component: {fileID: 2094030241071020430}
   - component: {fileID: 2093453803402296656}
-  m_Layer: 17
+  m_Layer: 11
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19071,7 +19071,7 @@ GameObject:
   - component: {fileID: 2296673133375916094}
   - component: {fileID: 2121739618785775072}
   - component: {fileID: 2092834008352515146}
-  m_Layer: 17
+  m_Layer: 11
   m_Name: GroundWaves2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23894,7 +23894,7 @@ GameObject:
   - component: {fileID: 2288034549215066244}
   - component: {fileID: 2094125215384071828}
   - component: {fileID: 2091997008831827442}
-  m_Layer: 17
+  m_Layer: 11
   m_Name: Spiral
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28708,7 +28708,7 @@ GameObject:
   - component: {fileID: 2287967110700166690}
   - component: {fileID: 2093247153750028828}
   - component: {fileID: 2092564395557727012}
-  m_Layer: 17
+  m_Layer: 11
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32266,7 +32266,7 @@ ParticleSystem:
   CollisionModule:
     enabled: 0
     serializedVersion: 3
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
@@ -32442,12 +32442,12 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 512
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
     collisionMessages: 0
-    collidesWithDynamic: 1
+    collidesWithDynamic: 0
     interiorCollisions: 0
   TriggerModule:
     enabled: 0
@@ -33473,7 +33473,7 @@ GameObject:
   - component: {fileID: 2296470058595166024}
   - component: {fileID: 2093645503746119330}
   - component: {fileID: 2091963646672183546}
-  m_Layer: 17
+  m_Layer: 11
   m_Name: CoreDerbis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38171,7 +38171,7 @@ GameObject:
   - component: {fileID: 2288206637275005924}
   - component: {fileID: 2093050734931111338}
   - component: {fileID: 2092728967992722720}
-  m_Layer: 17
+  m_Layer: 11
   m_Name: SpiralDesbis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42985,7 +42985,7 @@ GameObject:
   - component: {fileID: 7866546165405233719}
   - component: {fileID: 7562069342896111306}
   - component: {fileID: 3263577032446084311}
-  m_Layer: 17
+  m_Layer: 11
   m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47739,7 +47739,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6214677138745013348}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47773,7 +47773,8 @@ GameObject:
   - component: {fileID: 8932818195805830288}
   - component: {fileID: 148364927}
   - component: {fileID: 148364926}
-  m_Layer: 17
+  - component: {fileID: 114843336836663294}
+  m_Layer: 11
   m_Name: ef_skill_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51345,7 +51346,7 @@ ParticleSystem:
   CollisionModule:
     enabled: 0
     serializedVersion: 3
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
@@ -51521,7 +51522,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 2048
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -52570,6 +52571,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 2.5
   m_Center: {x: 0, y: 0, z: 0.0034999857}
+--- !u!114 &114843336836663294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8932818195805830289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc39dcadbbc38a94ca75566fc60fd2bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TriggerEnabledTime: 2.06
 --- !u!1 &8932818195932356647
 GameObject:
   m_ObjectHideFlags: 0
@@ -52581,7 +52595,7 @@ GameObject:
   - component: {fileID: 8932818195932356646}
   - component: {fileID: 8932818195932356644}
   - component: {fileID: 8932818195932356645}
-  m_Layer: 17
+  m_Layer: 11
   m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57382,7 +57396,7 @@ GameObject:
   - component: {fileID: 8932818196077281321}
   - component: {fileID: 8932818196077281327}
   - component: {fileID: 8932818196077281320}
-  m_Layer: 17
+  m_Layer: 11
   m_Name: dilie_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62138,7 +62152,7 @@ GameObject:
   - component: {fileID: 8932818197026568042}
   - component: {fileID: 8932818197026568040}
   - component: {fileID: 8932818197026568041}
-  m_Layer: 17
+  m_Layer: 11
   m_Name: dilie_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}

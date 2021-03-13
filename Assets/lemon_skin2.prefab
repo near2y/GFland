@@ -3031,6 +3031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3774cecb389d8424d92ac45f328fd022, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SkillLayer: 11
   m_AnimateStateCompiler:
     m_showProperty: 0
     m_Animator: {fileID: 7609614126204626795}

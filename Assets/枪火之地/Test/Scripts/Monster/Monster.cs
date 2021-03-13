@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Monster : MonoBehaviour
+public abstract class Monster : AttackRole
 {
     [HideInInspector]
     public DamageAbility m_DamageAbility;
@@ -12,11 +12,16 @@ public abstract class Monster : MonoBehaviour
     public AnimateStateCompiler m_StateCompiler;
 
 
-
     protected void Awake()
     {
         m_DamageAbility.Init(100, transform, OutStage);
         InitStateCompiler();
+    }
+
+    private void Start()
+    {
+        m_CombatAbility = GameManager.Instance.m_CombatAbilityClassPool.Spawn(true);
+        m_CombatAbility.currentHp = 100; 
     }
 
     protected abstract void InitStateCompiler();
@@ -30,6 +35,8 @@ public abstract class Monster : MonoBehaviour
     }
 
     protected int m_idOutStage = Animator.StringToHash("OutStage");
+
+
     public virtual void OutStage()
     {
         m_StateCompiler.m_Animator.SetTrigger(m_idOutStage);

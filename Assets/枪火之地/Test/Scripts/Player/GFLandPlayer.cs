@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GFLandPlayer : MonoBehaviour
+public class GFLandPlayer : AttackRole
 {
     public AnimateStateCompiler m_AnimateStateCompiler;
     public JoystickMovement m_Movement = new JoystickMovement();
@@ -13,9 +13,16 @@ public class GFLandPlayer : MonoBehaviour
 
     private void Start()
     {
+
         m_Movement.m_CompleteUpdate += MoveCallBack;
         m_AnimateStateCompiler.Init(typeof(GFLandPlayer));
         ToState(PlayerState.ToStage);
+
+        //CombatAbility Set
+        m_CombatAbility = GameManager.Instance.m_CombatAbilityClassPool.Spawn(true);
+        m_CombatAbility.currentHp = 100;
+        m_CombatAbility.attBase = 50;
+        m_CombatAbility.layer = (int)GamePhysicsLayer.PlayerBullet;
 
         m_playerAttackSystem.Init(this);
 
@@ -46,6 +53,8 @@ public class GFLandPlayer : MonoBehaviour
     Vector3 lastPosition = new Vector3();
     Quaternion lastRotation = new Quaternion();
     Vector3 aniDir = new Vector3();
+
+
     private void MoveCallBack(float h,float v)
     {
         if (transform.position != lastPosition)

@@ -73,7 +73,6 @@ public class Player : MonoBehaviour
         floorMask = LayerMask.GetMask("Ground");
         //startColorrange = Method.GetColorrangeInRender(meshRenderer);
         //StartGame = false;
-
     }
 
     private void Start()

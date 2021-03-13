@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TestManager : MonoBehaviour
 {
-    public GameObject spiderPre;
+    public EquipmentGun equipmentGun;
     public Transform monsterGather;
 
     List<Monster> monsters;
@@ -24,6 +24,7 @@ public class TestManager : MonoBehaviour
         }
         showMonsterIndex = 0;
 
+        equipmentGun.test = player.gameObject;
     }
 
 

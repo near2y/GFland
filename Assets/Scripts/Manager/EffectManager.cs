@@ -13,7 +13,7 @@ public class EffectManager
         effectParent = parent;
     }
 
-    public GameObject GetEffect(int id,Transform trans,float chantTime)
+    public GameObject GetEffect(int id,Transform trans)
     {
         EffectDataBase data = GameManager.Instance.effectJson.GetDataByID(id);
         GameObject effect = ObjectManager.Instance.InstantiateObject(data.prePath);
@@ -25,16 +25,8 @@ public class EffectManager
         }
         else
         {
-            if (chantTime > 0)
-            {
-                effect.transform.SetParent(trans);
-                effect.transform.localPosition = data.locationOff;
-                GameManager.Instance.mono.StartCoroutine(AutoRemoveFollow(chantTime,effect));
-            }
-            else
-            {
-                effect.transform.position = trans.position + data.locationOff;
-            }
+            effect.transform.SetParent(effectParent);
+            effect.transform.position = trans.position + data.locationOff;
         }
 
 

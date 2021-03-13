@@ -26,6 +26,7 @@ public class GameManager : MonoSingleton<GameManager>
     public JsonData<EffectDataBase> effectJson;
 
     public ClassObjectPool<Skill> m_SkillClassPool = new ClassObjectPool<Skill>(200);
+    public ClassObjectPool<CombatAbility> m_CombatAbilityClassPool = new ClassObjectPool<CombatAbility>(100);
 
     private void Start()
     {
@@ -34,6 +35,7 @@ public class GameManager : MonoSingleton<GameManager>
         skillJson = new JsonData<SkillDataBase>(ConstGameSet.skillJsonUrl);
         equipmentJson = new JsonData<EquipmentDataBase>(ConstGameSet.equipmentJsonUrl);
         effectJson = new JsonData<EffectDataBase>(ConstGameSet.effectJsonUrl);
+        CampManager.Instance.Reset();
 
     }
 

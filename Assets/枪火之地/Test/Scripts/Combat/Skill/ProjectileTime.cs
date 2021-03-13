@@ -13,5 +13,6 @@ public class ProjectileTime
     {
         var datas = data.Split('|');
         nomalizeMoment = float.Parse(datas[0]);
+        projectileID = int.Parse(datas[1]);
     }
 }

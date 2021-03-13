@@ -13,13 +13,12 @@
         "作用中心": 1,
         "作用形状": 0,
         "施法动作": "attack",
-        "伤害帧": "0.5|12345&0.2|12356",
-        "弹道帧": "0|13111",
-        "特效帧": "0.5|12586",
+        "伤害帧": "0|1",
+        "弹道帧": "0.5|12586",
+        "特效帧": 0,
         "功能帧": "0|1001",
         "增加能量": 0,
-        "音效": "battle_attack1_1|battle_attack1_2|battle_attack1_3",
-        "吟唱时间": 1.75
+        "音效": "battle_attack1_1|battle_attack1_2|battle_attack1_3"
     },
     {
         "技能id": 1101012,
@@ -40,7 +39,6 @@
         "特效帧": 0,
         "功能帧": 0,
         "增加能量": 0,
-        "音效": "battle_attack1_1|battle_attack1_2|battle_attack1_3",
-        "吟唱时间": 1
+        "音效": "battle_attack1_1|battle_attack1_2|battle_attack1_3"
     }
 ]
