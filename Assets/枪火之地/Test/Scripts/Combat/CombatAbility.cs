@@ -57,6 +57,14 @@ public class CombatAbility
     /// 当前所属 physics layer层
     /// </summary>
     public Int32 layer;
+    /// <summary>
+    /// 所属对象
+    /// </summary>
+    public GameObject gameObject;
+    /// <summary>
+    /// 阵营名字
+    /// </summary>
+    public string campName; 
 
     public void Reset()
     {

@@ -30,6 +30,8 @@ public class GameSceneMgr : MonoBehaviour
     void Init()
     {
         GameManager.Instance.gameSceneMgr = this;
+        //init camp
+        InitCamp();
         //monsterPoints
         var enemyPointObj = GameObject.Find("MonsterPoint");
         if (enemyPointObj != null)enemyPoints = new EnemyPoints(enemyPointObj.transform);
@@ -38,6 +40,7 @@ public class GameSceneMgr : MonoBehaviour
         { 
             m_Player = GameObject.Instantiate(m_PlayerPre).GetComponent<GFLandPlayer>();
             m_Player.m_LookTarget = playerLookTarget;
+            CampManager.Instance.AddToCamp(ConstString.PlayerCampName, m_Player.m_CombatAbility);
         }
         //if (player == null) player = GameObject.Find("player").GetComponent<Player>();
         //TODO
@@ -66,7 +69,12 @@ public class GameSceneMgr : MonoBehaviour
         startedWave = true;
     }
 
-
+    private void InitCamp()
+    {
+        CampManager.Instance.Reset();
+        CampManager.Instance.RegisterCamp("Player");
+        CampManager.Instance.RegisterCamp("Monster");
+    }
 
     private void Update()
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ConStr
+public class ConstString
 {
     //界面名称
     public const string LOADINGPANEL = "LoadPanel.prefab";
@@ -21,4 +21,8 @@ public class ConStr
 
     //临时音乐资源
     public const string MENUSOUND = "Assets/GameData/Sounds/menusound.mp3";
+
+    //阵营名字
+    public const string PlayerCampName = "Player";
+    public const string MonsterCampName = "Monster";
 }

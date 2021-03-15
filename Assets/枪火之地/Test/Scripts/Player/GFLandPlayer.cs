@@ -10,10 +10,12 @@ public class GFLandPlayer : AttackRole
     public Transform m_LookTarget = null;
     public PlayerAttackSystem m_playerAttackSystem;
 
+    //阵营对象数组
+    List<CombatAbility> m_campAbilityList;
 
     private void Start()
     {
-
+        m_campAbilityList = new List<CombatAbility>();
         m_Movement.m_CompleteUpdate += MoveCallBack;
         m_AnimateStateCompiler.Init(typeof(GFLandPlayer));
         ToState(PlayerState.ToStage);
@@ -23,10 +25,12 @@ public class GFLandPlayer : AttackRole
         m_CombatAbility.currentHp = 100;
         m_CombatAbility.attBase = 50;
         m_CombatAbility.layer = (int)GamePhysicsLayer.PlayerBullet;
-
+        m_CombatAbility.gameObject = gameObject;
+        m_CombatAbility.campName = ConstString.PlayerCampName;
         m_playerAttackSystem.Init(this);
 
     }
+
 
     private void OnDestroy()
     {
@@ -40,11 +44,14 @@ public class GFLandPlayer : AttackRole
 
     public void InGameMove()
     {
+        
         m_Movement.UpdateMovement();
+        m_LookTarget = GameManager.Instance.gameSceneMgr.enemyManager.FindCloseMonster(transform.position)?.gameObject.transform;
         m_Movement.UpdateLookAt(m_LookTarget);
-
         m_playerAttackSystem.OnMoveUpdate();
     }
+
+
 
     #region Move Connect Animator
     int m_VerticalID = Animator.StringToHash("Vertical");

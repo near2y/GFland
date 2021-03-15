@@ -61,11 +61,6 @@ public class BehaviourBase : StateMachineBehaviour
         {
             AddDelegate(ref callBack, name, type);
         }
-        var m = type.GetMethod(name);
-        if (m != null)
-        {
-            callBack += (BehaviourCallBack)m.CreateDelegate(typeof(BehaviourCallBack), m_Bind);
-        }
     }
     void AddDelegate(ref BehaviourCallBack callBack, string name, System.Type type)
     {

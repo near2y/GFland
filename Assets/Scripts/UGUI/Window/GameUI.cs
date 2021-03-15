@@ -37,7 +37,7 @@ public class GameUI : Window
     void ClickHomeBtn()
     {
         UIManager.Instance.CloseWindow(Name);
-        GameMapManager.Instance.LoadScene(ConStr.MENUSCENE, 1);
+        GameMapManager.Instance.LoadScene(ConstString.MENUSCENE, 1);
     }
 
     //点击下一关

@@ -102,7 +102,7 @@ public class Player : MonoBehaviour
         //Move
         if (!hadJoystick)
         {
-            GameUI ui = UIManager.Instance.FindWindowByName<GameUI>(ConStr.GAMEPANEL);
+            GameUI ui = UIManager.Instance.FindWindowByName<GameUI>(ConstString.GAMEPANEL);
             if (ui != null && ui.m_Panel.joystick != null)
             {
                 hadJoystick = true;
@@ -155,7 +155,7 @@ public class Player : MonoBehaviour
         skill = GameManager.Instance.gameSceneMgr.effectManager.GetEffect(4006).GetComponent<PlayerBoomSkill>();
         skill.player = transform;
         anim.SetBool(aniID_StartGame, true);
-        GameManager.Instance.gameSceneMgr.gameUI = UIManager.Instance.PopUpWindow(ConStr.GAMEPANEL, true) as GameUI;
+        GameManager.Instance.gameSceneMgr.gameUI = UIManager.Instance.PopUpWindow(ConstString.GAMEPANEL, true) as GameUI;
 
     }
 

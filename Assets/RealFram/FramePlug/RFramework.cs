@@ -33,7 +33,7 @@ public class RFramework : MonoSingleton<RFramework>
     {
         if (!m_Test) 
         {
-            GameMapManager.Instance.LoadScene(ConStr.MENUSCENE);
+            GameMapManager.Instance.LoadScene(ConstString.MENUSCENE);
         }
         //UIManager.Instance.PopUpWindow(ConStr.MENUPANEL);
     }
@@ -67,10 +67,10 @@ public class RFramework : MonoSingleton<RFramework>
     /// </summary>
     private void RegisterUI()
     {
-        UIManager.Instance.Register<MenuUI>(ConStr.MENUPANEL);
-        UIManager.Instance.Register<LoadUI>(ConStr.LOADINGPANEL);
-        UIManager.Instance.Register<GameUI>(ConStr.GAMEPANEL);
-        UIManager.Instance.Register<ChoosePropUI>(ConStr.CHOOSEPROPPANEL);
+        UIManager.Instance.Register<MenuUI>(ConstString.MENUPANEL);
+        UIManager.Instance.Register<LoadUI>(ConstString.LOADINGPANEL);
+        UIManager.Instance.Register<GameUI>(ConstString.GAMEPANEL);
+        UIManager.Instance.Register<ChoosePropUI>(ConstString.CHOOSEPROPPANEL);
     }
 
 }

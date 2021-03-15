@@ -9,7 +9,7 @@ public class PlayerWaitStartGame : StateMachineBehaviour
     {
         RFramework.Instance.m_UIRoot.gameObject.SetActive(false);
         RFramework.Instance.m_UIRoot.gameObject.SetActive(true);
-        UIManager.Instance.PopUpWindow(ConStr.CHOOSEPROPPANEL, true);
+        UIManager.Instance.PopUpWindow(ConstString.CHOOSEPROPPANEL, true);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

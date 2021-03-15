@@ -50,7 +50,7 @@ public class GameMapManager : Singleton<GameMapManager>
     {
         LoadingProgress = 0;
         m_Mono.StartCoroutine(LoadSceneAsync(name));
-        UIManager.Instance.PopUpWindow(ConStr.LOADINGPANEL,true,index);
+        UIManager.Instance.PopUpWindow(ConstString.LOADINGPANEL,true,index);
     }
 
     public void LoadScene(string name, Action complete,int index = 1)
@@ -78,7 +78,7 @@ public class GameMapManager : Singleton<GameMapManager>
         }
         ClearCache();
         AlreadyLoadScene = false;
-        AsyncOperation unloadScene = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(ConStr.EMPTYSCENE, LoadSceneMode.Single);
+        AsyncOperation unloadScene = UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(ConstString.EMPTYSCENE, LoadSceneMode.Single);
         while(unloadScene!=null && !unloadScene.isDone)
         {
             yield return new WaitForEndOfFrame();

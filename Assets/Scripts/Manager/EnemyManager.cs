@@ -12,6 +12,10 @@ public class EnemyManager
     /// 当前正在场上的敌人集合
     /// </summary>
     public List<Enemy> m_EnemyList;
+    /// <summary>
+    /// 当前正在场上的敌人集合
+    /// </summary>
+    public List<Monster> m_MonsterList;
 
     public int enemyAliveCount = 0;
 
@@ -21,6 +25,7 @@ public class EnemyManager
     {
         m_Parent = parent;
         m_EnemyList = new List<Enemy>();
+        m_MonsterList = new List<Monster>();
         m_EnemyData = ConfigerManager.Instance.FindData<EnemyData>(CFG.TABLE_ENEMY);
     }
 
@@ -90,5 +95,51 @@ public class EnemyManager
         m_EnemyList.Add(enemy);
         enemy.addedInGame = true;
     }
+
+    public void AddMonster(Monster monster)
+    {
+        if (monster.m_InMonsterList) return;
+        monster.m_InMonsterList = true;
+        m_MonsterList.Add(monster);
+        CampManager.Instance.AddToCamp(ConstString.MonsterCampName, monster.m_CombatAbility);
+    }
+
+    public void RemoveMonster(Monster monster)
+    {
+        if (!monster.m_InMonsterList) return;
+        monster.m_InMonsterList = false;
+        m_MonsterList.Remove(monster);
+        CampManager.Instance.RemoveOutCamp(ConstString.MonsterCampName, monster.m_CombatAbility);
+    }
+
+    /// <summary>
+    /// 找到最近的敌人
+    /// </summary>
+    /// <returns></returns>
+    public Monster FindCloseMonster(Vector3 srcPos)
+    {
+        if (m_MonsterList.Count > 0)
+        {
+            Monster monster = m_MonsterList[0];
+            float closeDis = Vector3.SqrMagnitude(srcPos - monster.gameObject.transform.position);
+            for (int i = 1; i < m_MonsterList.Count; i++)
+            {
+                float newDis = Vector3.SqrMagnitude(srcPos - m_MonsterList[i].transform.position);
+                if (newDis <closeDis )
+                {
+                    closeDis = newDis;
+                    monster = m_MonsterList[i];
+                }
+            }
+            return monster;
+        }
+        else
+        {
+            return null;
+        }
+
+    }
+
+
 
 }

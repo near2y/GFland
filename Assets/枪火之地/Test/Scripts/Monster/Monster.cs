@@ -8,7 +8,8 @@ public abstract class Monster : AttackRole
     public DamageAbility m_DamageAbility;
     [HideInInspector]
     public Transform m_Target;
-
+    [HideInInspector]
+    public bool m_InMonsterList;
     public AnimateStateCompiler m_StateCompiler;
 
 
@@ -20,8 +21,12 @@ public abstract class Monster : AttackRole
 
     private void Start()
     {
+        //TODO
+        //配置CombatAbility
         m_CombatAbility = GameManager.Instance.m_CombatAbilityClassPool.Spawn(true);
-        m_CombatAbility.currentHp = 100; 
+        m_CombatAbility.currentHp = 100;
+        m_CombatAbility.gameObject = gameObject;
+        m_CombatAbility.campName = ConstString.MonsterCampName;
     }
 
     protected abstract void InitStateCompiler();
@@ -32,6 +37,7 @@ public abstract class Monster : AttackRole
     {
         m_Target = target;
         m_StateCompiler.m_Animator.SetTrigger(m_idToStage);
+        m_InMonsterList = false;
     }
 
     protected int m_idOutStage = Animator.StringToHash("OutStage");
@@ -40,6 +46,7 @@ public abstract class Monster : AttackRole
     public virtual void OutStage()
     {
         m_StateCompiler.m_Animator.SetTrigger(m_idOutStage);
+        GameManager.Instance.gameSceneMgr.enemyManager.RemoveMonster(this);
     }
 
 
@@ -48,6 +55,13 @@ public abstract class Monster : AttackRole
         m_DamageAbility.Update();
     }
 
+    /// <summary>
+    /// 完成生成
+    /// </summary>
+    public virtual void CompleteSpawn()
+    {
+        GameManager.Instance.gameSceneMgr.enemyManager.AddMonster(this);
+    }
 }
 
 public enum MonsterSpawnType

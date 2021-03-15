@@ -28,7 +28,7 @@ public class LoadUI : Window
         switch (state)
         {
             case 1:
-                UIManager.Instance.PopUpWindow(ConStr.MENUPANEL);
+                UIManager.Instance.PopUpWindow(ConstString.MENUPANEL);
                 break;
             //case 2:
             //    UIManager.Instance.PopUpWindow(ConStr.GAMEPANEL,true);
